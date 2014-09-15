@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TGCameraViewController">
+            <connections>
+                <outlet property="captureView" destination="dIq-rQ-gzr" id="F4T-QP-lPu"/>
+                <outlet property="flashButton" destination="p7O-pE-Mp0" id="Tqo-vg-CGw"/>
+                <outlet property="toggleButton" destination="WJG-N5-BnZ" id="QRP-Z9-Zpe"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dit-c7-IZk" userLabel="Top View">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3k-MF-E1l" userLabel="Close">
+                            <rect key="frame" x="8" y="5" width="50" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="8zQ-fR-Cw5"/>
+                                <constraint firstAttribute="height" constant="40" id="HL7-sq-UFh"/>
+                            </constraints>
+                            <state key="normal" image="CameraClose">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="closeTapped" destination="-1" eventType="touchUpInside" id="mp3-Tj-Kz0"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="O3k-MF-E1l" firstAttribute="leading" secondItem="dit-c7-IZk" secondAttribute="leading" constant="8" id="2C8-Dp-ehP"/>
+                        <constraint firstAttribute="height" constant="50" id="6Jx-N4-dl2"/>
+                        <constraint firstItem="O3k-MF-E1l" firstAttribute="top" secondItem="dit-c7-IZk" secondAttribute="top" constant="5" id="TAQ-IX-9xX"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rJ9-I8-VJI" userLabel="Bottom View">
+                    <rect key="frame" x="0.0" y="500" width="600" height="100"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wtQ-Dg-G3i" userLabel="Shot">
+                            <rect key="frame" x="261" y="10" width="78" height="78"/>
+                            <state key="normal" image="CameraShot">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="shotTapped" destination="-1" eventType="touchUpInside" id="DzL-BM-p4i"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7O-pE-Mp0" userLabel="Flash">
+                            <rect key="frame" x="512" y="10" width="80" height="80"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="80" id="WPH-Fg-sf4"/>
+                            </constraints>
+                            <state key="normal" image="CameraFlashAuto">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="flashTapped" destination="-1" eventType="touchUpInside" id="yzx-f1-HjP"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJG-N5-BnZ" userLabel="Toggle">
+                            <rect key="frame" x="8" y="10" width="80" height="80"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="80" id="Qb6-vi-Yng"/>
+                            </constraints>
+                            <state key="normal" image="CameraToggle">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="toggleTapped" destination="-1" eventType="touchUpInside" id="cnq-8L-ak1"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="WJG-N5-BnZ" firstAttribute="top" secondItem="rJ9-I8-VJI" secondAttribute="top" constant="10" id="GPp-Fq-cqM"/>
+                        <constraint firstAttribute="bottom" secondItem="WJG-N5-BnZ" secondAttribute="bottom" constant="10" id="LQv-OP-a8z"/>
+                        <constraint firstAttribute="bottom" secondItem="wtQ-Dg-G3i" secondAttribute="bottom" constant="12" id="TRf-fc-Jvw"/>
+                        <constraint firstAttribute="height" constant="100" id="W6e-Kl-7Xj"/>
+                        <constraint firstAttribute="centerX" secondItem="wtQ-Dg-G3i" secondAttribute="centerX" id="iEH-AF-HP3"/>
+                        <constraint firstAttribute="bottom" secondItem="p7O-pE-Mp0" secondAttribute="bottom" constant="10" id="tP4-lL-il7"/>
+                        <constraint firstAttribute="trailing" secondItem="p7O-pE-Mp0" secondAttribute="trailing" constant="8" id="tf6-bX-y07"/>
+                        <constraint firstItem="p7O-pE-Mp0" firstAttribute="top" secondItem="rJ9-I8-VJI" secondAttribute="top" constant="10" id="wy2-j7-SW3"/>
+                        <constraint firstItem="WJG-N5-BnZ" firstAttribute="leading" secondItem="rJ9-I8-VJI" secondAttribute="leading" constant="8" id="zsX-Iy-a0Y"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dIq-rQ-gzr" userLabel="Capture View">
+                    <rect key="frame" x="0.0" y="50" width="600" height="450"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="dit-c7-IZk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="6a1-LI-Q7g"/>
+                <constraint firstItem="rJ9-I8-VJI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Hyx-j8-b54"/>
+                <constraint firstItem="dIq-rQ-gzr" firstAttribute="top" secondItem="dit-c7-IZk" secondAttribute="bottom" id="JmN-ib-nBA"/>
+                <constraint firstItem="dIq-rQ-gzr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="XUc-73-OQ9"/>
+                <constraint firstItem="dit-c7-IZk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="dWM-mE-FoN"/>
+                <constraint firstItem="rJ9-I8-VJI" firstAttribute="top" secondItem="dIq-rQ-gzr" secondAttribute="bottom" id="fKv-xx-Y7M"/>
+                <constraint firstAttribute="trailing" secondItem="rJ9-I8-VJI" secondAttribute="trailing" id="fhs-E0-cAC"/>
+                <constraint firstAttribute="trailing" secondItem="dit-c7-IZk" secondAttribute="trailing" id="i50-UZ-bBi"/>
+                <constraint firstAttribute="bottom" secondItem="rJ9-I8-VJI" secondAttribute="bottom" id="lhi-VS-5Rd"/>
+                <constraint firstAttribute="trailing" secondItem="dIq-rQ-gzr" secondAttribute="trailing" id="t6K-AA-bZj"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="CameraClose" width="26" height="26"/>
+        <image name="CameraFlashAuto" width="41" height="41"/>
+        <image name="CameraShot" width="78" height="78"/>
+        <image name="CameraToggle" width="30" height="30"/>
+    </resources>
+</document>

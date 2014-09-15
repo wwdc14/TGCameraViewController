@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Eda-Vg-Qoc">
+    <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="L5q-as-T2h">
+            <objects>
+                <navigationController id="Eda-Vg-Qoc" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GDi-yo-0O4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="QRX-dV-Qlj" kind="relationship" relationship="rootViewController" id="hte-FT-hcg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BU4-yI-zPj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-256" y="96"/>
+        </scene>
+        <!--Initial-->
+        <scene sceneID="AvY-Ed-Mqp">
+            <objects>
+                <viewController id="QRX-dV-Qlj" customClass="TGInitialViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JA7-oE-oFj"/>
+                        <viewControllerLayoutGuide type="bottom" id="ssR-rD-Gn3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="f7u-Ek-YX3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bpf-cM-IeV">
+                                <rect key="frame" x="150" y="445" width="300" height="135"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i43-vW-xQp">
+                                        <rect key="frame" x="8" y="26" width="284" height="30"/>
+                                        <state key="normal" title="Take photo">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="takePhotoTapped" destination="QRX-dV-Qlj" eventType="touchUpInside" id="PjQ-Uy-FyH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UX4-na-yGp">
+                                        <rect key="frame" x="8" y="79" width="284" height="30"/>
+                                        <state key="normal" title="Choose existing photo">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="chooseExistingPhotoTapped" destination="QRX-dV-Qlj" eventType="touchUpInside" id="yvl-4X-n1a"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="135" id="lQa-Tv-RuM"/>
+                                    <constraint firstAttribute="width" constant="300" id="pt6-Z9-zPk"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZSx-0Y-doC">
+                                <rect key="frame" x="220" y="158" width="160" height="284"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="c2y-CO-mYA"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="ZSx-0Y-doC" secondAttribute="centerY" id="1hP-OK-T1D"/>
+                            <constraint firstAttribute="centerX" secondItem="bpf-cM-IeV" secondAttribute="centerX" id="3CS-lT-4ew"/>
+                            <constraint firstItem="ssR-rD-Gn3" firstAttribute="top" secondItem="bpf-cM-IeV" secondAttribute="bottom" constant="20" id="Bgi-6Q-dMo"/>
+                            <constraint firstItem="ZSx-0Y-doC" firstAttribute="top" secondItem="JA7-oE-oFj" secondAttribute="bottom" constant="94" id="hht-fQ-x6Q"/>
+                            <constraint firstAttribute="centerX" secondItem="ZSx-0Y-doC" secondAttribute="centerX" id="ooT-ud-nV3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Initial" id="w4g-fM-4fa"/>
+                    <connections>
+                        <outlet property="photoView" destination="ZSx-0Y-doC" id="KhV-t5-DCf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="krk-pN-rQY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="641" y="96"/>
+        </scene>
+    </scenes>
+</document>
