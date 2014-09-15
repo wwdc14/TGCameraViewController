@@ -30,4 +30,4 @@ This code is distributed under the terms and conditions of the [MIT license](LIC
 
 ## Change-log
 
-A brief summary of each TGCameraViewController release can be found on the [releases](https://github.com/tdginternet/tudogostoso-ios_v1/releases).
+A brief summary of each TGCameraViewController release can be found on the [releases](https://github.com/tdginternet/TGCameraViewController/releases).
