@@ -1,9 +1,12 @@
 
-/* Class = "IBUIButton"; normalTitle = "Back"; ObjectID = "WAy-eH-OU9"; */
-"WAy-eH-OU9.normalTitle" = "Voltar";
+/* Class = "IBUIButton"; normalTitle = "Reset"; ObjectID = "1yn-Ri-oTe"; */
+"1yn-Ri-oTe.normalTitle" = "Limpar";
 
-/* Class = "IBUIButton"; normalTitle = "Cancel"; ObjectID = "z20-hs-Mae"; */
-"z20-hs-Mae.normalTitle" = "Cancelar";
+/* Class = "IBUIButton"; normalTitle = "Filters"; ObjectID = "bwi-ED-cl6"; */
+"bwi-ED-cl6.normalTitle" = "Filtros";
 
 /* Class = "IBUIButton"; normalTitle = "Confirm"; ObjectID = "pc5-8R-lAJ"; */
 "pc5-8R-lAJ.normalTitle" = "Confirmar";
+
+/* Class = "IBUIButton"; normalTitle = "Cancel"; ObjectID = "z20-hs-Mae"; */
+"z20-hs-Mae.normalTitle" = "Cancelar";

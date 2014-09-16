@@ -7,6 +7,7 @@
 //
 
 #import "TGPhotoViewController.h"
+#import "UIImage+CameraFilters.h"
 
 @interface TGPhotoViewController ()
 
@@ -16,8 +17,10 @@
 @property (strong, nonatomic) UIImage *photo;
 
 - (IBAction)backTapped;
+- (IBAction)resetTapped;
 - (IBAction)cancelTapped;
 - (IBAction)confirmTapped;
+- (IBAction)filtersTapped;
 
 + (instancetype)newController;
 
@@ -63,6 +66,11 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (IBAction)resetTapped
+{
+    _photoView.image = _photo;
+}
+
 - (IBAction)cancelTapped
 {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -74,6 +82,21 @@
         [_delegate cameraImage:_photo];
         [self dismissViewControllerAnimated:YES completion:nil];
     }
+}
+
+- (IBAction)filtersTapped
+{
+    // effect 1
+    //_photoView.image = [_photoView.image saturateImage:1.8 withContrast:1];
+    
+    // effect 2
+    //_photoView.image = [_photoView.image saturateImage:0 withContrast:1.05];
+    
+    // effect 3
+    //_photoView.image = [_photoView.image vignetteWithRadius:0 intensity:6];
+    
+    // effect 4
+    //_photoView.image = [_photoView.image curveFilter];
 }
 
 #pragma mark -
