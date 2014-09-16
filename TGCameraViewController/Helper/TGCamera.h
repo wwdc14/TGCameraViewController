@@ -32,8 +32,11 @@
 - (void)stopRunning;
 
 - (void)changeFlashModeWithButton:(UIButton *)button;
+
 - (void)focusTouches:(NSSet *)touches inView:(UIView *)view;
-- (void)takePhoto;
+
+- (void)takePhotoWithCaptureView:(UIView *)captureView;
+
 - (void)toogleWithFlashButton:(UIButton *)flashButton;
 
 @end

@@ -12,6 +12,7 @@
 @interface TGCameraShot : NSObject
 
 + (void)takePhotoWithDelegate:(id<TGCameraDelegate>)delegate
-             stillImageOutput:(AVCaptureStillImageOutput *)stillImageOutput;
+             stillImageOutput:(AVCaptureStillImageOutput *)stillImageOutput
+                  captureView:(UIView *)captureView;
 
 @end

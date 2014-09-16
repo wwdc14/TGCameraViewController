@@ -64,9 +64,9 @@
     [TGCameraFocus focusWithCaptureSession:_session touches:touches inView:view];
 }
 
-- (void)takePhoto
+- (void)takePhotoWithCaptureView:(UIView *)captureView
 {
-    [TGCameraShot takePhotoWithDelegate:_delegate stillImageOutput:_stillImageOutput];
+    [TGCameraShot takePhotoWithDelegate:_delegate stillImageOutput:_stillImageOutput captureView:captureView];
 }
 
 - (void)toogleWithFlashButton:(UIButton *)flashButton

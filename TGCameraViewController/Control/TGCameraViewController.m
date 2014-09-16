@@ -99,7 +99,7 @@
 
 - (IBAction)shotTapped
 {
-    [_camera takePhoto];
+    [_camera takePhotoWithCaptureView:_captureView];
 }
 
 - (IBAction)toggleTapped
