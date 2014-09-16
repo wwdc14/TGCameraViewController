@@ -23,8 +23,7 @@
 + (instancetype)new __attribute__
 ((unavailable("[-init] is not allowed, use [+cameraWithRootView:andCaptureView]")));
 
-+ (instancetype)cameraWithDelegate:(id<TGCameraDelegate>)delegate
-                          rootView:(UIView *)rootView
++ (instancetype)cameraWithRootView:(UIView *)rootView
                        captureView:(UIView *)captureView
                        flashButton:(UIButton *)flashButton;
 
@@ -35,7 +34,7 @@
 
 - (void)focusTouches:(NSSet *)touches inView:(UIView *)view;
 
-- (void)takePhotoWithCaptureView:(UIView *)captureView;
+- (void)takePhotoWithCaptureView:(UIView *)captureView completion:(void (^)(UIImage *photo))completion;
 
 - (void)toogleWithFlashButton:(UIButton *)flashButton;
 
