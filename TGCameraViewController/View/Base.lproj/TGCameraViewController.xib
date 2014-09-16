@@ -22,7 +22,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3k-MF-E1l" userLabel="Close">
-                            <rect key="frame" x="8" y="5" width="50" height="40"/>
+                            <rect key="frame" x="0.0" y="5" width="50" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="50" id="8zQ-fR-Cw5"/>
                                 <constraint firstAttribute="height" constant="40" id="HL7-sq-UFh"/>
@@ -37,7 +37,7 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="O3k-MF-E1l" firstAttribute="leading" secondItem="dit-c7-IZk" secondAttribute="leading" constant="8" id="2C8-Dp-ehP"/>
+                        <constraint firstItem="O3k-MF-E1l" firstAttribute="leading" secondItem="dit-c7-IZk" secondAttribute="leading" id="2C8-Dp-ehP"/>
                         <constraint firstAttribute="height" constant="50" id="6Jx-N4-dl2"/>
                         <constraint firstItem="O3k-MF-E1l" firstAttribute="top" secondItem="dit-c7-IZk" secondAttribute="top" constant="5" id="TAQ-IX-9xX"/>
                     </constraints>
@@ -51,7 +51,7 @@
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="shotTapped" destination="-1" eventType="touchUpInside" id="DzL-BM-p4i"/>
+                                <action selector="shotTapped:" destination="-1" eventType="touchUpInside" id="5ti-w9-Okd"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7O-pE-Mp0" userLabel="Flash">
@@ -98,6 +98,7 @@
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="tintColor" red="1" green="0.35686275362968445" blue="0.0039215688593685627" alpha="1" colorSpace="deviceRGB"/>
             <constraints>
                 <constraint firstItem="dit-c7-IZk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="6a1-LI-Q7g"/>
                 <constraint firstItem="rJ9-I8-VJI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Hyx-j8-b54"/>

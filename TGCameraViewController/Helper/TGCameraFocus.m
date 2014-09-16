@@ -8,6 +8,7 @@
 
 @import AVFoundation;
 @import UIKit;
+#import "TGCameraColor.h"
 #import "TGCameraFocus.h"
 
 @interface TGCameraFocus ()
@@ -77,7 +78,7 @@
     UIView *subview = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
     
     view.center = subview.center = touchPoint;
-    view.layer.borderColor = subview.layer.borderColor = [UIColor orangeColor].CGColor;
+    view.layer.borderColor = subview.layer.borderColor = [TGCameraColor orangeColor].CGColor;
 
     view.layer.borderWidth = 1;
     view.layer.cornerRadius = CGRectGetHeight(view.frame) / 2;

@@ -13,9 +13,10 @@
 #import "TGCameraShot.h"
 #import "TGCameraToggle.h"
 
+
+
 @interface TGCamera ()
 
-@property (weak) id<TGCameraDelegate> delegate;
 @property (strong, nonatomic) AVCaptureSession *session;
 @property (strong, nonatomic) AVCaptureStillImageOutput *stillImageOutput;
 
@@ -31,11 +32,9 @@
 
 @implementation TGCamera
 
-+ (instancetype)cameraWithDelegate:(id<TGCameraDelegate>)delegate rootView:(UIView *)rootView captureView:(UIView *)captureView flashButton:(UIButton *)flashButton
++ (instancetype)cameraWithRootView:(UIView *)rootView captureView:(UIView *)captureView flashButton:(UIButton *)flashButton
 {
     TGCamera *camera = [TGCamera newCamera];
-    
-    camera.delegate = delegate;
     [camera setupWithRootView:rootView captureView:captureView flashButton:flashButton];
     
     return camera;
@@ -64,9 +63,11 @@
     [TGCameraFocus focusWithCaptureSession:_session touches:touches inView:view];
 }
 
-- (void)takePhoto
+- (void)takePhotoWithCaptureView:(UIView *)captureView completion:(void (^)(UIImage *))completion
 {
-    [TGCameraShot takePhotoWithDelegate:_delegate stillImageOutput:_stillImageOutput];
+    [TGCameraShot takePhotoCaptureView:captureView stillImageOutput:_stillImageOutput completion:^(UIImage *photo) {
+        completion(photo);
+    }];
 }
 
 - (void)toogleWithFlashButton:(UIButton *)flashButton

@@ -7,11 +7,13 @@
 //
 
 @import Foundation;
-#import "TGCamera.h"
+@import AVFoundation;
+@import UIKit;
 
 @interface TGCameraShot : NSObject
 
-+ (void)takePhotoWithDelegate:(id<TGCameraDelegate>)delegate
-             stillImageOutput:(AVCaptureStillImageOutput *)stillImageOutput;
++ (void)takePhotoCaptureView:(UIView *)captureView
+            stillImageOutput:(AVCaptureStillImageOutput *)stillImageOutput
+                  completion:(void (^)(UIImage *photo))completion;
 
 @end
