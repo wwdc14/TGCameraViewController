@@ -7,6 +7,7 @@
 //
 
 #import "TGCameraViewController.h"
+#import "TGPhotoViewController.h"
 
 
 
@@ -21,7 +22,7 @@
 
 - (IBAction)closeTapped;
 - (IBAction)flashTapped;
-- (IBAction)shotTapped;
+- (IBAction)shotTapped:(UIButton *)button;
 - (IBAction)toggleTapped;
 
 @end
@@ -34,7 +35,7 @@
 {
     [super viewDidLoad];
     
-    _camera = [TGCamera cameraWithDelegate:(id)self rootView:self.view captureView:_captureView flashButton:_flashButton];
+    _camera = [TGCamera cameraWithRootView:self.view captureView:_captureView flashButton:_flashButton];
     _captureView.backgroundColor = [UIColor clearColor];
 }
 
@@ -97,9 +98,15 @@
     [_camera changeFlashModeWithButton:_flashButton];
 }
 
-- (IBAction)shotTapped
+- (void)shotTapped:(UIButton *)button
 {
-    [_camera takePhotoWithCaptureView:_captureView];
+    button.enabled = NO;
+    
+    [_camera takePhotoWithCaptureView:_captureView completion:^(UIImage *photo) {
+        TGPhotoViewController *viewController = [TGPhotoViewController newWithDelegate:_delegate photo:photo];
+        [self.navigationController pushViewController:viewController animated:YES];
+        button.enabled = YES;
+    }];
 }
 
 - (IBAction)toggleTapped
