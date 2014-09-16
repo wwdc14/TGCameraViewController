@@ -1,0 +1,9 @@
+
+/* Class = "IBUIButton"; normalTitle = "Back"; ObjectID = "WAy-eH-OU9"; */
+"WAy-eH-OU9.normalTitle" = "Voltar";
+
+/* Class = "IBUIButton"; normalTitle = "Cancel"; ObjectID = "z20-hs-Mae"; */
+"z20-hs-Mae.normalTitle" = "Cancelar";
+
+/* Class = "IBUIButton"; normalTitle = "Confirm"; ObjectID = "pc5-8R-lAJ"; */
+"pc5-8R-lAJ.normalTitle" = "Confirmar";
