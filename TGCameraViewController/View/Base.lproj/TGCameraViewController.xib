@@ -42,6 +42,10 @@
                         <constraint firstItem="O3k-MF-E1l" firstAttribute="top" secondItem="dit-c7-IZk" secondAttribute="top" constant="5" id="TAQ-IX-9xX"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dIq-rQ-gzr" userLabel="Capture View">
+                    <rect key="frame" x="0.0" y="50" width="600" height="450"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rJ9-I8-VJI" userLabel="Bottom View">
                     <rect key="frame" x="0.0" y="500" width="600" height="100"/>
                     <subviews>
@@ -91,10 +95,6 @@
                         <constraint firstItem="p7O-pE-Mp0" firstAttribute="top" secondItem="rJ9-I8-VJI" secondAttribute="top" constant="10" id="wy2-j7-SW3"/>
                         <constraint firstItem="WJG-N5-BnZ" firstAttribute="leading" secondItem="rJ9-I8-VJI" secondAttribute="leading" constant="8" id="zsX-Iy-a0Y"/>
                     </constraints>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dIq-rQ-gzr" userLabel="Capture View">
-                    <rect key="frame" x="0.0" y="50" width="600" height="450"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

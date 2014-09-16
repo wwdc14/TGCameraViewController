@@ -7,20 +7,30 @@
 //
 
 #import "TGPhotoViewController.h"
+#import "TGFilterView.h"
 #import "UIImage+CameraFilters.h"
+#import "UIView+CameraAnimations.h"
+
+
 
 @interface TGPhotoViewController ()
 
 @property (strong, nonatomic) IBOutlet UIImageView *photoView;
+@property (strong, nonatomic) IBOutlet TGFilterView *filterView;
 
 @property (weak) id<TGCameraDelegate> delegate;
 @property (strong, nonatomic) UIImage *photo;
 
 - (IBAction)backTapped;
-- (IBAction)resetTapped;
 - (IBAction)cancelTapped;
 - (IBAction)confirmTapped;
 - (IBAction)filtersTapped;
+
+- (IBAction)defaultFilterTapped;
+- (IBAction)satureFilterTapped;
+- (IBAction)curveFilterTapped;
+- (IBAction)vignetteFilterTapped;
+
 
 + (instancetype)newController;
 
@@ -59,16 +69,11 @@
 }
 
 #pragma mark -
-#pragma mark - Actions
+#pragma mark - Controller actions
 
 - (IBAction)backTapped
 {
     [self.navigationController popViewControllerAnimated:YES];
-}
-
-- (IBAction)resetTapped
-{
-    _photoView.image = _photo;
 }
 
 - (IBAction)cancelTapped
@@ -86,17 +91,30 @@
 
 - (IBAction)filtersTapped
 {
-    // effect 1
-    //_photoView.image = [_photoView.image saturateImage:1.8 withContrast:1];
-    
-    // effect 2
-    //_photoView.image = [_photoView.image saturateImage:0 withContrast:1.05];
-    
-    // effect 3
-    //_photoView.image = [_photoView.image vignetteWithRadius:0 intensity:6];
-    
-    // effect 4
-    //_photoView.image = [_photoView.image curveFilter];
+    //[self.view addSubview:_filterView];
+}
+
+#pragma mark -
+#pragma mark - Filter view actions
+
+- (IBAction)defaultFilterTapped
+{
+    _photoView.image = _photo;
+}
+
+- (IBAction)satureFilterTapped
+{
+    _photoView.image = [_photo saturateImage:1.8 withContrast:1];
+}
+
+- (IBAction)curveFilterTapped
+{
+    _photoView.image = [_photo curveFilter];
+}
+
+- (IBAction)vignetteFilterTapped
+{
+    _photoView.image = [_photo vignetteWithRadius:0 intensity:6];
 }
 
 #pragma mark -
