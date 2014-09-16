@@ -52,6 +52,36 @@
 }
 
 #pragma mark -
+#pragma mark - Public methods
+
+- (void)addToView:(UIView *)view aboveView:(UIView *)aboveView
+{
+    CGRect frame = self.frame;
+    frame.origin.y = CGRectGetMaxY(view.frame) - CGRectGetHeight(aboveView.frame);
+    self.frame = frame;
+    
+    [view addSubview:self];
+    
+    frame.origin.y -= CGRectGetHeight(self.frame);
+    
+    [UIView animateWithDuration:.5 animations:^{
+        self.frame = frame;
+    } completion:^(BOOL finished) {}];
+}
+
+- (void)removeFromSuperviewAnimated
+{
+    CGRect frame = self.frame;
+    frame.origin.y += CGRectGetHeight(self.frame);
+    
+    [UIView animateWithDuration:.5 animations:^{
+        self.frame = frame;
+    } completion:^(BOOL finished) {
+        [self removeFromSuperview];
+    }];
+}
+
+#pragma mark -
 #pragma mark - Private methods
 
 - (void)setup

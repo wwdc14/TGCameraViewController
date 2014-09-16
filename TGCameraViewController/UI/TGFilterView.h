@@ -10,4 +10,7 @@
 
 @interface TGFilterView : UIView
 
+- (void)addToView:(UIView *)view aboveView:(UIView *)aboveView;
+- (void)removeFromSuperviewAnimated;
+
 @end

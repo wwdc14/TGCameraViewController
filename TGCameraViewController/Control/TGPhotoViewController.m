@@ -16,6 +16,7 @@
 @interface TGPhotoViewController ()
 
 @property (strong, nonatomic) IBOutlet UIImageView *photoView;
+@property (strong, nonatomic) IBOutlet UIView *bottomView;
 @property (strong, nonatomic) IBOutlet TGFilterView *filterView;
 
 @property (weak) id<TGCameraDelegate> delegate;
@@ -84,6 +85,7 @@
 - (IBAction)confirmTapped
 {
     if ([_delegate respondsToSelector:@selector(cameraImage:)]) {
+        _photo = _photoView.image;
         [_delegate cameraImage:_photo];
         [self dismissViewControllerAnimated:YES completion:nil];
     }
@@ -91,7 +93,13 @@
 
 - (IBAction)filtersTapped
 {
-    //[self.view addSubview:_filterView];
+    if ([_filterView isDescendantOfView:self.view]) {
+        [_filterView removeFromSuperviewAnimated];
+    } else {
+        [_filterView addToView:self.view aboveView:_bottomView];
+        [self.view sendSubviewToBack:_filterView];
+        [self.view sendSubviewToBack:_photoView];
+    }
 }
 
 #pragma mark -
