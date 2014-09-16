@@ -15,6 +15,7 @@
 		F835957F19C7230500CAE395 /* TGInitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F835957E19C7230500CAE395 /* TGInitialViewController.m */; };
 		F835958419C72F3400CAE395 /* TGAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = F835958319C72F3400CAE395 /* TGAlbum.m */; };
 		F835958719C766F800CAE395 /* TGCameraShot.m in Sources */ = {isa = PBXBuildFile; fileRef = F835958619C766F800CAE395 /* TGCameraShot.m */; };
+		F83C260B19C856D400A8ADB2 /* TGCameraColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F83C260A19C856D400A8ADB2 /* TGCameraColor.m */; };
 		F861D60A19C604810077B642 /* TGCameraToggle.m in Sources */ = {isa = PBXBuildFile; fileRef = F861D60919C604810077B642 /* TGCameraToggle.m */; };
 		F861D60D19C612430077B642 /* TGCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = F861D60C19C612430077B642 /* TGCamera.m */; };
 		F861D61019C61E240077B642 /* TGCameraFlash.m in Sources */ = {isa = PBXBuildFile; fileRef = F861D60F19C61E240077B642 /* TGCameraFlash.m */; };
@@ -43,6 +44,8 @@
 		F835958319C72F3400CAE395 /* TGAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGAlbum.m; sourceTree = "<group>"; };
 		F835958519C766F800CAE395 /* TGCameraShot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGCameraShot.h; sourceTree = "<group>"; };
 		F835958619C766F800CAE395 /* TGCameraShot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGCameraShot.m; sourceTree = "<group>"; };
+		F83C260919C856D400A8ADB2 /* TGCameraColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGCameraColor.h; sourceTree = "<group>"; };
+		F83C260A19C856D400A8ADB2 /* TGCameraColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGCameraColor.m; sourceTree = "<group>"; };
 		F861D60819C604810077B642 /* TGCameraToggle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGCameraToggle.h; sourceTree = "<group>"; };
 		F861D60919C604810077B642 /* TGCameraToggle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGCameraToggle.m; sourceTree = "<group>"; };
 		F861D60B19C612430077B642 /* TGCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGCamera.h; sourceTree = "<group>"; };
@@ -156,6 +159,8 @@
 				F835958319C72F3400CAE395 /* TGAlbum.m */,
 				F861D60B19C612430077B642 /* TGCamera.h */,
 				F861D60C19C612430077B642 /* TGCamera.m */,
+				F83C260919C856D400A8ADB2 /* TGCameraColor.h */,
+				F83C260A19C856D400A8ADB2 /* TGCameraColor.m */,
 				F861D60E19C61E240077B642 /* TGCameraFlash.h */,
 				F861D60F19C61E240077B642 /* TGCameraFlash.m */,
 				F861D63D19C669060077B642 /* TGCameraFocus.h */,
@@ -264,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F861D63F19C669060077B642 /* TGCameraFocus.m in Sources */,
+				F83C260B19C856D400A8ADB2 /* TGCameraColor.m in Sources */,
 				F835957F19C7230500CAE395 /* TGInitialViewController.m in Sources */,
 				F82F8EE419C4F29000A47148 /* main.m in Sources */,
 				F861D60D19C612430077B642 /* TGCamera.m in Sources */,
