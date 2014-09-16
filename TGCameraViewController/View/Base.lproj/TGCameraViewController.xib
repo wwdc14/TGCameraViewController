@@ -22,7 +22,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3k-MF-E1l" userLabel="Close">
-                            <rect key="frame" x="8" y="5" width="50" height="40"/>
+                            <rect key="frame" x="0.0" y="5" width="50" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="50" id="8zQ-fR-Cw5"/>
                                 <constraint firstAttribute="height" constant="40" id="HL7-sq-UFh"/>
@@ -37,7 +37,7 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="O3k-MF-E1l" firstAttribute="leading" secondItem="dit-c7-IZk" secondAttribute="leading" constant="8" id="2C8-Dp-ehP"/>
+                        <constraint firstItem="O3k-MF-E1l" firstAttribute="leading" secondItem="dit-c7-IZk" secondAttribute="leading" id="2C8-Dp-ehP"/>
                         <constraint firstAttribute="height" constant="50" id="6Jx-N4-dl2"/>
                         <constraint firstItem="O3k-MF-E1l" firstAttribute="top" secondItem="dit-c7-IZk" secondAttribute="top" constant="5" id="TAQ-IX-9xX"/>
                     </constraints>
