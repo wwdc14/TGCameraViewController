@@ -6,12 +6,11 @@
 //  Copyright (c) 2014 Tudo Gostoso Internet. All rights reserved.
 //
 
-@import AVFoundation;
 #import "TGCameraShot.h"
 
 @implementation TGCameraShot
 
-+ (void)takePhotoWithDelegate:(id<TGCameraDelegate>)delegate stillImageOutput:(AVCaptureStillImageOutput *)stillImageOutput captureView:(UIView *)captureView
++ (void)takePhotoCaptureView:(UIView *)captureView stillImageOutput:(AVCaptureStillImageOutput *)stillImageOutput completion:(void (^)(UIImage *))completion
 {
     [self showAnimationWithCaptureView:captureView];
     
@@ -33,11 +32,9 @@
     [stillImageOutput captureStillImageAsynchronouslyFromConnection:videoConnection
     completionHandler:^(CMSampleBufferRef imageDataSampleBuffer, NSError *error) {
         if (imageDataSampleBuffer != NULL) {
-            if ([delegate respondsToSelector:@selector(cameraImage:)]) {
-                NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
-                UIImage *image = [UIImage imageWithData:imageData];
-                [delegate cameraImage:image];
-            }
+            NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
+            UIImage *image = [UIImage imageWithData:imageData];
+            completion(image);
         }
     }];
 }
