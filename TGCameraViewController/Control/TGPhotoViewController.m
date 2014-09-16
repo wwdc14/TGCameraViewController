@@ -9,6 +9,7 @@
 #import "TGPhotoViewController.h"
 #import "TGFilterView.h"
 #import "UIImage+CameraFilters.h"
+#import "UIImage+RotateByDegrees.h"
 #import "UIView+CameraAnimations.h"
 
 
@@ -23,6 +24,7 @@
 @property (strong, nonatomic) UIImage *photo;
 
 - (IBAction)backTapped;
+- (IBAction)rotateClicked;
 - (IBAction)cancelTapped;
 - (IBAction)confirmTapped;
 - (IBAction)filtersTapped;
@@ -75,6 +77,12 @@
 - (IBAction)backTapped
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)rotateClicked
+{
+    _photo = [_photo imageRotateByDegrees:-90];
+    _photoView.image = _photo;
 }
 
 - (IBAction)cancelTapped
