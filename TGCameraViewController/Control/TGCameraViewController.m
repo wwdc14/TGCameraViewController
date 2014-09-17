@@ -47,7 +47,13 @@
                                              selector:@selector(deviceOrientationDidChangeNotification)
                                                  name:UIDeviceOrientationDidChangeNotification
                                                object:nil];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
     
+    [_camera insertSublayerWithCaptureView:_captureView atRootView:self.view];
     [_camera startRunning];
 }
 

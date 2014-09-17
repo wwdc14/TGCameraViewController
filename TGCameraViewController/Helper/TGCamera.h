@@ -30,12 +30,10 @@
 - (void)startRunning;
 - (void)stopRunning;
 
+- (void)insertSublayerWithCaptureView:(UIView *)captureView atRootView:(UIView *)rootView;
 - (void)changeFlashModeWithButton:(UIButton *)button;
-
 - (void)focusTouches:(NSSet *)touches inView:(UIView *)view;
-
 - (void)takePhotoWithCaptureView:(UIView *)captureView completion:(void (^)(UIImage *photo))completion;
-
 - (void)toogleWithFlashButton:(UIButton *)flashButton;
 
 @end

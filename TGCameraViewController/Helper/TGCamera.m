@@ -53,6 +53,20 @@
     [_session stopRunning];
 }
 
+- (void)insertSublayerWithCaptureView:(UIView *)captureView atRootView:(UIView *)rootView
+{
+    AVCaptureVideoPreviewLayer *previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:_session];
+    previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
+    
+    CALayer *rootLayer = [rootView layer];
+    rootLayer.masksToBounds = YES;
+    
+    CGRect frame = captureView.frame;
+    previewLayer.frame = frame;
+    
+    [rootLayer insertSublayer:previewLayer atIndex:0];
+}
+
 - (void)changeFlashModeWithButton:(UIButton *)button
 {
     [TGCameraFlash changeModeWithCaptureSession:_session andButton:button];
@@ -101,21 +115,6 @@
     AVCaptureDeviceInput *deviceInput = [AVCaptureDeviceInput deviceInputWithDevice:device error:nil];
     
     [_session addInput:deviceInput];
-    
-    //
-    // insert sublayer for camera preview
-    //
-    
-    AVCaptureVideoPreviewLayer *previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:_session];
-    previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
-    
-    CALayer *rootLayer = [rootView layer];
-    rootLayer.masksToBounds = YES;
-    
-    CGRect frame = captureView.frame;
-    previewLayer.frame = frame;
-    
-    [rootLayer insertSublayer:previewLayer atIndex:0];
     
     //
     // add output to session
