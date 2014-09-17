@@ -1,14 +1,14 @@
 //
-//  TGFilterView.m
+//  TGCameraFilterView.m
 //  TGCameraViewController
 //
 //  Created by Bruno Furtado on 16/09/14.
 //  Copyright (c) 2014 Tudo Gostoso Internet. All rights reserved.
 //
 
-#import "TGFilterView.h"
+#import "TGCameraFilterView.h"
 
-@interface TGFilterView ()
+@interface TGCameraFilterView ()
 
 - (void)setup;
 
@@ -16,7 +16,7 @@
 
 
 
-@implementation TGFilterView
+@implementation TGCameraFilterView
 
 - (instancetype)init
 {

@@ -117,7 +117,7 @@
             <nil key="simulatedStatusBarMetrics"/>
             <point key="canvasLocation" x="-57" y="116"/>
         </view>
-        <view alpha="0.84999999999999987" contentMode="scaleToFill" id="mfq-V7-07J" userLabel="Filter View" customClass="TGFilterView">
+        <view alpha="0.84999999999999987" contentMode="scaleToFill" id="mfq-V7-07J" userLabel="Filter View" customClass="TGCameraFilterView">
             <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>

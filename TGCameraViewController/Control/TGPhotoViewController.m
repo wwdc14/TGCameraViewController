@@ -7,7 +7,7 @@
 //
 
 #import "TGPhotoViewController.h"
-#import "TGFilterView.h"
+#import "TGCameraFilterView.h"
 #import "UIImage+CameraFilters.h"
 #import "UIView+CameraAnimations.h"
 
@@ -17,7 +17,7 @@
 
 @property (strong, nonatomic) IBOutlet UIImageView *photoView;
 @property (strong, nonatomic) IBOutlet UIView *bottomView;
-@property (strong, nonatomic) IBOutlet TGFilterView *filterView;
+@property (strong, nonatomic) IBOutlet TGCameraFilterView *filterView;
 
 @property (weak) id<TGCameraDelegate> delegate;
 @property (strong, nonatomic) UIImage *photo;
