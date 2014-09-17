@@ -191,8 +191,7 @@
 
 - (AVCaptureVideoOrientation)videoOrientationForDeviceOrientation:(UIDeviceOrientation)deviceOrientation
 {
-    //AVCaptureVideoOrientation result = (AVCaptureVideoOrientation) deviceOrientation;
-    AVCaptureVideoOrientation result = deviceOrientation;
+    AVCaptureVideoOrientation result = (AVCaptureVideoOrientation) deviceOrientation;
     
     switch (deviceOrientation) {
         case UIDeviceOrientationLandscapeLeft:
