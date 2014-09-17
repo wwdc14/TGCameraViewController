@@ -18,6 +18,8 @@
 - (IBAction)takePhotoTapped;
 - (IBAction)chooseExistingPhotoTapped;
 
+- (void)clearTapped;
+
 @end
 
 
@@ -27,6 +29,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    UIBarButtonItem *clearButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+                                                                                 target:self
+                                                                                 action:@selector(clearTapped)];
+    
+    self.navigationItem.rightBarButtonItem = clearButton;
 }
 
 - (void)didReceiveMemoryWarning
@@ -75,6 +83,14 @@
 {
     UIImagePickerController *pickerController = [TGAlbum imagePickerControllerWithDelegate:self];
     [self presentViewController:pickerController animated:YES completion:nil];
+}
+
+#pragma mark -
+#pragma mark - Private methods
+
+- (void)clearTapped
+{
+    _photoView.image = nil;
 }
 
 @end
