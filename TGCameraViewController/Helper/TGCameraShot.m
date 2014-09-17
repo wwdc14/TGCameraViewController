@@ -49,7 +49,7 @@
    
     UIView *animatedView = [[UIView alloc] initWithFrame:frame];
     animatedView.alpha = 0;
-    animatedView.backgroundColor = [UIColor whiteColor];
+    animatedView.backgroundColor = [UIColor blackColor];
     
     [captureView addSubview:animatedView];
     
