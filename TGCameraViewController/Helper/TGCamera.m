@@ -11,7 +11,6 @@
 #import "TGCameraFocus.h"
 #import "TGCameraShot.h"
 #import "TGCameraToggle.h"
-#import "TGCameraZoom.h"
 
 
 
@@ -76,9 +75,9 @@
     [TGCameraFocus focusWithCaptureSession:_session touchPoint:touchPoint inFocusView:focusView];
 }
 
-- (void)takePhotoWithCaptureView:(UIView *)captureView completion:(void (^)(UIImage *))completion
+- (void)takePhotoWithCaptureView:(UIView *)captureView effectiveScale:(NSInteger)effectiveScale completion:(void (^)(UIImage *))completion
 {
-    [TGCameraShot takePhotoCaptureView:captureView stillImageOutput:_stillImageOutput completion:^(UIImage *photo) {
+    [TGCameraShot takePhotoCaptureView:captureView stillImageOutput:_stillImageOutput effectiveScale:effectiveScale completion:^(UIImage *photo) {
         completion(photo);
     }];
 }

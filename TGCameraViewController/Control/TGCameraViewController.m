@@ -118,11 +118,11 @@
     [_camera changeFlashModeWithButton:_flashButton];
 }
 
-- (void)shotTapped:(UIButton *)button
+- (IBAction)shotTapped:(UIButton *)button
 {
     button.enabled = NO;
     
-    [_camera takePhotoWithCaptureView:_captureView completion:^(UIImage *photo) {
+    [_camera takePhotoWithCaptureView:_captureView effectiveScale:_effectiveScale completion:^(UIImage *photo) {
         TGPhotoViewController *viewController = [TGPhotoViewController newWithDelegate:_delegate photo:photo];
         [self.navigationController pushViewController:viewController animated:YES];
         button.enabled = YES;

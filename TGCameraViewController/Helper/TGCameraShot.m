@@ -10,7 +10,7 @@
 
 @implementation TGCameraShot
 
-+ (void)takePhotoCaptureView:(UIView *)captureView stillImageOutput:(AVCaptureStillImageOutput *)stillImageOutput completion:(void (^)(UIImage *))completion
++ (void)takePhotoCaptureView:(UIView *)captureView stillImageOutput:(AVCaptureStillImageOutput *)stillImageOutput effectiveScale:(NSInteger)effectiveScale completion:(void (^)(UIImage *))completion
 {
     [self showAnimationWithCaptureView:captureView];
     
@@ -28,6 +28,8 @@
             break;
         }
     }
+    
+    [videoConnection setVideoScaleAndCropFactor:effectiveScale];
     
     [stillImageOutput captureStillImageAsynchronouslyFromConnection:videoConnection
     completionHandler:^(CMSampleBufferRef imageDataSampleBuffer, NSError *error) {
