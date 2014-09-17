@@ -22,9 +22,7 @@
 
 + (instancetype)newCamera;
 
-- (void)setupWithRootView:(UIView *)rootView
-              captureView:(UIView *)captureView
-              flashButton:(UIButton *)flashButton;
+- (void)setupWithFlashButton:(UIButton *)flashButton;
 
 @end
 
@@ -32,10 +30,10 @@
 
 @implementation TGCamera
 
-+ (instancetype)cameraWithRootView:(UIView *)rootView captureView:(UIView *)captureView flashButton:(UIButton *)flashButton
++ (instancetype)cameraWithFlashButton:(UIButton *)flashButton
 {
     TGCamera *camera = [TGCamera newCamera];
-    [camera setupWithRootView:rootView captureView:captureView flashButton:flashButton];
+    [camera setupWithFlashButton:flashButton];
     
     return camera;
 }
@@ -98,7 +96,7 @@
     return [super new];
 }
 
-- (void)setupWithRootView:(UIView *)rootView captureView:(UIView *)captureView flashButton:(UIButton *)flashButton
+- (void)setupWithFlashButton:(UIButton *)flashButton
 {
     //
     // create session

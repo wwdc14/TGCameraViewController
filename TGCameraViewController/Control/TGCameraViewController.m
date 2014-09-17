@@ -35,7 +35,7 @@
 {
     [super viewDidLoad];
     
-    _camera = [TGCamera cameraWithRootView:self.view captureView:_captureView flashButton:_flashButton];
+    _camera = [TGCamera cameraWithFlashButton:_flashButton];
     _captureView.backgroundColor = [UIColor clearColor];
 }
 

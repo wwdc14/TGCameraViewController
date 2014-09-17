@@ -23,9 +23,7 @@
 + (instancetype)new __attribute__
 ((unavailable("[-init] is not allowed, use [+cameraWithRootView:andCaptureView]")));
 
-+ (instancetype)cameraWithRootView:(UIView *)rootView
-                       captureView:(UIView *)captureView
-                       flashButton:(UIButton *)flashButton;
++ (instancetype)cameraWithFlashButton:(UIButton *)flashButton;
 
 - (void)startRunning;
 - (void)stopRunning;
