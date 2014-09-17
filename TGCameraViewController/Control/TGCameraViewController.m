@@ -70,6 +70,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    [self deviceOrientationDidChangeNotification];
     
     if (_wasLoaded == NO) {
         _wasLoaded = YES;
