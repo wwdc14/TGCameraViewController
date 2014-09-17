@@ -14,11 +14,11 @@
 @interface TGCameraViewController ()
 
 @property (strong, nonatomic) IBOutlet UIView *captureView;
-@property (strong, nonatomic) IBOutlet UIButton *albumButton;
 @property (strong, nonatomic) IBOutlet UIButton *toggleButton;
 @property (strong, nonatomic) IBOutlet UIButton *flashButton;
 
 @property (strong, nonatomic) TGCamera *camera;
+@property (nonatomic) BOOL wasLoaded;
 
 - (IBAction)closeTapped;
 - (IBAction)flashTapped;
@@ -47,14 +47,18 @@
                                              selector:@selector(deviceOrientationDidChangeNotification)
                                                  name:UIDeviceOrientationDidChangeNotification
                                                object:nil];
+    
+    [_camera startRunning];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     
-    [_camera insertSublayerWithCaptureView:_captureView atRootView:self.view];
-    [_camera startRunning];
+    if (_wasLoaded == NO) {
+        _wasLoaded = YES;
+        [_camera insertSublayerWithCaptureView:_captureView atRootView:self.view];
+    }
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -153,7 +157,6 @@
     CGAffineTransform transform = CGAffineTransformMakeRotation(radians);
     
     [UIView animateWithDuration:.5f animations:^{
-        _albumButton.transform =
         _flashButton.transform =
         _toggleButton.transform = transform;
     }];
