@@ -32,6 +32,9 @@
 - (IBAction)handlePinchGesture:(UIPinchGestureRecognizer *)recognizer;
 - (IBAction)handleTapGesture:(UITapGestureRecognizer *)recognizer;
 
+- (void)deviceOrientationDidChangeNotification;
+- (void)zoomWithRecognizer:(UIPinchGestureRecognizer *)recognizer;
+
 @end
 
 
@@ -136,40 +139,7 @@
 
 - (IBAction)handlePinchGesture:(UIPinchGestureRecognizer *)recognizer
 {
-    BOOL allTouchesAreOnThePreviewLayer = YES;
-    NSInteger numberOfTouches = [recognizer numberOfTouches];
-    
-    AVCaptureVideoPreviewLayer *previewLayer = [_camera previewLayer];
-    
-    for (NSInteger i = 0; i < numberOfTouches; i++) {
-        CGPoint location = [recognizer locationOfTouch:i inView:_captureView];
-        CGPoint convertedLocation = [previewLayer convertPoint:location fromLayer:previewLayer.superlayer];
-        
-        if ([previewLayer containsPoint:convertedLocation] == NO) {
-            allTouchesAreOnThePreviewLayer = NO;
-            break;
-        }
-    }
-    
-    if (allTouchesAreOnThePreviewLayer) {
-        _effectiveScale = _beginPinchGestureScale * [recognizer scale];
-        
-        if (_effectiveScale < 1.) {
-            _effectiveScale = 1.;
-        }
-        
-        AVCaptureStillImageOutput *stillImageOutput = [_camera stillImageOutput];
-        CGFloat maxScaleAndCropFactor = [[stillImageOutput connectionWithMediaType:AVMediaTypeVideo] videoMaxScaleAndCropFactor];
-        
-        if (_effectiveScale > maxScaleAndCropFactor) {
-            _effectiveScale = maxScaleAndCropFactor;
-        }
-        
-        [CATransaction begin];
-        [CATransaction setAnimationDuration:.025];
-        [previewLayer setAffineTransform:CGAffineTransformMakeScale(_effectiveScale, _effectiveScale)];
-        [CATransaction commit];
-    }
+    [self zoomWithRecognizer:recognizer];
 }
 
 - (IBAction)handleTapGesture:(UITapGestureRecognizer *)recognizer
@@ -214,6 +184,44 @@
         _flashButton.transform =
         _toggleButton.transform = transform;
     }];
+}
+
+- (void)zoomWithRecognizer:(UIPinchGestureRecognizer *)recognizer
+{
+    BOOL allTouchesAreOnThePreviewLayer = YES;
+    NSInteger numberOfTouches = [recognizer numberOfTouches];
+    
+    AVCaptureVideoPreviewLayer *previewLayer = [_camera previewLayer];
+    
+    for (NSInteger i = 0; i < numberOfTouches; i++) {
+        CGPoint location = [recognizer locationOfTouch:i inView:_captureView];
+        CGPoint convertedLocation = [previewLayer convertPoint:location fromLayer:previewLayer.superlayer];
+        
+        if ([previewLayer containsPoint:convertedLocation] == NO) {
+            allTouchesAreOnThePreviewLayer = NO;
+            break;
+        }
+    }
+    
+    if (allTouchesAreOnThePreviewLayer) {
+        _effectiveScale = _beginPinchGestureScale * [recognizer scale];
+        
+        if (_effectiveScale < 1.) {
+            _effectiveScale = 1.;
+        }
+        
+        AVCaptureStillImageOutput *stillImageOutput = [_camera stillImageOutput];
+        CGFloat maxScaleAndCropFactor = [[stillImageOutput connectionWithMediaType:AVMediaTypeVideo] videoMaxScaleAndCropFactor];
+        
+        if (_effectiveScale > maxScaleAndCropFactor) {
+            _effectiveScale = maxScaleAndCropFactor;
+        }
+        
+        [CATransaction begin];
+        [CATransaction setAnimationDuration:.025];
+        [previewLayer setAffineTransform:CGAffineTransformMakeScale(_effectiveScale, _effectiveScale)];
+        [CATransaction commit];
+    }
 }
 
 @end
