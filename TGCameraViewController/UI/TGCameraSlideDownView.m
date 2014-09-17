@@ -38,13 +38,14 @@
     
     CGFloat originY = CGRectGetMaxY(view.frame);
     originY -= CGRectGetHeight(self.frame) + CGRectGetMinY(view.frame);
+    originY -= CGRectGetMinY(view.frame)/4;
     
     CGRect frame = self.frame;
     frame.size.width = width;
     frame.size.height = height;
     frame.origin.y = originY;
     self.frame = frame;
-        
+    
     [view addSubview:self];
 }
 
