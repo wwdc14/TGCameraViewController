@@ -75,9 +75,10 @@
     [TGCameraFocus focusWithCaptureSession:_session touchPoint:touchPoint inFocusView:focusView];
 }
 
-- (void)takePhotoWithCaptureView:(UIView *)captureView effectiveScale:(NSInteger)effectiveScale completion:(void (^)(UIImage *))completion
+- (void)takePhotoWithCaptureView:(UIView *)captureView effectiveScale:(NSInteger)effectiveScale videoOrientation:(AVCaptureVideoOrientation)videoOrientation completion:(void (^)(UIImage *))completion
 {
-    [TGCameraShot takePhotoCaptureView:captureView stillImageOutput:_stillImageOutput effectiveScale:effectiveScale completion:^(UIImage *photo) {
+    [TGCameraShot takePhotoCaptureView:captureView stillImageOutput:_stillImageOutput effectiveScale:effectiveScale videoOrientation:videoOrientation
+    completion:^(UIImage *photo) {
         completion(photo);
     }];
 }

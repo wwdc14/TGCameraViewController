@@ -32,7 +32,7 @@
 - (IBAction)handlePinchGesture:(UIPinchGestureRecognizer *)recognizer;
 - (IBAction)handleTapGesture:(UITapGestureRecognizer *)recognizer;
 
-- (void)deviceOrientationDidChangeNotification;
+- (AVCaptureVideoOrientation)videoOrientationForDeviceOrientation:(UIDeviceOrientation)deviceOrientation;
 - (void)zoomWithRecognizer:(UIPinchGestureRecognizer *)recognizer;
 
 @end
@@ -125,7 +125,10 @@
 {
     button.enabled = NO;
     
-    [_camera takePhotoWithCaptureView:_captureView effectiveScale:_effectiveScale completion:^(UIImage *photo) {
+    UIDeviceOrientation deviceOrientation = [[UIDevice currentDevice] orientation];
+    AVCaptureVideoOrientation videoOrientation = [self videoOrientationForDeviceOrientation:deviceOrientation];
+    
+    [_camera takePhotoWithCaptureView:_captureView effectiveScale:_effectiveScale videoOrientation:videoOrientation completion:^(UIImage *photo) {
         TGPhotoViewController *viewController = [TGPhotoViewController newWithDelegate:_delegate photo:photo];
         [self.navigationController pushViewController:viewController animated:YES];
         button.enabled = YES;
@@ -184,6 +187,27 @@
         _flashButton.transform =
         _toggleButton.transform = transform;
     }];
+}
+
+- (AVCaptureVideoOrientation)videoOrientationForDeviceOrientation:(UIDeviceOrientation)deviceOrientation
+{
+    //AVCaptureVideoOrientation result = (AVCaptureVideoOrientation) deviceOrientation;
+    AVCaptureVideoOrientation result = deviceOrientation;
+    
+    switch (deviceOrientation) {
+        case UIDeviceOrientationLandscapeLeft:
+            result = AVCaptureVideoOrientationLandscapeRight;
+            break;
+            
+        case UIDeviceOrientationLandscapeRight:
+            result = AVCaptureVideoOrientationLandscapeLeft;
+            break;
+            
+        default:
+            break;
+    }
+    
+    return result;
 }
 
 - (void)zoomWithRecognizer:(UIPinchGestureRecognizer *)recognizer

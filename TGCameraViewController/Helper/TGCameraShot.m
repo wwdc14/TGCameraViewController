@@ -10,7 +10,7 @@
 
 @implementation TGCameraShot
 
-+ (void)takePhotoCaptureView:(UIView *)captureView stillImageOutput:(AVCaptureStillImageOutput *)stillImageOutput effectiveScale:(NSInteger)effectiveScale completion:(void (^)(UIImage *))completion
++ (void)takePhotoCaptureView:(UIView *)captureView stillImageOutput:(AVCaptureStillImageOutput *)stillImageOutput effectiveScale:(NSInteger)effectiveScale videoOrientation:(AVCaptureVideoOrientation)videoOrientation completion:(void (^)(UIImage *))completion
 {
     [self showAnimationWithCaptureView:captureView];
     
@@ -29,6 +29,7 @@
         }
     }
     
+    [videoConnection setVideoOrientation:videoOrientation];
     [videoConnection setVideoScaleAndCropFactor:effectiveScale];
     
     [stillImageOutput captureStillImageAsynchronouslyFromConnection:videoConnection

@@ -15,6 +15,7 @@
 + (void)takePhotoCaptureView:(UIView *)captureView
             stillImageOutput:(AVCaptureStillImageOutput *)stillImageOutput
               effectiveScale:(NSInteger)effectiveScale
+            videoOrientation:(AVCaptureVideoOrientation)videoOrientation
                   completion:(void (^)(UIImage *photo))completion;
 
 @end

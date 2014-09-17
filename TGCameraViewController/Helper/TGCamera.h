@@ -33,9 +33,16 @@
 - (AVCaptureStillImageOutput *)stillImageOutput;
 
 - (void)insertSublayerWithCaptureView:(UIView *)captureView atRootView:(UIView *)rootView;
+
 - (void)changeFlashModeWithButton:(UIButton *)button;
+
 - (void)focusView:(UIView *)focusView inTouchPoint:(CGPoint)touchPoint;
-- (void)takePhotoWithCaptureView:(UIView *)captureView effectiveScale:(NSInteger)effectiveScale completion:(void (^)(UIImage *))completion;
+
+- (void)takePhotoWithCaptureView:(UIView *)captureView
+                  effectiveScale:(NSInteger)effectiveScale
+                videoOrientation:(AVCaptureVideoOrientation)videoOrientation
+                      completion:(void (^)(UIImage *))completion;
+
 - (void)toogleWithFlashButton:(UIButton *)flashButton;
 
 @end
