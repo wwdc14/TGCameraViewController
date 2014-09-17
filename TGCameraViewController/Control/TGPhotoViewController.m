@@ -9,7 +9,6 @@
 #import "TGPhotoViewController.h"
 #import "TGCameraFilterView.h"
 #import "UIImage+CameraFilters.h"
-#import "UIView+CameraAnimations.h"
 
 
 
