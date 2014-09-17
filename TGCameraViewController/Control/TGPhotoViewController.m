@@ -54,7 +54,8 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];    
+    [super viewDidLoad];
+    _photoView.clipsToBounds = YES;
     _photoView.image = _photo;
 }
 

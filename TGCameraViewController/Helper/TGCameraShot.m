@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Tudo Gostoso Internet. All rights reserved.
 //
 
+@import AssetsLibrary;
 #import "TGCameraShot.h"
 
 @implementation TGCameraShot
