@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F82C4ACF19CA050C001CEA3C /* TGAssetsLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = F82C4ACE19CA050C001CEA3C /* TGAssetsLibrary.m */; };
+		F82C4AD619CA058E001CEA3C /* TGAssetImageFile.m in Sources */ = {isa = PBXBuildFile; fileRef = F82C4AD519CA058E001CEA3C /* TGAssetImageFile.m */; };
 		F82F8EDC19C4F29000A47148 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F82F8EC819C4F29000A47148 /* AppDelegate.m */; };
 		F82F8EDE19C4F29000A47148 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F82F8ECF19C4F29000A47148 /* LaunchScreen.xib */; };
 		F82F8EDF19C4F29000A47148 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F82F8ED119C4F29000A47148 /* Main.storyboard */; };
@@ -32,6 +34,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F82C4ACD19CA050C001CEA3C /* TGAssetsLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGAssetsLibrary.h; sourceTree = "<group>"; };
+		F82C4ACE19CA050C001CEA3C /* TGAssetsLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGAssetsLibrary.m; sourceTree = "<group>"; };
+		F82C4AD419CA058E001CEA3C /* TGAssetImageFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGAssetImageFile.h; sourceTree = "<group>"; };
+		F82C4AD519CA058E001CEA3C /* TGAssetImageFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGAssetImageFile.m; sourceTree = "<group>"; };
 		F82F8E8119C4EFE700A47148 /* TGCameraViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TGCameraViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F82F8EC719C4F29000A47148 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F82F8EC819C4F29000A47148 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -88,6 +94,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F82C4AD019CA0554001CEA3C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F82C4AD419CA058E001CEA3C /* TGAssetImageFile.h */,
+				F82C4AD519CA058E001CEA3C /* TGAssetImageFile.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		F82F8E7819C4EFE700A47148 = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +174,7 @@
 				F879166F19C879DB000F8637 /* Category */,
 				F861D61119C620E10077B642 /* Control */,
 				F861D60719C604590077B642 /* Helper */,
+				F82C4AD019CA0554001CEA3C /* Model */,
 				F8505F9B19C8AD5E00F89CA4 /* UI */,
 				F861D61519C620EC0077B642 /* View */,
 				F861D62819C653D90077B642 /* TGCameraViewController.xcassets */,
@@ -184,6 +200,8 @@
 			children = (
 				F835958219C72F3400CAE395 /* TGAlbum.h */,
 				F835958319C72F3400CAE395 /* TGAlbum.m */,
+				F82C4ACD19CA050C001CEA3C /* TGAssetsLibrary.h */,
+				F82C4ACE19CA050C001CEA3C /* TGAssetsLibrary.m */,
 				F861D60B19C612430077B642 /* TGCamera.h */,
 				F861D60C19C612430077B642 /* TGCamera.m */,
 				F83C260919C856D400A8ADB2 /* TGCameraColor.h */,
@@ -317,6 +335,8 @@
 				F8E72B4C19C9B76400FF3AE5 /* TGCameraSlideDownView.m in Sources */,
 				F8505F9E19C8AD7A00F89CA4 /* TGCameraFilterView.m in Sources */,
 				F82F8EDC19C4F29000A47148 /* AppDelegate.m in Sources */,
+				F82C4AD619CA058E001CEA3C /* TGAssetImageFile.m in Sources */,
+				F82C4ACF19CA050C001CEA3C /* TGAssetsLibrary.m in Sources */,
 				F861D60A19C604810077B642 /* TGCameraToggle.m in Sources */,
 				F835958419C72F3400CAE395 /* TGAlbum.m in Sources */,
 				F861D61419C620E10077B642 /* TGCameraViewController.m in Sources */,

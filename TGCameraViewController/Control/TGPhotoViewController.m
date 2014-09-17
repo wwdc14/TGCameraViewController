@@ -7,6 +7,7 @@
 //
 
 #import "TGPhotoViewController.h"
+#import "TGAssetsLibrary.h"
 #import "TGCameraFilterView.h"
 #import "UIImage+CameraFilters.h"
 
@@ -87,6 +88,11 @@
     if ([_delegate respondsToSelector:@selector(cameraImage:)]) {
         _photo = _photoView.image;
         [_delegate cameraImage:_photo];
+        
+        
+        TGAssetsLibrary *library = [TGAssetsLibrary defaultAssetsLibrary];
+        [library saveImage:_photo completion:nil];
+        
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
