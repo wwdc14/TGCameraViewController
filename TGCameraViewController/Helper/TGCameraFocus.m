@@ -13,8 +13,8 @@
 
 @interface TGCameraFocus ()
 
-+ (CGPoint)pointOfInterestWithTouch:(UITouch *)touch;
-+ (void)showFocusViewWithTouch:(UITouch *)touch andDevice:(AVCaptureDevice *)device;
++ (CGPoint)pointOfInterestWithTouchPoint:(CGPoint)touchPoint;
++ (void)showFocusView:(UIView *)focusView withTouchPoint:(CGPoint)touchPoint andDevice:(AVCaptureDevice *)device;
 
 @end
 
@@ -25,38 +25,31 @@
 #pragma mark -
 #pragma mark - Public methods
 
-+ (void)focusWithCaptureSession:(AVCaptureSession *)session touches:(NSSet *)touches inView:(UIView *)view
++ (void)focusWithCaptureSession:(AVCaptureSession *)session touchPoint:(CGPoint)touchPoint inFocusView:(UIView *)focusView
 {
-    [touches enumerateObjectsUsingBlock:^(id obj, BOOL *stop) {
-        AVCaptureDevice *device = [session.inputs.lastObject device];
+    AVCaptureDevice *device = [session.inputs.lastObject device];
+    
+    if ([device isFocusPointOfInterestSupported]) {
+        [self showFocusView:focusView withTouchPoint:touchPoint andDevice:device];
         
-        if ([device isFocusPointOfInterestSupported]) {
-            UITouch *touch = obj;
-            
-            if (touch.view == view) {
-                [self showFocusViewWithTouch:touch andDevice:device];
-                
-                [device lockForConfiguration:nil];
-                
-                device.focusPointOfInterest =
-                device.exposurePointOfInterest = [self pointOfInterestWithTouch:touch];
-                
-                device.focusMode = AVCaptureFocusModeAutoFocus;
-                [device isExposureModeSupported:AVCaptureExposureModeAutoExpose];
-                device.exposureMode = AVCaptureExposureModeAutoExpose;
-                
-                [device unlockForConfiguration];
-            }
-        }
-    }];
+        [device lockForConfiguration:nil];
+        
+        device.focusPointOfInterest =
+        device.exposurePointOfInterest = [self pointOfInterestWithTouchPoint:touchPoint];
+        
+        device.focusMode = AVCaptureFocusModeAutoFocus;
+        [device isExposureModeSupported:AVCaptureExposureModeAutoExpose];
+        device.exposureMode = AVCaptureExposureModeAutoExpose;
+        
+        [device unlockForConfiguration];
+    }
 }
 
 #pragma mark -
 #pragma mark - Private methods
 
-+ (CGPoint)pointOfInterestWithTouch:(UITouch *)touch
++ (CGPoint)pointOfInterestWithTouchPoint:(CGPoint)touchPoint
 {
-    CGPoint touchPoint = [touch locationInView:touch.view];
     CGSize screenSize = [UIScreen.mainScreen bounds].size;
     
     CGPoint pointOfInterest;
@@ -66,10 +59,8 @@
     return pointOfInterest;
 }
 
-+ (void)showFocusViewWithTouch:(UITouch *)touch andDevice:(AVCaptureDevice *)device
++ (void)showFocusView:(UIView *)focusView withTouchPoint:(CGPoint)touchPoint andDevice:(AVCaptureDevice *)device
 {
-    CGPoint touchPoint = [touch locationInView:touch.view];
-    
     //
     // create view and subview to focus
     //
@@ -91,15 +82,15 @@
     // if doesn't exists, ignore
     //
     
-    [touch.view.subviews.lastObject removeFromSuperview];
-    [touch.view.subviews.lastObject removeFromSuperview];
+    [focusView.subviews.lastObject removeFromSuperview];
+    [focusView.subviews.lastObject removeFromSuperview];
     
     //
     // add focus view and focus subview to touch viiew
     //
     
-    [touch.view addSubview:view];
-    [touch.view addSubview:subview];
+    [focusView addSubview:view];
+    [focusView addSubview:subview];
     
     //
     // remove focus view and focus subview animated

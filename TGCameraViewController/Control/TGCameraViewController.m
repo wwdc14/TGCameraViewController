@@ -21,12 +21,16 @@
 @property (strong, nonatomic) IBOutlet TGCameraSlideDownView *slideDownView;
 
 @property (strong, nonatomic) TGCamera *camera;
+@property (nonatomic) CGFloat beginPinchGestureScale;
+@property (nonatomic) CGFloat effectiveScale;
 @property (nonatomic) BOOL wasLoaded;
 
 - (IBAction)closeTapped;
 - (IBAction)flashTapped;
 - (IBAction)shotTapped:(UIButton *)button;
 - (IBAction)toggleTapped;
+- (IBAction)handlePinchGesture:(UIPinchGestureRecognizer *)recognizer;
+- (IBAction)handleTapGesture:(UITapGestureRecognizer *)recognizer;
 
 @end
 
@@ -40,6 +44,7 @@
     
     _camera = [TGCamera cameraWithFlashButton:_flashButton];
     _captureView.backgroundColor = [UIColor clearColor];
+    _effectiveScale = 1.;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -88,19 +93,16 @@
     return YES;
 }
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    [_camera focusTouches:touches inView:_captureView];
-}
-
 #pragma mark -
-#pragma mark - TGCameraDelegate
+#pragma mark - UIGestureRecognizerDelegate
 
-- (void)cameraImage:(UIImage *)image
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
 {
-    if ([self.delegate respondsToSelector:@selector(cameraImage:)]) {
-        [self.delegate cameraImage:image];
+    if ([gestureRecognizer isKindOfClass:[UIPinchGestureRecognizer class]]) {
+        _beginPinchGestureScale = _effectiveScale;
     }
+    
+    return YES;
 }
 
 #pragma mark -
@@ -130,6 +132,50 @@
 - (IBAction)toggleTapped
 {
     [_camera toogleWithFlashButton:_flashButton];
+}
+
+- (IBAction)handlePinchGesture:(UIPinchGestureRecognizer *)recognizer
+{
+    BOOL allTouchesAreOnThePreviewLayer = YES;
+    NSInteger numberOfTouches = [recognizer numberOfTouches];
+    
+    AVCaptureVideoPreviewLayer *previewLayer = [_camera previewLayer];
+    
+    for (NSInteger i = 0; i < numberOfTouches; i++) {
+        CGPoint location = [recognizer locationOfTouch:i inView:_captureView];
+        CGPoint convertedLocation = [previewLayer convertPoint:location fromLayer:previewLayer.superlayer];
+        
+        if ([previewLayer containsPoint:convertedLocation] == NO) {
+            allTouchesAreOnThePreviewLayer = NO;
+            break;
+        }
+    }
+    
+    if (allTouchesAreOnThePreviewLayer) {
+        _effectiveScale = _beginPinchGestureScale * [recognizer scale];
+        
+        if (_effectiveScale < 1.) {
+            _effectiveScale = 1.;
+        }
+        
+        AVCaptureStillImageOutput *stillImageOutput = [_camera stillImageOutput];
+        CGFloat maxScaleAndCropFactor = [[stillImageOutput connectionWithMediaType:AVMediaTypeVideo] videoMaxScaleAndCropFactor];
+        
+        if (_effectiveScale > maxScaleAndCropFactor) {
+            _effectiveScale = maxScaleAndCropFactor;
+        }
+        
+        [CATransaction begin];
+        [CATransaction setAnimationDuration:.025];
+        [previewLayer setAffineTransform:CGAffineTransformMakeScale(_effectiveScale, _effectiveScale)];
+        [CATransaction commit];
+    }
+}
+
+- (IBAction)handleTapGesture:(UITapGestureRecognizer *)recognizer
+{
+    CGPoint touchPoint = [recognizer locationInView:_captureView];
+    [_camera focusView:_captureView inTouchPoint:touchPoint];
 }
 
 #pragma mark -

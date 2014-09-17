@@ -11,6 +11,6 @@
 
 @interface TGCameraFocus : NSObject
 
-+ (void)focusWithCaptureSession:(AVCaptureSession *)session touches:(NSSet *)touches inView:(UIView *)view;
++ (void)focusWithCaptureSession:(AVCaptureSession *)session touchPoint:(CGPoint)touchPoint inFocusView:(UIView *)focusView;
 
 @end

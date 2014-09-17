@@ -7,6 +7,7 @@
 //
 
 @import Foundation;
+@import AVFoundation;
 @import UIKit;
 
 
@@ -28,9 +29,12 @@
 - (void)startRunning;
 - (void)stopRunning;
 
+- (AVCaptureVideoPreviewLayer *)previewLayer;
+- (AVCaptureStillImageOutput *)stillImageOutput;
+
 - (void)insertSublayerWithCaptureView:(UIView *)captureView atRootView:(UIView *)rootView;
 - (void)changeFlashModeWithButton:(UIButton *)button;
-- (void)focusTouches:(NSSet *)touches inView:(UIView *)view;
+- (void)focusView:(UIView *)focusView inTouchPoint:(CGPoint)touchPoint;
 - (void)takePhotoWithCaptureView:(UIView *)captureView completion:(void (^)(UIImage *photo))completion;
 - (void)toogleWithFlashButton:(UIButton *)flashButton;
 

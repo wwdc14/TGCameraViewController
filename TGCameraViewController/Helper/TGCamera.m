@@ -6,18 +6,19 @@
 //  Copyright (c) 2014 Tudo Gostoso Internet. All rights reserved.
 //
 
-@import AVFoundation;
 #import "TGCamera.h"
 #import "TGCameraFlash.h"
 #import "TGCameraFocus.h"
 #import "TGCameraShot.h"
 #import "TGCameraToggle.h"
+#import "TGCameraZoom.h"
 
 
 
 @interface TGCamera ()
 
 @property (strong, nonatomic) AVCaptureSession *session;
+@property (strong, nonatomic) AVCaptureVideoPreviewLayer *previewLayer;
 @property (strong, nonatomic) AVCaptureStillImageOutput *stillImageOutput;
 
 + (instancetype)newCamera;
@@ -53,16 +54,16 @@
 
 - (void)insertSublayerWithCaptureView:(UIView *)captureView atRootView:(UIView *)rootView
 {
-    AVCaptureVideoPreviewLayer *previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:_session];
-    previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
+    _previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:_session];
+    _previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
     
     CALayer *rootLayer = [rootView layer];
     rootLayer.masksToBounds = YES;
     
     CGRect frame = captureView.frame;
-    previewLayer.frame = frame;
+    _previewLayer.frame = frame;
     
-    [rootLayer insertSublayer:previewLayer atIndex:0];
+    [rootLayer insertSublayer:_previewLayer atIndex:0];
 }
 
 - (void)changeFlashModeWithButton:(UIButton *)button
@@ -70,9 +71,9 @@
     [TGCameraFlash changeModeWithCaptureSession:_session andButton:button];
 }
 
-- (void)focusTouches:(NSSet *)touches inView:(UIView *)view
+- (void)focusView:(UIView *)focusView inTouchPoint:(CGPoint)touchPoint
 {
-    [TGCameraFocus focusWithCaptureSession:_session touches:touches inView:view];
+    [TGCameraFocus focusWithCaptureSession:_session touchPoint:touchPoint inFocusView:focusView];
 }
 
 - (void)takePhotoWithCaptureView:(UIView *)captureView completion:(void (^)(UIImage *))completion

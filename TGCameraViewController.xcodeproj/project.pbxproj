@@ -29,6 +29,7 @@
 		F897018919C7AF5C004E6480 /* TGPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F897018719C7AF5C004E6480 /* TGPhotoViewController.xib */; };
 		F8E72B4919C9B75900FF3AE5 /* TGCameraSlideUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E72B4819C9B75900FF3AE5 /* TGCameraSlideUpView.m */; };
 		F8E72B4C19C9B76400FF3AE5 /* TGCameraSlideDownView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E72B4B19C9B76400FF3AE5 /* TGCameraSlideDownView.m */; };
+		F8E72B4F19C9DD9E00FF3AE5 /* TGCameraZoom.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E72B4E19C9DD9E00FF3AE5 /* TGCameraZoom.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,8 @@
 		F8E72B4819C9B75900FF3AE5 /* TGCameraSlideUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGCameraSlideUpView.m; sourceTree = "<group>"; };
 		F8E72B4A19C9B76400FF3AE5 /* TGCameraSlideDownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGCameraSlideDownView.h; sourceTree = "<group>"; };
 		F8E72B4B19C9B76400FF3AE5 /* TGCameraSlideDownView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGCameraSlideDownView.m; sourceTree = "<group>"; };
+		F8E72B4D19C9DD9E00FF3AE5 /* TGCameraZoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGCameraZoom.h; sourceTree = "<group>"; };
+		F8E72B4E19C9DD9E00FF3AE5 /* TGCameraZoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGCameraZoom.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +199,8 @@
 				F835958619C766F800CAE395 /* TGCameraShot.m */,
 				F861D60819C604810077B642 /* TGCameraToggle.h */,
 				F861D60919C604810077B642 /* TGCameraToggle.m */,
+				F8E72B4D19C9DD9E00FF3AE5 /* TGCameraZoom.h */,
+				F8E72B4E19C9DD9E00FF3AE5 /* TGCameraZoom.m */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -307,6 +312,7 @@
 				F861D63F19C669060077B642 /* TGCameraFocus.m in Sources */,
 				F8E72B4919C9B75900FF3AE5 /* TGCameraSlideUpView.m in Sources */,
 				F879167219C879DB000F8637 /* UIImage+CameraFilters.m in Sources */,
+				F8E72B4F19C9DD9E00FF3AE5 /* TGCameraZoom.m in Sources */,
 				F83C260B19C856D400A8ADB2 /* TGCameraColor.m in Sources */,
 				F835957F19C7230500CAE395 /* TGInitialViewController.m in Sources */,
 				F82F8EE419C4F29000A47148 /* main.m in Sources */,
