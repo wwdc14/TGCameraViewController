@@ -9,6 +9,8 @@
             <connections>
                 <outlet property="captureView" destination="dIq-rQ-gzr" id="F4T-QP-lPu"/>
                 <outlet property="flashButton" destination="p7O-pE-Mp0" id="Tqo-vg-CGw"/>
+                <outlet property="slideDownView" destination="Czb-nz-m44" id="Ga2-kT-HSY"/>
+                <outlet property="slideUpView" destination="vJp-kA-okD" id="hiW-4t-8lC"/>
                 <outlet property="toggleButton" destination="WJG-N5-BnZ" id="QRP-Z9-Zpe"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -18,6 +20,10 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dIq-rQ-gzr" userLabel="Capture View">
+                    <rect key="frame" x="0.0" y="50" width="600" height="450"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dit-c7-IZk" userLabel="Top View">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                     <subviews>
@@ -41,10 +47,6 @@
                         <constraint firstAttribute="height" constant="50" id="hyA-J5-S26"/>
                         <constraint firstItem="O3k-MF-E1l" firstAttribute="top" secondItem="dit-c7-IZk" secondAttribute="top" constant="5" id="q45-nb-5eD"/>
                     </constraints>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dIq-rQ-gzr" userLabel="Capture View">
-                    <rect key="frame" x="0.0" y="50" width="600" height="450"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rJ9-I8-VJI" userLabel="Bottom View">
                     <rect key="frame" x="0.0" y="500" width="600" height="100"/>
@@ -114,6 +116,24 @@
                 <constraint firstItem="rJ9-I8-VJI" firstAttribute="top" secondItem="dIq-rQ-gzr" secondAttribute="bottom" id="utj-UK-F05"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
+        </view>
+        <view contentMode="scaleToFill" id="vJp-kA-okD" customClass="TGCameraSlideUpView">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="225"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="tintColor" red="1" green="0.35686275360000003" blue="0.0039215688589999999" alpha="1" colorSpace="deviceRGB"/>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="791" y="-32.5"/>
+        </view>
+        <view contentMode="scaleToFill" id="Czb-nz-m44" customClass="TGCameraSlideDownView">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="225"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="tintColor" red="1" green="0.35686275360000003" blue="0.0039215688589999999" alpha="1" colorSpace="deviceRGB"/>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="791" y="239.5"/>
         </view>
     </objects>
     <resources>

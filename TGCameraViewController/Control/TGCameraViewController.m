@@ -8,7 +8,8 @@
 
 #import "TGCameraViewController.h"
 #import "TGPhotoViewController.h"
-
+#import "TGCameraSlideDownView.h"
+#import "TGCameraSlideUpView.h"
 
 
 @interface TGCameraViewController ()
@@ -16,6 +17,8 @@
 @property (strong, nonatomic) IBOutlet UIView *captureView;
 @property (strong, nonatomic) IBOutlet UIButton *toggleButton;
 @property (strong, nonatomic) IBOutlet UIButton *flashButton;
+@property (strong, nonatomic) IBOutlet TGCameraSlideUpView *slideUpView;
+@property (strong, nonatomic) IBOutlet TGCameraSlideDownView *slideDownView;
 
 @property (strong, nonatomic) TGCamera *camera;
 @property (nonatomic) BOOL wasLoaded;
@@ -49,6 +52,11 @@
                                                object:nil];
     
     [_camera startRunning];
+    
+    if (_wasLoaded == NO) {
+        [_slideUpView showWithAnimationAtView:_captureView];
+        [_slideDownView showWithAnimationAtView:_captureView];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
