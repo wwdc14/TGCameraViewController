@@ -68,6 +68,7 @@
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
     UIView *subview = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
     
+    view.tag = subview.tag = -1;
     view.center = subview.center = touchPoint;
     view.layer.borderColor = subview.layer.borderColor = [TGCameraColor orangeColor].CGColor;
 
@@ -82,8 +83,14 @@
     // if doesn't exists, ignore
     //
     
-    [focusView.subviews.lastObject removeFromSuperview];
-    [focusView.subviews.lastObject removeFromSuperview];
+    for (id subview in [focusView subviews]) {
+        if ([subview tag] == -1) {
+            [subview removeFromSuperview];
+        }
+    }
+    
+    //[focusView.subviews.lastObject removeFromSuperview];
+    //[focusView.subviews.lastObject removeFromSuperview];
     
     //
     // add focus view and focus subview to touch viiew
