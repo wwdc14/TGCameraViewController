@@ -42,7 +42,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZSx-0Y-doC">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZSx-0Y-doC">
                                 <rect key="frame" x="0.0" y="64" width="600" height="450"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2vz-WL-Max" userLabel="Options View">
@@ -87,8 +87,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ZSx-0Y-doC" secondAttribute="trailing" id="0ps-lu-iKs"/>
+                            <constraint firstItem="ZSx-0Y-doC" firstAttribute="leading" secondItem="f7u-Ek-YX3" secondAttribute="leading" id="4Am-Tl-i3m"/>
                             <constraint firstItem="ssR-rD-Gn3" firstAttribute="top" secondItem="2vz-WL-Max" secondAttribute="bottom" id="7vo-Lw-Sxc"/>
                             <constraint firstAttribute="trailing" secondItem="2vz-WL-Max" secondAttribute="trailing" id="DZa-MX-ixt"/>
+                            <constraint firstItem="2vz-WL-Max" firstAttribute="top" secondItem="ZSx-0Y-doC" secondAttribute="bottom" id="IXm-86-ZcZ"/>
+                            <constraint firstItem="ZSx-0Y-doC" firstAttribute="top" secondItem="JA7-oE-oFj" secondAttribute="bottom" id="P6P-bS-PKG"/>
                             <constraint firstAttribute="centerY" secondItem="yqs-4U-p9y" secondAttribute="centerY" id="Teo-XC-VN6"/>
                             <constraint firstItem="2vz-WL-Max" firstAttribute="leading" secondItem="f7u-Ek-YX3" secondAttribute="leading" id="brK-HF-3He"/>
                             <constraint firstAttribute="centerX" secondItem="yqs-4U-p9y" secondAttribute="centerX" id="o0g-ph-CHr"/>
