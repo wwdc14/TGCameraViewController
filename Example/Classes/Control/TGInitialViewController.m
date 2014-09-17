@@ -30,6 +30,8 @@
 {
     [super viewDidLoad];
     
+    _photoView.clipsToBounds = YES;
+    
     UIBarButtonItem *clearButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
                                                                                  target:self
                                                                                  action:@selector(clearTapped)];
