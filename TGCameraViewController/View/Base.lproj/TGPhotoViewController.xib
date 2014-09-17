@@ -34,26 +34,11 @@
                                 <action selector="backTapped" destination="-1" eventType="touchUpInside" id="fwF-J8-ieM"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cjq-Y4-yU3">
-                            <rect key="frame" x="542" y="5" width="50" height="40"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="40" id="T4u-pz-oip"/>
-                                <constraint firstAttribute="width" constant="50" id="Zwr-0i-09b"/>
-                            </constraints>
-                            <state key="normal" title="Rotate">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="rotateClicked" destination="-1" eventType="touchUpInside" id="eHw-30-DcL"/>
-                            </connections>
-                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="C6o-C0-wqy"/>
-                        <constraint firstItem="cjq-Y4-yU3" firstAttribute="top" secondItem="rRi-bL-lCE" secondAttribute="top" constant="5" id="Gu7-XR-M2w"/>
                         <constraint firstItem="WAy-eH-OU9" firstAttribute="leading" secondItem="rRi-bL-lCE" secondAttribute="leading" id="Xq0-64-Abc"/>
-                        <constraint firstAttribute="trailing" secondItem="cjq-Y4-yU3" secondAttribute="trailing" constant="8" id="jvg-l6-Lzh"/>
                         <constraint firstItem="WAy-eH-OU9" firstAttribute="top" secondItem="rRi-bL-lCE" secondAttribute="top" constant="5" id="rY9-DU-0X1"/>
                     </constraints>
                 </view>
