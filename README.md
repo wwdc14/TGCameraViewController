@@ -13,6 +13,7 @@ Custom camera with AVFoundation. Beautiful, light and easy to integrate with iOS
 <br/><br/><br/>
 
 ---
+
 ### Requirements
 
 TGCameraViewController works on iOS 7.0+ version and is compatible with ARC projects. It depends on the following Apple frameworks, which should already be included with most Xcode templates:
@@ -25,11 +26,13 @@ TGCameraViewController works on iOS 7.0+ version and is compatible with ARC proj
 * UIKit.framework
 
 You will need LLVM 3.0 or later in order to build TGCameraViewController.
+
 ---
 
 <br/><br/><br/>
 
 ---
+
 ### Adding TGCameraViewController to your project
 
 #### Cocoapods
@@ -54,27 +57,33 @@ Alternatively you can directly add source files to your project.
 
 1. Download the [latest code version](https://github.com/tdginternet/TGCameraViewController/archive/master.zip) or add the repository as a git submodule to your git-tracked project.
 2. Open your project in Xcode, then drag and drop all files at `TGCameraViewController` folder onto your project (use the "Product Navigator view"). Make sure to select Copy items when asked if you extracted the code archive outside of your project.
+
 ---
 
 <br/><br/><br/>
 
 ---
+
 ### Usage
 
 Hold up...
+
 ---
 
 <br/><br/><br/>
 
 ---
+
 ### License
 
 This code is distributed under the terms and conditions of the [MIT license](LICENSE).
+
 ---
 
 <br/><br/><br/>
 
 ---
+
 ### Change-log
 
 A brief summary of each TGCameraViewController release can be found on the [releases](https://github.com/tdginternet/TGCameraViewController/releases).
