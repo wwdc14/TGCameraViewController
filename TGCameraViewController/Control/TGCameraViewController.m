@@ -16,6 +16,7 @@
 
 @property (strong, nonatomic) IBOutlet UIView *captureView;
 @property (strong, nonatomic) IBOutlet UIButton *toggleButton;
+@property (strong, nonatomic) IBOutlet UIButton *shotButton;
 @property (strong, nonatomic) IBOutlet UIButton *flashButton;
 @property (strong, nonatomic) IBOutlet TGCameraSlideView *slideUpView;
 @property (strong, nonatomic) IBOutlet TGCameraSlideView *slideDownView;
@@ -27,7 +28,7 @@
 
 - (IBAction)closeTapped;
 - (IBAction)flashTapped;
-- (IBAction)shotTapped:(UIButton *)button;
+- (IBAction)shotTapped;
 - (IBAction)toggleTapped;
 - (IBAction)handlePinchGesture:(UIPinchGestureRecognizer *)recognizer;
 - (IBAction)handleTapGesture:(UITapGestureRecognizer *)recognizer;
@@ -46,8 +47,9 @@
     [super viewDidLoad];
     
     _camera = [TGCamera cameraWithFlashButton:_flashButton];
-    _captureView.backgroundColor = [UIColor clearColor];
     _effectiveScale = 1.;
+    
+    _captureView.backgroundColor = [UIColor clearColor];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -59,9 +61,13 @@
                                                  name:UIDeviceOrientationDidChangeNotification
                                                object:nil];
     
+    _toggleButton.enabled = _shotButton.enabled = _flashButton.enabled = NO;
+    
     [_camera startRunning];
-    [_slideUpView hideWithAnimationAtView:_captureView];
-    [_slideDownView hideWithAnimationAtView:_captureView];
+    
+    [TGCameraSlideView hideSlideUpView:_slideUpView slideDownView:_slideDownView atView:_captureView completion:^{
+    _toggleButton.enabled = _shotButton.enabled = _flashButton.enabled = YES;
+    }];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -120,20 +126,19 @@
     [_camera changeFlashModeWithButton:_flashButton];
 }
 
-- (IBAction)shotTapped:(UIButton *)button
+- (IBAction)shotTapped
 {
-    [_slideUpView showWithAnimationAtView:_captureView];
-    [_slideDownView showWithAnimationAtView:_captureView];
+    _shotButton.enabled = NO;
     
-    button.enabled = NO;
-    
-    UIDeviceOrientation deviceOrientation = [[UIDevice currentDevice] orientation];
-    AVCaptureVideoOrientation videoOrientation = [self videoOrientationForDeviceOrientation:deviceOrientation];
-    
-    [_camera takePhotoWithCaptureView:_captureView effectiveScale:_effectiveScale videoOrientation:videoOrientation completion:^(UIImage *photo) {
-        TGPhotoViewController *viewController = [TGPhotoViewController newWithDelegate:_delegate photo:photo];
-        [self.navigationController pushViewController:viewController animated:YES];
-        button.enabled = YES;
+    [TGCameraSlideView showSlideUpView:_slideUpView slideDownView:_slideDownView atView:_captureView completion:^{
+        UIDeviceOrientation deviceOrientation = [[UIDevice currentDevice] orientation];
+        AVCaptureVideoOrientation videoOrientation = [self videoOrientationForDeviceOrientation:deviceOrientation];
+        
+        [_camera takePhotoWithCaptureView:_captureView effectiveScale:_effectiveScale videoOrientation:videoOrientation completion:^(UIImage *photo) {
+            TGPhotoViewController *viewController = [TGPhotoViewController newWithDelegate:_delegate photo:photo];
+            [self.navigationController pushViewController:viewController animated:YES];
+            _shotButton.enabled = YES;
+        }];
     }];
 }
 

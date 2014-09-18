@@ -14,8 +14,15 @@
 
 @interface TGCameraSlideView : UIView
 
-- (void)showWithAnimationAtView:(UIView *)view;
-- (void)hideWithAnimationAtView:(UIView *)view;
++ (void)showSlideUpView:(TGCameraSlideView *)slideUpView
+          slideDownView:(TGCameraSlideView *)slideDownView
+                 atView:(UIView *)view
+             completion:(void (^)(void))completion;
+
++ (void)hideSlideUpView:(TGCameraSlideView *)slideUpView
+          slideDownView:(TGCameraSlideView *)slideDownView
+                 atView:(UIView *)view
+             completion:(void (^)(void))completion;
 
 @end
 
