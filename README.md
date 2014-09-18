@@ -73,15 +73,12 @@ pod install
 #### Take photo
 
 ```objetive-c
-@import UIKit;
 #import "TGCamera.h"
 #import "TGCameraViewController.h"
 
 @interface TGViewController : UIViewController <TGCameraDelegate>
-
 @property (strong, nonatomic) IBOutlet UIImageView *photoView;
 - (IBAction)takePhotoTapped;
-
 @end
 
 @implementation TGViewController
@@ -101,6 +98,40 @@ pod install
     navigationController.navigationBarHidden = YES;
     
     [self presentViewController:navigationController animated:YES completion:nil];
+}
+
+@end
+```
+
+#### Choose photo
+
+```objetive-c
+#import "TGAlbum.h"
+
+@interface TGViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@property (strong, nonatomic) IBOutlet UIImageView *photoView;
+- (IBAction)chooseExistingPhotoTapped;
+@end
+
+
+
+@implementation TGViewController
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    _photoView.image = [TGAlbum imageWithMediaInfo:info];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)chooseExistingPhotoTapped
+{
+    UIImagePickerController *pickerController = [TGAlbum imagePickerControllerWithDelegate:self];
+    [self presentViewController:pickerController animated:YES completion:nil];
 }
 
 @end
