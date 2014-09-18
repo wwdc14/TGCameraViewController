@@ -35,9 +35,7 @@ Custom camera with AVFoundation. Beautiful, light and easy to integrate with iOS
 * Add a pod entry for TGCameraViewController to your Podfile:
 
 ```
-pod 'TGCameraViewController', 
-	:git => 'https://github.com/tdginternet/TGCameraViewController', 
-	:branch => 'master'
+pod 'TGCameraViewController'
 ```
 
 * Install the pod(s) by running:
