@@ -51,6 +51,8 @@ pod 'TGCameraViewController', :git => 'https://github.com/tdginternet/TGCameraVi
 pod install
 ```
 
+<br/>
+
 #### Source files
 
 Alternatively you can directly add source files to your project.
