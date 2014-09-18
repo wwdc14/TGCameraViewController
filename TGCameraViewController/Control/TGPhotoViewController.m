@@ -23,7 +23,6 @@
 @property (strong, nonatomic) UIImage *photo;
 
 - (IBAction)backTapped;
-- (IBAction)cancelTapped;
 - (IBAction)confirmTapped;
 - (IBAction)filtersTapped;
 
@@ -76,11 +75,6 @@
 - (IBAction)backTapped
 {
     [self.navigationController popViewControllerAnimated:YES];
-}
-
-- (IBAction)cancelTapped
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)confirmTapped
