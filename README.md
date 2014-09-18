@@ -57,9 +57,7 @@ pod install
 
 Alternatively you can directly add source files to your project.
 
-Download the [latest code version](https://github.com/tdginternet/TGCameraViewController/archive/master.zip) or add the repository as a git submodule to your git-tracked project.
-
-Open your project in Xcode, then drag and drop all files at `TGCameraViewController` folder onto your project (use the "Product Navigator view"). Make sure to select Copy items when asked if you extracted the code archive outside of your project.
+Download the [latest code version](https://github.com/tdginternet/TGCameraViewController/archive/master.zip) or add the repository as a git submodule to your git-tracked project. Open your project in Xcode, then drag and drop all files at `TGCameraViewController` folder onto your project (use the "Product Navigator view"). Make sure to select Copy items when asked if you extracted the code archive outside of your project.
 
 ---
 
