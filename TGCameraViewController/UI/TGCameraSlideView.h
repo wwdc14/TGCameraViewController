@@ -22,7 +22,7 @@
 
 @protocol TGCameraSlideViewProtocol <NSObject>
 
-- (void)addSlideToView:(UIView *)view;
-- (void)removeSlideFromSuperview;
+- (CGFloat)initialOriginY:(UIView *)view;
+- (CGFloat)endOriginY;
 
 @end
