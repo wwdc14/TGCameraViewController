@@ -47,14 +47,16 @@ You will need LLVM 3.0 or later in order to build TGCameraViewController.
 ---
 ---
 
-### Adding TGCameraViewController to your project
+### Adding to your project
 
 [CocoaPods](http://cocoapods.org) is the recommended way to add TGCameraViewController to your project.
 
 * Add a pod entry for TGCameraViewController to your Podfile:
 
 ```
-pod 'TGCameraViewController', :git => 'https://github.com/tdginternet/TGCameraViewController', :branch => 'master'
+pod 'TGCameraViewController', 
+	:git => 'https://github.com/tdginternet/TGCameraViewController', 
+	:branch => 'master'
 ```
 
 * Install the pod(s) by running:
