@@ -80,26 +80,17 @@ pod install
 @interface TGViewController : UIViewController <TGCameraDelegate>
 
 @property (strong, nonatomic) IBOutlet UIImageView *photoView;
-
 - (IBAction)takePhotoTapped;
 
 @end
 
-
-
 @implementation TGViewController
-
-#pragma mark -
-#pragma mark - TGCameraDelegate
 
 - (void)cameraImage:(UIImage *)image
 {
     _photoView.image = image;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-
-#pragma mark -
-#pragma mark - Actions
 
 - (IBAction)takePhotoTapped
 {
