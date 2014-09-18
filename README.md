@@ -13,9 +13,6 @@ Custom camera with AVFoundation. Beautiful, light and easy to integrate with iOS
 
 <br/>
 
----
----
-
 ### Info
 
 * Completely custom camera with AVFoundation
