@@ -62,8 +62,8 @@
     [_camera startRunning];
     
     if (_wasLoaded == NO) {
-        [_slideUpView showWithAnimationAtView:_captureView];
-        [_slideDownView showWithAnimationAtView:_captureView];
+        [_slideUpView hideWithAnimationAtView:_captureView];
+        [_slideDownView hideWithAnimationAtView:_captureView];
     }
 }
 
@@ -126,6 +126,12 @@
 {
     button.enabled = NO;
     
+    [_slideUpView showWithAnimationAtView:_captureView];
+    [_slideDownView showWithAnimationAtView:_captureView];
+    [_slideUpView hideWithAnimationAtView:_captureView];
+    [_slideDownView hideWithAnimationAtView:_captureView];
+    
+    /*
     UIDeviceOrientation deviceOrientation = [[UIDevice currentDevice] orientation];
     AVCaptureVideoOrientation videoOrientation = [self videoOrientationForDeviceOrientation:deviceOrientation];
     
@@ -134,6 +140,7 @@
         [self.navigationController pushViewController:viewController animated:YES];
         button.enabled = YES;
     }];
+    */
 }
 
 - (IBAction)toggleTapped

@@ -15,6 +15,7 @@
 @interface TGCameraSlideView : UIView
 
 - (void)showWithAnimationAtView:(UIView *)view;
+- (void)hideWithAnimationAtView:(UIView *)view;
 
 @end
 
@@ -22,7 +23,10 @@
 
 @protocol TGCameraSlideViewProtocol <NSObject>
 
-- (CGFloat)initialOriginY:(UIView *)view;
-- (CGFloat)endOriginY;
+- (CGFloat)originYInitialShow:(UIView *)view;
+- (CGFloat)originYEndShow:(UIView *)view;
+
+- (CGFloat)originYInitialHide:(UIView *)view;
+- (CGFloat)originYEndHide;
 
 @end

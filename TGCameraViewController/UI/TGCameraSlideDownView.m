@@ -19,12 +19,22 @@
 #pragma mark -
 #pragma mark - TGCameraSlideViewProtocol
 
-- (CGFloat)initialOriginY:(UIView *)view
+- (CGFloat)originYInitialShow:(UIView *)view
+{
+    return CGRectGetMaxY(self.frame);
+}
+
+- (CGFloat)originYEndShow:(UIView *)view
 {
     return CGRectGetHeight(view.frame)/2;
 }
 
-- (CGFloat)endOriginY
+- (CGFloat)originYInitialHide:(UIView *)view
+{
+    return CGRectGetHeight(view.frame)/2;
+}
+
+- (CGFloat)originYEndHide
 {
     return CGRectGetMaxY(self.frame);
 }

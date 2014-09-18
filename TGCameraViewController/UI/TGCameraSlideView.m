@@ -12,8 +12,8 @@
 
 @interface TGCameraSlideView () <TGCameraSlideViewProtocol>
 
-- (void)addSlideToView:(UIView *)view;
-- (void)removeSlideFromSuperview;;
+- (void)addSlideToView:(UIView *)view withOriginY:(CGFloat)originY;
+- (void)removeSlideFromSuperviewWithOriginY:(CGFloat)originY;
 
 @end
 
@@ -29,14 +29,26 @@ static NSString* const kExceptionMessage = @"Invoked abstract method";
 
 - (void)showWithAnimationAtView:(UIView *)view
 {
-    [self addSlideToView:view];
-    [self performSelector:@selector(removeSlideFromSuperview) withObject:nil afterDelay:.6];
+    [self addSlideToView:view withOriginY:[self originYInitialShow:view]];
+    [self removeSlideFromSuperviewWithOriginY:[self originYEndShow:view]];
+}
+
+- (void)hideWithAnimationAtView:(UIView *)view
+{
+    [self addSlideToView:view withOriginY:[self originYInitialHide:view]];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        [NSThread sleepForTimeInterval:.6];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self removeSlideFromSuperviewWithOriginY:[self originYEndHide]];
+        });
+    });
 }
 
 #pragma mark -
 #pragma mark - TGCameraSlideViewProtocol
 
-- (CGFloat)initialOriginY:(UIView *)view
+- (CGFloat)originYInitialShow:(UIView *)view
 {
     [NSException exceptionWithName:kExceptionName
                             reason:kExceptionMessage
@@ -45,7 +57,25 @@ static NSString* const kExceptionMessage = @"Invoked abstract method";
     return 0.;
 }
 
-- (CGFloat)endOriginY
+- (CGFloat)originYEndShow:(UIView *)uiview
+{
+    [NSException exceptionWithName:kExceptionName
+                            reason:kExceptionMessage
+                          userInfo:nil];
+    
+    return 0.;
+}
+
+- (CGFloat)originYInitialHide:(UIView *)view
+{
+    [NSException exceptionWithName:kExceptionName
+                            reason:kExceptionMessage
+                          userInfo:nil];
+    
+    return 0.;
+}
+
+- (CGFloat)originYEndHide
 {
     [NSException exceptionWithName:kExceptionName
                             reason:kExceptionMessage
@@ -57,11 +87,10 @@ static NSString* const kExceptionMessage = @"Invoked abstract method";
 #pragma mark -
 #pragma mark - Private methods
 
-- (void)addSlideToView:(UIView *)view
+- (void)addSlideToView:(UIView *)view withOriginY:(CGFloat)originY
 {
     CGFloat width = CGRectGetWidth(view.frame);
     CGFloat height = CGRectGetHeight(view.frame)/2;
-    CGFloat originY = [self initialOriginY:view];
     
     CGRect frame = self.frame;
     frame.size.width = width;
@@ -72,12 +101,12 @@ static NSString* const kExceptionMessage = @"Invoked abstract method";
     [view addSubview:self];
 }
 
-- (void)removeSlideFromSuperview
+- (void)removeSlideFromSuperviewWithOriginY:(CGFloat)originY
 {
     CGRect frame = self.frame;
-    frame.origin.y = [self endOriginY];
+    frame.origin.y = originY;
     
-    [UIView animateWithDuration:.5f animations:^{
+    [UIView animateWithDuration:2. animations:^{
         self.frame = frame;
     } completion:^(BOOL finished) {
         if (finished) {
