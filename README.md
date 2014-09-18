@@ -140,7 +140,9 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 
 - (IBAction)chooseExistingPhotoTapped
 {
-    UIImagePickerController *pickerController = [TGAlbum imagePickerControllerWithDelegate:self];
+    UIImagePickerController *pickerController = 
+    [TGAlbum imagePickerControllerWithDelegate:self];
+    
     [self presentViewController:pickerController animated:YES completion:nil];
 }
 
