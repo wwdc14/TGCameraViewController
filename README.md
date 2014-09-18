@@ -49,8 +49,6 @@ You will need LLVM 3.0 or later in order to build TGCameraViewController.
 
 ## Adding TGCameraViewController to your project
 
-#### Cocoapods
-
 [CocoaPods](http://cocoapods.org) is the recommended way to add TGCameraViewController to your project.
 
 * Add a pod entry for TGCameraViewController to your Podfile:
@@ -72,7 +70,50 @@ pod install
 
 ## Usage
 
-Hold up...
+#### Take photo
+
+```objetive-c
+@import UIKit;
+#import "TGCamera.h"
+#import "TGCameraViewController.h"
+
+@interface TGViewController : UIViewController <TGCameraDelegate>
+
+@property (strong, nonatomic) IBOutlet UIImageView *photoView;
+
+- (IBAction)takePhotoTapped;
+
+@end
+
+
+
+@implementation TGViewController
+
+#pragma mark -
+#pragma mark - TGCameraDelegate
+
+- (void)cameraImage:(UIImage *)image
+{
+    _photoView.image = image;
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark -
+#pragma mark - Actions
+
+- (IBAction)takePhotoTapped
+{
+	TGCameraViewController *viewController = [TGCameraViewController new];
+    viewController.delegate = self;
+    
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    navigationController.navigationBarHidden = YES;
+    
+    [self presentViewController:navigationController animated:YES completion:nil];
+}
+
+@end
+```
 
 ---
 ---
