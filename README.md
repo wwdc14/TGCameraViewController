@@ -9,6 +9,7 @@
 Custom camera with AVFoundation. Beautiful, light and easy to integrate with iOS projects.
 
 ![License MIT](https://go-shields.herokuapp.com/license-MIT-blue.png)
+[![Analytics](https://ga-beacon.appspot.com/UA-54929747-1/tdginternet/TGCameraViewController/README.md)](https://github.com/igrigorik/ga-beacon)
 
 <br/>
 
