@@ -4,12 +4,11 @@
   <img src="http://s23.postimg.org/4psw1dtyj/TGCamera_View_Controller.png" alt="TGCameraViewController" title="TGCameraViewController">
 </p>
 
+Custom camera with AVFoundation. Beautiful, light and easy to integrate with iOS projects.
+
 <p align="center">
   <img src="http://s13.postimg.org/cjxkzgu87/TGCamera_View_Controller.png" alt="TGCameraViewController" title="TGCameraViewController">
 </p>
-
-
-Custom camera with AVFoundation. Beautiful, light and easy to integrate with iOS projects.
 
 
 
