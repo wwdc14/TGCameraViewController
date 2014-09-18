@@ -26,7 +26,7 @@ Custom camera with AVFoundation. Beautiful, light and easy to integrate with iOS
 * Visual effects like Instagram iOS app
 * Zoom with pinch gesture
 
-<em>This library can be applied on all iPhones and iPods running iOS 7.0+ . She isn't prepared for iPads.</em>
+<em>This library can be applied on all iPhones and iPods running iOS 7.0+.</em>
 
 ---
 ---
