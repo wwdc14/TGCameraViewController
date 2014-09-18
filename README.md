@@ -18,6 +18,8 @@ Custom camera with AVFoundation. Beautiful, light and easy to integrate with iOS
 
 ## Requirements
 
+---
+
 TGCameraViewController works on iOS 7.0+ version and is compatible with ARC projects. It depends on the following Apple frameworks, which should already be included with most Xcode templates:
 
 * AVFoundation.framework
