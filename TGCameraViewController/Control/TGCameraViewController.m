@@ -9,8 +9,7 @@
 #import "TGCameraViewController.h"
 #import "TGPhotoViewController.h"
 #import "TGCameraSlideView.h"
-#import "TGCameraSlideDownView.h"
-#import "TGCameraSlideUpView.h"
+
 
 
 @interface TGCameraViewController ()
