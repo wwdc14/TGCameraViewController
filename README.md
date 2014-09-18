@@ -15,6 +15,22 @@ Custom camera with AVFoundation. Beautiful, light and easy to integrate with iOS
 ---
 ---
 
+## Info
+
+* Completely custom camera with AVFoundation
+* Easy way to access album (camera roll)
+* Flash auto, off and on
+* Focus
+* Front and back camera
+* Preview photo view with three filters (fast processing)
+* Visual effects like Instagram iOS app
+* Zoom with pinch gesture
+
+<em>This library can be applied on all iPhones and iPods running iOS 7.0+ . She isn't prepared for iPads.</em>
+
+---
+---
+
 ## Requirements
 
 TGCameraViewController works on iOS 7.0+ version and is compatible with ARC projects. It depends on the following Apple frameworks, which should already be included with most Xcode templates:
