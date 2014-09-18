@@ -15,6 +15,10 @@
 @interface TGCameraViewController ()
 
 @property (strong, nonatomic) IBOutlet UIView *captureView;
+@property (strong, nonatomic) IBOutlet UIImageView *topLeftView;
+@property (strong, nonatomic) IBOutlet UIImageView *topRightView;
+@property (strong, nonatomic) IBOutlet UIImageView *bottomLeftView;
+@property (strong, nonatomic) IBOutlet UIImageView *bottomRightView;
 @property (strong, nonatomic) IBOutlet UIButton *toggleButton;
 @property (strong, nonatomic) IBOutlet UIButton *shotButton;
 @property (strong, nonatomic) IBOutlet UIButton *flashButton;
@@ -50,6 +54,11 @@
     _effectiveScale = 1.;
     
     _captureView.backgroundColor = [UIColor clearColor];
+    
+    _topLeftView.transform = CGAffineTransformMakeRotation(0);
+    _topRightView.transform = CGAffineTransformMakeRotation(M_PI_2);
+    _bottomLeftView.transform = CGAffineTransformMakeRotation(-M_PI_2);
+    _bottomRightView.transform = CGAffineTransformMakeRotation(M_PI_2*2);
 }
 
 - (void)viewWillAppear:(BOOL)animated

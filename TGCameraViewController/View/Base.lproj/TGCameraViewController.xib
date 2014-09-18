@@ -7,12 +7,16 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TGCameraViewController">
             <connections>
+                <outlet property="bottomLeftView" destination="2rS-OA-lDQ" id="3Tj-6s-eEi"/>
+                <outlet property="bottomRightView" destination="HFV-tF-409" id="gvx-Rz-7bX"/>
                 <outlet property="captureView" destination="dIq-rQ-gzr" id="F4T-QP-lPu"/>
                 <outlet property="flashButton" destination="p7O-pE-Mp0" id="Tqo-vg-CGw"/>
                 <outlet property="shotButton" destination="wtQ-Dg-G3i" id="cWY-WV-5Gp"/>
                 <outlet property="slideDownView" destination="Czb-nz-m44" id="Ga2-kT-HSY"/>
                 <outlet property="slideUpView" destination="vJp-kA-okD" id="hiW-4t-8lC"/>
                 <outlet property="toggleButton" destination="WJG-N5-BnZ" id="QRP-Z9-Zpe"/>
+                <outlet property="topLeftView" destination="ljD-PV-2sR" id="6yh-RZ-d0w"/>
+                <outlet property="topRightView" destination="umk-ea-F3l" id="bIA-Jv-2nh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,28 +28,28 @@
                 <view multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dIq-rQ-gzr" userLabel="Capture View">
                     <rect key="frame" x="0.0" y="50" width="600" height="450"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TopLeft" translatesAutoresizingMaskIntoConstraints="NO" id="ljD-PV-2sR">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CameraDetail" translatesAutoresizingMaskIntoConstraints="NO" id="ljD-PV-2sR" userLabel="Top Left">
                             <rect key="frame" x="0.0" y="0.0" width="58" height="58"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="58" id="cpC-YT-5ut"/>
                                 <constraint firstAttribute="width" constant="58" id="rWY-0w-R1L"/>
                             </constraints>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TopRight" translatesAutoresizingMaskIntoConstraints="NO" id="umk-ea-F3l">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CameraDetail" translatesAutoresizingMaskIntoConstraints="NO" id="umk-ea-F3l" userLabel="Top Right">
                             <rect key="frame" x="542" y="0.0" width="58" height="58"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="58" id="Fdp-us-eFu"/>
                                 <constraint firstAttribute="width" constant="58" id="V1b-Mr-c78"/>
                             </constraints>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BottomLeft" translatesAutoresizingMaskIntoConstraints="NO" id="2rS-OA-lDQ">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CameraDetail" translatesAutoresizingMaskIntoConstraints="NO" id="2rS-OA-lDQ" userLabel="Bottom Left">
                             <rect key="frame" x="0.0" y="392" width="58" height="58"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="58" id="Veh-dT-2MM"/>
                                 <constraint firstAttribute="height" constant="58" id="X2r-AO-AoJ"/>
                             </constraints>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BottomRight" translatesAutoresizingMaskIntoConstraints="NO" id="HFV-tF-409">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CameraDetail" translatesAutoresizingMaskIntoConstraints="NO" id="HFV-tF-409" userLabel="Bottom Right">
                             <rect key="frame" x="542" y="392" width="58" height="58"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="58" id="G0H-ic-hcw"/>
@@ -206,13 +210,10 @@
         </tapGestureRecognizer>
     </objects>
     <resources>
-        <image name="BottomLeft" width="58" height="58"/>
-        <image name="BottomRight" width="58" height="58"/>
         <image name="CameraClose" width="26" height="26"/>
+        <image name="CameraDetail" width="58" height="58"/>
         <image name="CameraFlashAuto" width="41" height="41"/>
         <image name="CameraShot" width="78" height="78"/>
         <image name="CameraToggle" width="30" height="30"/>
-        <image name="TopLeft" width="58" height="58"/>
-        <image name="TopRight" width="58" height="58"/>
     </resources>
 </document>
