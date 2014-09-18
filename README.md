@@ -142,12 +142,20 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     UIImagePickerController *pickerController = 
     [TGAlbum imagePickerControllerWithDelegate:self];
-    
+
     [self presentViewController:pickerController animated:YES completion:nil];
 }
 
 @end
 ```
+
+---
+---
+
+### Todo
+
+* iPad support
+* Preview when user choose photo 
 
 ---
 ---
