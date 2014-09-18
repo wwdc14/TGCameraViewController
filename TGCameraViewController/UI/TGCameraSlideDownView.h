@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 Tudo Gostoso Internet. All rights reserved.
 //
 
-@import UIKit;
+#import "TGCameraSlideView.h"
 
-@interface TGCameraSlideDownView : UIView
+@interface TGCameraSlideDownView : TGCameraSlideView
 
-- (void)showWithAnimationAtView:(UIView *)view;
+//- (void)showWithAnimationAtView:(UIView *)view;
 
 @end

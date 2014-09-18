@@ -8,6 +8,7 @@
 
 #import "TGCameraViewController.h"
 #import "TGPhotoViewController.h"
+#import "TGCameraSlideView.h"
 #import "TGCameraSlideDownView.h"
 #import "TGCameraSlideUpView.h"
 
@@ -17,8 +18,8 @@
 @property (strong, nonatomic) IBOutlet UIView *captureView;
 @property (strong, nonatomic) IBOutlet UIButton *toggleButton;
 @property (strong, nonatomic) IBOutlet UIButton *flashButton;
-@property (strong, nonatomic) IBOutlet TGCameraSlideUpView *slideUpView;
-@property (strong, nonatomic) IBOutlet TGCameraSlideDownView *slideDownView;
+@property (strong, nonatomic) IBOutlet TGCameraSlideView *slideUpView;
+@property (strong, nonatomic) IBOutlet TGCameraSlideView *slideDownView;
 
 @property (strong, nonatomic) TGCamera *camera;
 @property (nonatomic) CGFloat beginPinchGestureScale;

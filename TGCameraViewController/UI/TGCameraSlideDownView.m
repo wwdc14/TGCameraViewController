@@ -8,30 +8,18 @@
 
 #import "TGCameraSlideDownView.h"
 
-@interface TGCameraSlideDownView ()
-
-- (void)addToView:(UIView *)view;
-- (void)removeFromSuperviewAnimated;
+@interface TGCameraSlideDownView () <TGCameraSlideViewProtocol>
 
 @end
 
 
 
 @implementation TGCameraSlideDownView
-
+ 
 #pragma mark -
-#pragma mark - Public methods
+#pragma mark - TGCameraSlideViewProtocol
 
-- (void)showWithAnimationAtView:(UIView *)view;
-{
-    [self addToView:view];
-    [self performSelector:@selector(removeFromSuperviewAnimated) withObject:nil afterDelay:.6];
-}
-
-#pragma mark -
-#pragma mark - Private methods
-
-- (void)addToView:(UIView *)view
+- (void)addSlideToView:(UIView *)view
 {
     CGFloat width = CGRectGetWidth(view.frame);
     CGFloat height = CGRectGetHeight(view.frame)/2;
@@ -49,7 +37,7 @@
     [view addSubview:self];
 }
 
-- (void)removeFromSuperviewAnimated
+- (void)removeSlideFromSuperview
 {
     CGRect frame = self.frame;
     frame.origin.y = CGRectGetMaxY(self.frame);
