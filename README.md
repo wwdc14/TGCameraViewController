@@ -4,7 +4,7 @@
 
 
 
-#TGCameraViewController ![License MIT](https://go-shields.herokuapp.com/license-MIT-blue.png)
+![License MIT](https://go-shields.herokuapp.com/license-MIT-blue.png)
 
 Custom camera with AVFoundation. Beautiful, light and easy to integrate with iOS projects.
 
