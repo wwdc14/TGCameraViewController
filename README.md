@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="http://s22.postimg.org/sfgwg4ixd/NZAlert_View.png" alt="NZAlertView" title="NZAlertView">
+  <img src="http://s23.postimg.org/4psw1dtyj/TGCamera_View_Controller.png" alt="NZAlertView" title="NZAlertView">
 </p>
 
 
