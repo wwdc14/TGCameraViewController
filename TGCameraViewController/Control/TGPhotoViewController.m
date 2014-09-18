@@ -9,6 +9,7 @@
 @import AssetsLibrary;
 #import "TGPhotoViewController.h"
 #import "TGAssetsLibrary.h"
+#import "TGCameraColor.h"
 #import "TGCameraFilterView.h"
 #import "UIImage+CameraFilters.h"
 
@@ -19,20 +20,22 @@
 @property (strong, nonatomic) IBOutlet UIImageView *photoView;
 @property (strong, nonatomic) IBOutlet UIView *bottomView;
 @property (strong, nonatomic) IBOutlet TGCameraFilterView *filterView;
+@property (strong, nonatomic) IBOutlet UIButton *defaultFilterButton;
 
 @property (weak) id<TGCameraDelegate> delegate;
+@property (strong, nonatomic) UIView *detailFilterView;
 @property (strong, nonatomic) UIImage *photo;
 
 - (IBAction)backTapped;
 - (IBAction)confirmTapped;
 - (IBAction)filtersTapped;
 
-- (IBAction)defaultFilterTapped;
-- (IBAction)satureFilterTapped;
-- (IBAction)curveFilterTapped;
-- (IBAction)vignetteFilterTapped;
+- (IBAction)defaultFilterTapped:(UIButton *)button;
+- (IBAction)satureFilterTapped:(UIButton *)button;
+- (IBAction)curveFilterTapped:(UIButton *)button;
+- (IBAction)vignetteFilterTapped:(UIButton *)button;
 
-
+- (void)addDetailViewToButton:(UIButton *)button;
 + (instancetype)newController;
 
 @end
@@ -56,8 +59,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     _photoView.clipsToBounds = YES;
     _photoView.image = _photo;
+    
+    [self addDetailViewToButton:_defaultFilterButton];
 }
 
 - (void)didReceiveMemoryWarning
@@ -108,28 +114,50 @@
 #pragma mark -
 #pragma mark - Filter view actions
 
-- (IBAction)defaultFilterTapped
+- (IBAction)defaultFilterTapped:(UIButton *)button
 {
+    [self addDetailViewToButton:button];
     _photoView.image = _photo;
 }
 
-- (IBAction)satureFilterTapped
+- (IBAction)satureFilterTapped:(UIButton *)button
 {
+    [self addDetailViewToButton:button];
     _photoView.image = [_photo saturateImage:1.8 withContrast:1];
 }
 
-- (IBAction)curveFilterTapped
+- (IBAction)curveFilterTapped:(UIButton *)button
 {
+    [self addDetailViewToButton:button];
     _photoView.image = [_photo curveFilter];
 }
 
-- (IBAction)vignetteFilterTapped
+- (IBAction)vignetteFilterTapped:(UIButton *)button
 {
+    [self addDetailViewToButton:button];
     _photoView.image = [_photo vignetteWithRadius:0 intensity:6];
 }
 
 #pragma mark -
 #pragma mark - Private methods
+
+- (void)addDetailViewToButton:(UIButton *)button
+{
+    [_detailFilterView removeFromSuperview];
+    
+    CGFloat height = 2.5;
+    
+    CGRect frame = button.frame;
+    frame.size.height = height;
+    frame.origin.x = 0;
+    frame.origin.y = CGRectGetMaxY(button.frame) - height;
+    
+    _detailFilterView = [[UIView alloc] initWithFrame:frame];
+    _detailFilterView.backgroundColor = [TGCameraColor orangeColor];
+    _detailFilterView.userInteractionEnabled = NO;
+    
+    [button addSubview:_detailFilterView];
+}
 
 + (instancetype)newController
 {

@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TGPhotoViewController">
             <connections>
                 <outlet property="bottomView" destination="Wwe-hD-eWO" id="phi-0I-kq7"/>
+                <outlet property="defaultFilterButton" destination="9jP-uX-c4U" id="AEq-cV-Ah8"/>
                 <outlet property="filterView" destination="mfq-V7-07J" id="Pf2-0x-IU7"/>
                 <outlet property="photoView" destination="AgS-wg-ici" id="7RM-EQ-xh7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -109,40 +110,40 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6gn-sg-KCX" userLabel="Center View">
                     <rect key="frame" x="121" y="0.0" width="360" height="90"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qQZ-zM-IfK" userLabel="Sature">
-                            <rect key="frame" x="106" y="0.0" width="70" height="90"/>
-                            <state key="normal" image="CameraEffectSature">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="satureFilterTapped" destination="-1" eventType="touchUpInside" id="1Z9-9S-Q9k"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evv-qG-miu" userLabel="Curve">
-                            <rect key="frame" x="181" y="0.0" width="70" height="90"/>
-                            <state key="normal" image="CameraEffectCurve">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="curveFilterTapped" destination="-1" eventType="touchUpInside" id="7qu-pw-hNH"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SfY-Gx-tnh" userLabel="Vignette">
-                            <rect key="frame" x="256" y="0.0" width="70" height="90"/>
-                            <state key="normal" image="CameraEffectVignette">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="vignetteFilterTapped" destination="-1" eventType="touchUpInside" id="srD-XO-39h"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9jP-uX-c4U">
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9jP-uX-c4U" userLabel="Default">
                             <rect key="frame" x="31" y="0.0" width="70" height="90"/>
                             <state key="normal" image="CameraEffectDefault">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="defaultFilterTapped" destination="-1" eventType="touchUpInside" id="lul-GA-zvS"/>
+                                <action selector="defaultFilterTapped:" destination="-1" eventType="touchUpInside" id="kSi-iK-ang"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qQZ-zM-IfK" userLabel="Sature">
+                            <rect key="frame" x="106" y="0.0" width="70" height="90"/>
+                            <state key="normal" image="CameraEffectSature">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="satureFilterTapped:" destination="-1" eventType="touchUpInside" id="uc7-sV-qmz"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evv-qG-miu" userLabel="Curve">
+                            <rect key="frame" x="181" y="0.0" width="70" height="90"/>
+                            <state key="normal" image="CameraEffectCurve">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="curveFilterTapped:" destination="-1" eventType="touchUpInside" id="gKy-GF-2ST"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SfY-Gx-tnh" userLabel="Vignette">
+                            <rect key="frame" x="256" y="0.0" width="70" height="90"/>
+                            <state key="normal" image="CameraEffectVignette">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="vignetteFilterTapped:" destination="-1" eventType="touchUpInside" id="ZkO-wF-q3M"/>
                             </connections>
                         </button>
                     </subviews>
