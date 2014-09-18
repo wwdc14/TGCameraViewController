@@ -49,7 +49,7 @@ pod 'TGCameraViewController', :git => 'https://github.com/tdginternet/TGCameraVi
 pod install
 ```
 
-<em>Alternatively you can directly download the [latest code version](https://github.com/tdginternet/TGCameraViewController/archive/master.zip) add  drag and drop all files at `TGCameraViewController` folder onto your project.</em>
+<em>Alternatively you can directly download the [latest code version](https://github.com/tdginternet/TGCameraViewController/archive/master.zip) add  drag and drop all files at <strong>TGCameraViewController</strong> folder onto your project.</em>
 
 ---
 ---
