@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Tudo Gostoso Internet. All rights reserved.
 //
 
+@import AssetsLibrary;
 #import "TGPhotoViewController.h"
 #import "TGAssetsLibrary.h"
 #import "TGCameraFilterView.h"
@@ -83,10 +84,12 @@
         _photo = _photoView.image;
         [_delegate cameraImage:_photo];
         
-        
-        TGAssetsLibrary *library = [TGAssetsLibrary defaultAssetsLibrary];
-        [library saveImage:_photo completion:nil];
-        
+        ALAuthorizationStatus status = [ALAssetsLibrary authorizationStatus];
+        if (status == ALAuthorizationStatusAuthorized) {
+            TGAssetsLibrary *library = [TGAssetsLibrary defaultAssetsLibrary];
+            [library saveImage:_photo completion:nil];
+        }
+         
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 }

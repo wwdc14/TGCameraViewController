@@ -27,22 +27,37 @@
 
 + (void)focusWithCaptureSession:(AVCaptureSession *)session touchPoint:(CGPoint)touchPoint inFocusView:(UIView *)focusView
 {
-    AVCaptureDevice *device = [session.inputs.lastObject device];
-    
-    if ([device isFocusPointOfInterestSupported]) {
-        [self showFocusView:focusView withTouchPoint:touchPoint andDevice:device];
-        
-        [device lockForConfiguration:nil];
-        
-        device.focusPointOfInterest =
-        device.exposurePointOfInterest = [self pointOfInterestWithTouchPoint:touchPoint];
-        
-        device.focusMode = AVCaptureFocusModeAutoFocus;
-        [device isExposureModeSupported:AVCaptureExposureModeAutoExpose];
-        device.exposureMode = AVCaptureExposureModeAutoExpose;
-        
-        [device unlockForConfiguration];
+    if (session == nil || [session inputs] == nil) {
+        return;
     }
+    
+    id lastObject = [session.inputs lastObject];
+    if (lastObject == nil || [lastObject device] == nil) {
+        return;
+    }
+    
+    AVCaptureDevice *device = [lastObject device];
+    if ([device isFocusPointOfInterestSupported] == NO) {
+        return;
+    }
+    
+    [self showFocusView:focusView withTouchPoint:touchPoint andDevice:device];
+    
+    NSError *error;
+    [device lockForConfiguration:&error];
+    
+    if (error) {
+        return;
+    }
+    
+    device.focusPointOfInterest =
+    device.exposurePointOfInterest = [self pointOfInterestWithTouchPoint:touchPoint];
+    
+    device.focusMode = AVCaptureFocusModeAutoFocus;
+    [device isExposureModeSupported:AVCaptureExposureModeAutoExpose];
+    device.exposureMode = AVCaptureExposureModeAutoExpose;
+    
+    [device unlockForConfiguration];
 }
 
 #pragma mark -

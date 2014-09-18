@@ -29,6 +29,7 @@
 		F879167219C879DB000F8637 /* UIImage+CameraFilters.m in Sources */ = {isa = PBXBuildFile; fileRef = F879167119C879DB000F8637 /* UIImage+CameraFilters.m */; };
 		F897018219C7AF19004E6480 /* TGPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F897018019C7AF19004E6480 /* TGPhotoViewController.m */; };
 		F897018919C7AF5C004E6480 /* TGPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F897018719C7AF5C004E6480 /* TGPhotoViewController.xib */; };
+		F897019819CA5E57004E6480 /* TGCameraSlideView.m in Sources */ = {isa = PBXBuildFile; fileRef = F897019719CA5E57004E6480 /* TGCameraSlideView.m */; };
 		F8E72B4919C9B75900FF3AE5 /* TGCameraSlideUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E72B4819C9B75900FF3AE5 /* TGCameraSlideUpView.m */; };
 		F8E72B4C19C9B76400FF3AE5 /* TGCameraSlideDownView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E72B4B19C9B76400FF3AE5 /* TGCameraSlideDownView.m */; };
 /* End PBXBuildFile section */
@@ -77,6 +78,8 @@
 		F897017F19C7AF19004E6480 /* TGPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGPhotoViewController.h; sourceTree = "<group>"; };
 		F897018019C7AF19004E6480 /* TGPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGPhotoViewController.m; sourceTree = "<group>"; };
 		F897018819C7AF5C004E6480 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TGPhotoViewController.xib; sourceTree = "<group>"; };
+		F897019619CA5E57004E6480 /* TGCameraSlideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGCameraSlideView.h; sourceTree = "<group>"; };
+		F897019719CA5E57004E6480 /* TGCameraSlideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGCameraSlideView.m; sourceTree = "<group>"; };
 		F8E72B4719C9B75900FF3AE5 /* TGCameraSlideUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGCameraSlideUpView.h; sourceTree = "<group>"; };
 		F8E72B4819C9B75900FF3AE5 /* TGCameraSlideUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGCameraSlideUpView.m; sourceTree = "<group>"; };
 		F8E72B4A19C9B76400FF3AE5 /* TGCameraSlideDownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGCameraSlideDownView.h; sourceTree = "<group>"; };
@@ -191,6 +194,8 @@
 				F8E72B4B19C9B76400FF3AE5 /* TGCameraSlideDownView.m */,
 				F8E72B4719C9B75900FF3AE5 /* TGCameraSlideUpView.h */,
 				F8E72B4819C9B75900FF3AE5 /* TGCameraSlideUpView.m */,
+				F897019619CA5E57004E6480 /* TGCameraSlideView.h */,
+				F897019719CA5E57004E6480 /* TGCameraSlideView.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -325,6 +330,7 @@
 				F861D63F19C669060077B642 /* TGCameraFocus.m in Sources */,
 				F8E72B4919C9B75900FF3AE5 /* TGCameraSlideUpView.m in Sources */,
 				F879167219C879DB000F8637 /* UIImage+CameraFilters.m in Sources */,
+				F897019819CA5E57004E6480 /* TGCameraSlideView.m in Sources */,
 				F83C260B19C856D400A8ADB2 /* TGCameraColor.m in Sources */,
 				F835957F19C7230500CAE395 /* TGInitialViewController.m in Sources */,
 				F82F8EE419C4F29000A47148 /* main.m in Sources */,
@@ -402,8 +408,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -423,7 +429,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "1d88f804-2d2a-4d80-b1bd-2f490f4a8d9f";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -445,8 +451,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -459,7 +465,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "1d88f804-2d2a-4d80-b1bd-2f490f4a8d9f";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -469,7 +475,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				INFOPLIST_FILE = Example/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -480,7 +486,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				INFOPLIST_FILE = Example/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

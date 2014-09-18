@@ -110,7 +110,7 @@
 {
     [self writeImageToSavedPhotosAlbum:[image CGImage] orientation:(ALAssetOrientation)image.imageOrientation
     completionBlock:^(NSURL *assetURL, NSError *error) {
-        if (error) {
+        if (error && completion) {
             completion(error);
             return;
         }

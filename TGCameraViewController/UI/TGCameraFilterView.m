@@ -8,6 +8,8 @@
 
 #import "TGCameraFilterView.h"
 
+
+
 @interface TGCameraFilterView ()
 
 - (void)setup;

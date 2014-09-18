@@ -8,8 +8,8 @@
 
 #import "TGCameraViewController.h"
 #import "TGPhotoViewController.h"
-#import "TGCameraSlideDownView.h"
-#import "TGCameraSlideUpView.h"
+#import "TGCameraSlideView.h"
+
 
 
 @interface TGCameraViewController ()
@@ -17,8 +17,8 @@
 @property (strong, nonatomic) IBOutlet UIView *captureView;
 @property (strong, nonatomic) IBOutlet UIButton *toggleButton;
 @property (strong, nonatomic) IBOutlet UIButton *flashButton;
-@property (strong, nonatomic) IBOutlet TGCameraSlideUpView *slideUpView;
-@property (strong, nonatomic) IBOutlet TGCameraSlideDownView *slideDownView;
+@property (strong, nonatomic) IBOutlet TGCameraSlideView *slideUpView;
+@property (strong, nonatomic) IBOutlet TGCameraSlideView *slideDownView;
 
 @property (strong, nonatomic) TGCamera *camera;
 @property (nonatomic) CGFloat beginPinchGestureScale;
@@ -60,18 +60,16 @@
                                                object:nil];
     
     [_camera startRunning];
-    
-    if (_wasLoaded == NO) {
-        [_slideUpView showWithAnimationAtView:_captureView];
-        [_slideDownView showWithAnimationAtView:_captureView];
-    }
+    [_slideUpView hideWithAnimationAtView:_captureView];
+    [_slideDownView hideWithAnimationAtView:_captureView];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self deviceOrientationDidChangeNotification];
     
+    [self deviceOrientationDidChangeNotification];
+
     if (_wasLoaded == NO) {
         _wasLoaded = YES;
         [_camera insertSublayerWithCaptureView:_captureView atRootView:self.view];
@@ -124,6 +122,9 @@
 
 - (IBAction)shotTapped:(UIButton *)button
 {
+    [_slideUpView showWithAnimationAtView:_captureView];
+    [_slideDownView showWithAnimationAtView:_captureView];
+    
     button.enabled = NO;
     
     UIDeviceOrientation deviceOrientation = [[UIDevice currentDevice] orientation];
