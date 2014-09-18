@@ -29,8 +29,6 @@ You will need LLVM 3.0 or later in order to build TGCameraViewController.
 
 ---
 
-<br/><br/><br/>
-
 ---
 
 ### Adding TGCameraViewController to your project
