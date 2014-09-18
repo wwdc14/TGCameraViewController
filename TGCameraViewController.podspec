@@ -12,6 +12,6 @@ Pod::Spec.new do |s|
   s.authors = { 'Bruno Tortato Furtado' => 'bruno@furtado.me' }
   
   s.source_files = 'TGCameraViewController/**/*.{h,m}'
-  s.resources = ['TGCameraViewController/View/TGCameraViewController.xib', 'TGCameraViewController/View/TGPhotoViewController.xib', 'TGCameraViewController/TGCameraViewController.xcassets']
+  s.resources = ['TGCameraViewController/**/*.xib', 'TGCameraViewController/**/*.xcassets']
   s.source = { :git => 'https://github.com/tdginternet/TGCameraViewController.git', :tag => s.version }  
 end
