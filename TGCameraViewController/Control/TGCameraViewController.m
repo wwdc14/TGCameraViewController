@@ -60,18 +60,16 @@
                                                object:nil];
     
     [_camera startRunning];
-    
-    if (_wasLoaded == NO) {
-        [_slideUpView hideWithAnimationAtView:_captureView];
-        [_slideDownView hideWithAnimationAtView:_captureView];
-    }
+    [_slideUpView hideWithAnimationAtView:_captureView];
+    [_slideDownView hideWithAnimationAtView:_captureView];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self deviceOrientationDidChangeNotification];
     
+    [self deviceOrientationDidChangeNotification];
+
     if (_wasLoaded == NO) {
         _wasLoaded = YES;
         [_camera insertSublayerWithCaptureView:_captureView atRootView:self.view];
@@ -124,14 +122,11 @@
 
 - (IBAction)shotTapped:(UIButton *)button
 {
-    button.enabled = NO;
-    
     [_slideUpView showWithAnimationAtView:_captureView];
     [_slideDownView showWithAnimationAtView:_captureView];
-    [_slideUpView hideWithAnimationAtView:_captureView];
-    [_slideDownView hideWithAnimationAtView:_captureView];
     
-    /*
+    button.enabled = NO;
+    
     UIDeviceOrientation deviceOrientation = [[UIDevice currentDevice] orientation];
     AVCaptureVideoOrientation videoOrientation = [self videoOrientationForDeviceOrientation:deviceOrientation];
     
@@ -140,7 +135,6 @@
         [self.navigationController pushViewController:viewController animated:YES];
         button.enabled = YES;
     }];
-    */
 }
 
 - (IBAction)toggleTapped

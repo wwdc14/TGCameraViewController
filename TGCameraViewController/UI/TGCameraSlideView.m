@@ -13,7 +13,13 @@
 @interface TGCameraSlideView () <TGCameraSlideViewProtocol>
 
 - (void)addSlideToView:(UIView *)view withOriginY:(CGFloat)originY;
-- (void)removeSlideFromSuperviewWithOriginY:(CGFloat)originY;
+
+- (void)hideWithAnimationAtView:(UIView *)view
+               withTimeInterval:(CGFloat)timeInterval;
+
+- (void)removeSlideFromSuperview:(BOOL)remove
+                    withDuration:(CGFloat)duration
+                         originY:(CGFloat)originY;
 
 @end
 
@@ -29,26 +35,24 @@ static NSString* const kExceptionMessage = @"Invoked abstract method";
 
 - (void)showWithAnimationAtView:(UIView *)view
 {
-    [self addSlideToView:view withOriginY:[self originYInitialShow:view]];
-    [self removeSlideFromSuperviewWithOriginY:[self originYEndShow:view]];
+    [self addSlideToView:view
+             withOriginY:[self finalPosition]];
+    
+    [self removeSlideFromSuperview:NO
+                      withDuration:.15f
+                           originY:[self initialPositionWithView:view]];
 }
 
 - (void)hideWithAnimationAtView:(UIView *)view
 {
-    [self addSlideToView:view withOriginY:[self originYInitialHide:view]];
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-        [NSThread sleepForTimeInterval:.6];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self removeSlideFromSuperviewWithOriginY:[self originYEndHide]];
-        });
-    });
+    [self hideWithAnimationAtView:view
+                 withTimeInterval:.6];
 }
 
 #pragma mark -
 #pragma mark - TGCameraSlideViewProtocol
 
-- (CGFloat)originYInitialShow:(UIView *)view
+- (CGFloat)initialPositionWithView:(UIView *)view
 {
     [NSException exceptionWithName:kExceptionName
                             reason:kExceptionMessage
@@ -57,25 +61,7 @@ static NSString* const kExceptionMessage = @"Invoked abstract method";
     return 0.;
 }
 
-- (CGFloat)originYEndShow:(UIView *)uiview
-{
-    [NSException exceptionWithName:kExceptionName
-                            reason:kExceptionMessage
-                          userInfo:nil];
-    
-    return 0.;
-}
-
-- (CGFloat)originYInitialHide:(UIView *)view
-{
-    [NSException exceptionWithName:kExceptionName
-                            reason:kExceptionMessage
-                          userInfo:nil];
-    
-    return 0.;
-}
-
-- (CGFloat)originYEndHide
+- (CGFloat)finalPosition
 {
     [NSException exceptionWithName:kExceptionName
                             reason:kExceptionMessage
@@ -101,16 +87,32 @@ static NSString* const kExceptionMessage = @"Invoked abstract method";
     [view addSubview:self];
 }
 
-- (void)removeSlideFromSuperviewWithOriginY:(CGFloat)originY
+- (void)hideWithAnimationAtView:(UIView *)view withTimeInterval:(CGFloat)timeInterval
+{
+    [self addSlideToView:view withOriginY:[self initialPositionWithView:view]];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        [NSThread sleepForTimeInterval:timeInterval];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self removeSlideFromSuperview:YES
+                              withDuration:.5
+                                   originY:[self finalPosition]];
+        });
+    });
+}
+
+- (void)removeSlideFromSuperview:(BOOL)remove withDuration:(CGFloat)duration originY:(CGFloat)originY
 {
     CGRect frame = self.frame;
     frame.origin.y = originY;
     
-    [UIView animateWithDuration:2. animations:^{
+    [UIView animateWithDuration:duration animations:^{
         self.frame = frame;
     } completion:^(BOOL finished) {
         if (finished) {
-            [self removeFromSuperview];
+            if (remove) {
+                [self removeFromSuperview];
+            }
         }
     }];
 }

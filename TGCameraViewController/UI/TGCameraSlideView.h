@@ -23,10 +23,7 @@
 
 @protocol TGCameraSlideViewProtocol <NSObject>
 
-- (CGFloat)originYInitialShow:(UIView *)view;
-- (CGFloat)originYEndShow:(UIView *)view;
-
-- (CGFloat)originYInitialHide:(UIView *)view;
-- (CGFloat)originYEndHide;
+- (CGFloat)initialPositionWithView:(UIView *)view;
+- (CGFloat)finalPosition;
 
 @end

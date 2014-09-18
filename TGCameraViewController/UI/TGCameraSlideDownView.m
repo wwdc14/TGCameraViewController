@@ -15,26 +15,16 @@
 
 
 @implementation TGCameraSlideDownView
- 
+
 #pragma mark -
 #pragma mark - TGCameraSlideViewProtocol
 
-- (CGFloat)originYInitialShow:(UIView *)view
-{
-    return CGRectGetMaxY(self.frame);
-}
-
-- (CGFloat)originYEndShow:(UIView *)view
+- (CGFloat)initialPositionWithView:(UIView *)view
 {
     return CGRectGetHeight(view.frame)/2;
 }
 
-- (CGFloat)originYInitialHide:(UIView *)view
-{
-    return CGRectGetHeight(view.frame)/2;
-}
-
-- (CGFloat)originYEndHide
+- (CGFloat)finalPosition
 {
     return CGRectGetMaxY(self.frame);
 }

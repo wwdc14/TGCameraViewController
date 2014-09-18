@@ -10,6 +10,4 @@
 
 @interface TGCameraSlideUpView : TGCameraSlideView
 
-//- (void)showWithAnimationAtView:(UIView *)view;
-
 @end
