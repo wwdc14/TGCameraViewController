@@ -4,12 +4,16 @@
   <img src="http://s23.postimg.org/4psw1dtyj/TGCamera_View_Controller.png" alt="TGCameraViewController" title="TGCameraViewController">
 </p>
 
+Custom camera with AVFoundation. Beautiful, light and easy to integrate with iOS projects.
+
+---
+
 <p align="center">
   <img src="http://s13.postimg.org/cjxkzgu87/TGCamera_View_Controller.png" alt="TGCameraViewController" title="TGCameraViewController">
 </p>
 
 
-Custom camera with AVFoundation. Beautiful, light and easy to integrate with iOS projects.
+
 
 
 
@@ -17,8 +21,11 @@ Custom camera with AVFoundation. Beautiful, light and easy to integrate with iOS
 
 TGCameraViewController works on iOS 7.0+ version and is compatible with ARC projects. It depends on the following Apple frameworks, which should already be included with most Xcode templates:
 
+* AssetsLibrary.framework
+* CoreImage.framework
 * AVFoundation.framework
 * Foundation.framework
+* MobileCoreServices.framework
 * UIKit.framework
 
 You will need LLVM 3.0 or later in order to build TGCameraViewController.
