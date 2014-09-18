@@ -10,8 +10,9 @@ Custom camera with AVFoundation. Beautiful, light and easy to integrate with iOS
 
 ![License MIT](https://go-shields.herokuapp.com/license-MIT-blue.png)
 
-<br/><br/><br/>
+<br/>
 
+---
 ---
 
 ### Requirements
@@ -28,7 +29,6 @@ TGCameraViewController works on iOS 7.0+ version and is compatible with ARC proj
 You will need LLVM 3.0 or later in order to build TGCameraViewController.
 
 ---
-
 ---
 
 ### Adding TGCameraViewController to your project
@@ -58,9 +58,6 @@ Alternatively you can directly add source files to your project.
 Download the [latest code version](https://github.com/tdginternet/TGCameraViewController/archive/master.zip) or add the repository as a git submodule to your git-tracked project. Open your project in Xcode, then drag and drop all files at `TGCameraViewController` folder onto your project (use the "Product Navigator view"). Make sure to select Copy items when asked if you extracted the code archive outside of your project.
 
 ---
-
-<br/><br/><br/>
-
 ---
 
 ### Usage
@@ -68,9 +65,6 @@ Download the [latest code version](https://github.com/tdginternet/TGCameraViewCo
 Hold up...
 
 ---
-
-<br/><br/><br/>
-
 ---
 
 ### License
@@ -78,9 +72,6 @@ Hold up...
 This code is distributed under the terms and conditions of the [MIT license](LICENSE).
 
 ---
-
-<br/><br/><br/>
-
 ---
 
 ### Change-log
