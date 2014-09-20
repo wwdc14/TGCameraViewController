@@ -6,10 +6,9 @@
 //  Copyright (c) 2014 Tudo Gostoso Internet. All rights reserved.
 //
 
-@import MobileCoreServices;
 #import "TGInitialViewController.h"
 #import "TGAlbum.h"
-#import "TGCameraViewController.h"
+#import "TGCameraNavigationController.h"
 
 @interface TGInitialViewController ()
 
@@ -71,13 +70,8 @@
 #pragma mark - Actions
 
 - (IBAction)takePhotoTapped
-{
-    TGCameraViewController *viewController = [TGCameraViewController new];
-    viewController.delegate = self;
-    
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
-    navigationController.navigationBarHidden = YES;
-    
+{    
+    TGCameraNavigationController *navigationController = [TGCameraNavigationController newWithCameraDelegate:self];
     [self presentViewController:navigationController animated:YES completion:nil];
 }
 
