@@ -18,11 +18,11 @@
 
 @interface TGCamera : NSObject
 
-- (instancetype) init __attribute__
-((unavailable("[-init] is not allowed, use [+cameraWithRootView:andCaptureView]")));
-
 + (instancetype)new __attribute__
-((unavailable("[-init] is not allowed, use [+cameraWithRootView:andCaptureView]")));
+((unavailable("[+new] is not allowed, use [+cameraWithRootView:andCaptureView:]")));
+
+- (instancetype) init __attribute__
+((unavailable("[-init] is not allowed, use [+cameraWithRootView:andCaptureView:]")));
 
 + (instancetype)cameraWithFlashButton:(UIButton *)flashButton;
 

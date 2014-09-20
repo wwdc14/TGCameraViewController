@@ -11,11 +11,11 @@
 
 @interface TGPhotoViewController : UIViewController
 
-- (instancetype) init __attribute__
-((unavailable("[-init] is not allowed, use [-initWithDelegate:photo:]")));
-
 + (instancetype)new __attribute__
-((unavailable("[-init] is not allowed, use [-initWithDelegate:photo:]")));
+((unavailable("[+new] is not allowed, use [+newWithDelegate:photo:]")));
+
+- (instancetype) init __attribute__
+((unavailable("[-init] is not allowed, use [+newWithDelegate:photo:]")));
 
 + (instancetype)newWithDelegate:(id<TGCameraDelegate>)delegate photo:(UIImage *)photo;
 
