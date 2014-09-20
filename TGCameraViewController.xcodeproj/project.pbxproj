@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F80D223A19CCFAC30019A8EA /* TGCameraGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = F80D223919CCFAC30019A8EA /* TGCameraGridView.m */; };
+		F80D223D19CCFD590019A8EA /* TGCameraGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = F80D223C19CCFD590019A8EA /* TGCameraGrid.m */; };
 		F82C4ACF19CA050C001CEA3C /* TGAssetsLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = F82C4ACE19CA050C001CEA3C /* TGAssetsLibrary.m */; };
 		F82C4AD619CA058E001CEA3C /* TGAssetImageFile.m in Sources */ = {isa = PBXBuildFile; fileRef = F82C4AD519CA058E001CEA3C /* TGAssetImageFile.m */; };
 		F82F8EDC19C4F29000A47148 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F82F8EC819C4F29000A47148 /* AppDelegate.m */; };
@@ -35,6 +37,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F80D223819CCFAC30019A8EA /* TGCameraGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGCameraGridView.h; sourceTree = "<group>"; };
+		F80D223919CCFAC30019A8EA /* TGCameraGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGCameraGridView.m; sourceTree = "<group>"; };
+		F80D223B19CCFD590019A8EA /* TGCameraGrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGCameraGrid.h; sourceTree = "<group>"; };
+		F80D223C19CCFD590019A8EA /* TGCameraGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGCameraGrid.m; sourceTree = "<group>"; };
 		F82C4ACD19CA050C001CEA3C /* TGAssetsLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGAssetsLibrary.h; sourceTree = "<group>"; };
 		F82C4ACE19CA050C001CEA3C /* TGAssetsLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGAssetsLibrary.m; sourceTree = "<group>"; };
 		F82C4AD419CA058E001CEA3C /* TGAssetImageFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGAssetImageFile.h; sourceTree = "<group>"; };
@@ -190,6 +196,8 @@
 			children = (
 				F8505F9C19C8AD7A00F89CA4 /* TGCameraFilterView.h */,
 				F8505F9D19C8AD7A00F89CA4 /* TGCameraFilterView.m */,
+				F80D223819CCFAC30019A8EA /* TGCameraGridView.h */,
+				F80D223919CCFAC30019A8EA /* TGCameraGridView.m */,
 				F8E72B4A19C9B76400FF3AE5 /* TGCameraSlideDownView.h */,
 				F8E72B4B19C9B76400FF3AE5 /* TGCameraSlideDownView.m */,
 				F8E72B4719C9B75900FF3AE5 /* TGCameraSlideUpView.h */,
@@ -215,6 +223,8 @@
 				F861D60F19C61E240077B642 /* TGCameraFlash.m */,
 				F861D63D19C669060077B642 /* TGCameraFocus.h */,
 				F861D63E19C669060077B642 /* TGCameraFocus.m */,
+				F80D223B19CCFD590019A8EA /* TGCameraGrid.h */,
+				F80D223C19CCFD590019A8EA /* TGCameraGrid.m */,
 				F835958519C766F800CAE395 /* TGCameraShot.h */,
 				F835958619C766F800CAE395 /* TGCameraShot.m */,
 				F861D60819C604810077B642 /* TGCameraToggle.h */,
@@ -327,6 +337,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F80D223D19CCFD590019A8EA /* TGCameraGrid.m in Sources */,
 				F861D63F19C669060077B642 /* TGCameraFocus.m in Sources */,
 				F8E72B4919C9B75900FF3AE5 /* TGCameraSlideUpView.m in Sources */,
 				F879167219C879DB000F8637 /* UIImage+CameraFilters.m in Sources */,
@@ -337,6 +348,7 @@
 				F861D60D19C612430077B642 /* TGCamera.m in Sources */,
 				F861D61019C61E240077B642 /* TGCameraFlash.m in Sources */,
 				F835958719C766F800CAE395 /* TGCameraShot.m in Sources */,
+				F80D223A19CCFAC30019A8EA /* TGCameraGridView.m in Sources */,
 				F897018219C7AF19004E6480 /* TGPhotoViewController.m in Sources */,
 				F8E72B4C19C9B76400FF3AE5 /* TGCameraSlideDownView.m in Sources */,
 				F8505F9E19C8AD7A00F89CA4 /* TGCameraFilterView.m in Sources */,

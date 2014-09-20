@@ -7,6 +7,8 @@
 //
 
 #import "TGCamera.h"
+#import "TGCameraGrid.h"
+#import "TGCameraGridView.h"
 #import "TGCameraFlash.h"
 #import "TGCameraFocus.h"
 #import "TGCameraShot.h"
@@ -19,6 +21,7 @@
 @property (strong, nonatomic) AVCaptureSession *session;
 @property (strong, nonatomic) AVCaptureVideoPreviewLayer *previewLayer;
 @property (strong, nonatomic) AVCaptureStillImageOutput *stillImageOutput;
+@property (strong, nonatomic) TGCameraGridView *gridView;
 
 + (instancetype)newCamera;
 
@@ -63,6 +66,14 @@
     _previewLayer.frame = frame;
     
     [rootLayer insertSublayer:_previewLayer atIndex:0];
+    
+    NSInteger index = [captureView.subviews count]-1;
+    [captureView insertSubview:self.gridView atIndex:index];
+}
+
+- (void)disPlayGridView
+{
+    [TGCameraGrid disPlayGridView:self.gridView];
 }
 
 - (void)changeFlashModeWithButton:(UIButton *)button
@@ -95,6 +106,21 @@
 + (instancetype)newCamera
 {
     return [super new];
+}
+
+- (TGCameraGridView *)gridView
+{
+    if (_gridView == nil) {
+        CGRect frame = _previewLayer.frame;
+        frame.origin.x = frame.origin.y = 0;
+        
+        _gridView = [[TGCameraGridView alloc] initWithFrame:frame];
+        _gridView.numberOfColumns = 2;
+        _gridView.numberOfRows = 2;
+        _gridView.alpha = 0;
+    }
+    
+    return _gridView;
 }
 
 - (void)setupWithFlashButton:(UIButton *)flashButton

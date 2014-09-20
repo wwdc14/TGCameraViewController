@@ -18,6 +18,11 @@
 
 @implementation TGCameraColor
 
++ (UIColor *)grayColor
+{
+    return [self colorWithRed:200 green:200 blue:200];
+}
+
 + (UIColor *)orangeColor
 {
     return [self colorWithRed:255 green:91 blue:1];

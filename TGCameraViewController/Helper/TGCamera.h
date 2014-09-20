@@ -34,6 +34,8 @@
 
 - (void)insertSublayerWithCaptureView:(UIView *)captureView atRootView:(UIView *)rootView;
 
+- (void)disPlayGridView;
+
 - (void)changeFlashModeWithButton:(UIButton *)button;
 
 - (void)focusView:(UIView *)focusView inTouchPoint:(CGPoint)touchPoint;

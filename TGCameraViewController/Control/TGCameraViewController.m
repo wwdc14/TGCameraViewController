@@ -19,6 +19,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *topRightView;
 @property (strong, nonatomic) IBOutlet UIImageView *bottomLeftView;
 @property (strong, nonatomic) IBOutlet UIImageView *bottomRightView;
+@property (strong, nonatomic) IBOutlet UIButton *gridButton;
 @property (strong, nonatomic) IBOutlet UIButton *toggleButton;
 @property (strong, nonatomic) IBOutlet UIButton *shotButton;
 @property (strong, nonatomic) IBOutlet UIButton *flashButton;
@@ -31,6 +32,7 @@
 @property (nonatomic) BOOL wasLoaded;
 
 - (IBAction)closeTapped;
+- (IBAction)gridTapped;
 - (IBAction)flashTapped;
 - (IBAction)shotTapped;
 - (IBAction)toggleTapped;
@@ -70,12 +72,18 @@
                                                  name:UIDeviceOrientationDidChangeNotification
                                                object:nil];
     
-    _toggleButton.enabled = _shotButton.enabled = _flashButton.enabled = NO;
+    _gridButton.enabled =
+    _toggleButton.enabled =
+    _shotButton.enabled =
+    _flashButton.enabled = NO;
     
     [_camera startRunning];
     
     [TGCameraSlideView hideSlideUpView:_slideUpView slideDownView:_slideDownView atView:_captureView completion:^{
-    _toggleButton.enabled = _shotButton.enabled = _flashButton.enabled = YES;
+        _gridButton.enabled =
+        _toggleButton.enabled =
+        _shotButton.enabled =
+        _flashButton.enabled = YES;
     }];
 }
 
@@ -128,6 +136,11 @@
 - (IBAction)closeTapped
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)gridTapped
+{
+    [_camera disPlayGridView];
 }
 
 - (IBAction)flashTapped
