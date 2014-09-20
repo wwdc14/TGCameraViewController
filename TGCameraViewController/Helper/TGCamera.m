@@ -112,23 +112,21 @@
     
     AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     
-    [device lockForConfiguration:nil];
-    
-    if (device.autoFocusRangeRestrictionSupported) {
-        device.autoFocusRangeRestriction = AVCaptureAutoFocusRangeRestrictionNear;
+    if ([device lockForConfiguration:nil]) {
+        if (device.autoFocusRangeRestrictionSupported) {
+            device.autoFocusRangeRestriction = AVCaptureAutoFocusRangeRestrictionNear;
+        }
+        
+        if (device.smoothAutoFocusSupported) {
+            device.smoothAutoFocusEnabled = YES;
+        }
+        
+        device.focusMode = AVCaptureFocusModeContinuousAutoFocus;
+        device.exposureMode = AVCaptureExposureModeContinuousAutoExposure;
+        
+        [device unlockForConfiguration];
     }
 
-    if (device.smoothAutoFocusSupported) {
-        device.smoothAutoFocusEnabled = YES;
-    }
-    
-    [device isExposureModeSupported:AVCaptureExposureModeAutoExpose];
-    device.exposureMode = AVCaptureExposureModeAutoExpose;
-    
-    device.focusMode = AVCaptureFocusModeAutoFocus;
-    
-    [device unlockForConfiguration];
-    
     //
     // add device input to session
     //
