@@ -16,11 +16,11 @@ typedef void(^TGAssetsLoadImagesCompletion)(NSArray *items, NSError *error);
 
 @interface TGAssetsLibrary : ALAssetsLibrary
 
-- (instancetype) init __attribute__
-((unavailable("[-init] is not allowed, use [+defaultAssetsLibrary]")));
-
 + (instancetype) new __attribute__
 ((unavailable("[+new] is not allowed, use [+defaultAssetsLibrary]")));
+
+- (instancetype) init __attribute__
+((unavailable("[-init] is not allowed, use [+defaultAssetsLibrary]")));
 
 + (TGAssetsLibrary *)defaultAssetsLibrary;
 

@@ -15,6 +15,7 @@ Custom camera with AVFoundation. Beautiful, light and easy to integrate with iOS
 [![Analytics](https://ga-beacon.appspot.com/UA-54929747-1/tdginternet/TGCameraViewController/README.md)](https://github.com/igrigorik/ga-beacon)
 
 * Completely custom camera with AVFoundation
+* Custom view with camera permission denied
 * Easy way to access album (camera roll)
 * Flash auto, off and on
 * Focus
@@ -55,7 +56,7 @@ pod install
 
 ```obj-c
 #import "TGCamera.h"
-#import "TGCameraViewController.h"
+#import "TGCameraNavigationController.h"
 
 @interface TGViewController : UIViewController <TGCameraDelegate>
 
@@ -76,14 +77,9 @@ pod install
 
 - (IBAction)takePhotoTapped
 {
-	TGCameraViewController *viewController = [TGCameraViewController new];
-    viewController.delegate = self;
-    
-    UINavigationController *navigationController = 
-    [[UINavigationController alloc] initWithRootViewController:viewController];
+    TGCameraNavigationController *navigationController = 
+    [TGCameraNavigationController newWithCameraDelegate:self];
 
-    navigationController.navigationBarHidden = YES;
-    
     [self presentViewController:navigationController animated:YES completion:nil];
 }
 
@@ -138,8 +134,8 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 TGCameraViewController works on iOS 7.0+ version and is compatible with ARC projects. It depends on the following Apple frameworks, which should already be included with most Xcode templates:
 
 * AssetsLibrary.framework
-* CoreImage.framework
 * AVFoundation.framework
+* CoreImage.framework
 * Foundation.framework
 * MobileCoreServices.framework
 * UIKit.framework

@@ -32,6 +32,9 @@
 		F897018219C7AF19004E6480 /* TGPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F897018019C7AF19004E6480 /* TGPhotoViewController.m */; };
 		F897018919C7AF5C004E6480 /* TGPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F897018719C7AF5C004E6480 /* TGPhotoViewController.xib */; };
 		F897019819CA5E57004E6480 /* TGCameraSlideView.m in Sources */ = {isa = PBXBuildFile; fileRef = F897019719CA5E57004E6480 /* TGCameraSlideView.m */; };
+		F8B3E82719CDAEFC0070CEB2 /* TGCameraNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B3E82619CDAEFC0070CEB2 /* TGCameraNavigationController.m */; };
+		F8B3E83219CDB6B80070CEB2 /* TGCameraAuthorizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B3E83119CDB6B80070CEB2 /* TGCameraAuthorizationViewController.m */; };
+		F8B3E83319CDB6D90070CEB2 /* TGCameraAuthorizationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8B3E83519CDB6D90070CEB2 /* TGCameraAuthorizationViewController.xib */; };
 		F8E72B4919C9B75900FF3AE5 /* TGCameraSlideUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E72B4819C9B75900FF3AE5 /* TGCameraSlideUpView.m */; };
 		F8E72B4C19C9B76400FF3AE5 /* TGCameraSlideDownView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E72B4B19C9B76400FF3AE5 /* TGCameraSlideDownView.m */; };
 /* End PBXBuildFile section */
@@ -86,6 +89,12 @@
 		F897018819C7AF5C004E6480 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TGPhotoViewController.xib; sourceTree = "<group>"; };
 		F897019619CA5E57004E6480 /* TGCameraSlideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGCameraSlideView.h; sourceTree = "<group>"; };
 		F897019719CA5E57004E6480 /* TGCameraSlideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGCameraSlideView.m; sourceTree = "<group>"; };
+		F8B3E82519CDAEFC0070CEB2 /* TGCameraNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGCameraNavigationController.h; sourceTree = "<group>"; };
+		F8B3E82619CDAEFC0070CEB2 /* TGCameraNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGCameraNavigationController.m; sourceTree = "<group>"; };
+		F8B3E83019CDB6B80070CEB2 /* TGCameraAuthorizationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGCameraAuthorizationViewController.h; sourceTree = "<group>"; };
+		F8B3E83119CDB6B80070CEB2 /* TGCameraAuthorizationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGCameraAuthorizationViewController.m; sourceTree = "<group>"; };
+		F8B3E83419CDB6D90070CEB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TGCameraAuthorizationViewController.xib; sourceTree = "<group>"; };
+		F8B3E83719CDC4650070CEB2 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/TGCameraAuthorizationViewController.strings"; sourceTree = "<group>"; };
 		F8E72B4719C9B75900FF3AE5 /* TGCameraSlideUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGCameraSlideUpView.h; sourceTree = "<group>"; };
 		F8E72B4819C9B75900FF3AE5 /* TGCameraSlideUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGCameraSlideUpView.m; sourceTree = "<group>"; };
 		F8E72B4A19C9B76400FF3AE5 /* TGCameraSlideDownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGCameraSlideDownView.h; sourceTree = "<group>"; };
@@ -236,6 +245,10 @@
 		F861D61119C620E10077B642 /* Control */ = {
 			isa = PBXGroup;
 			children = (
+				F8B3E83019CDB6B80070CEB2 /* TGCameraAuthorizationViewController.h */,
+				F8B3E83119CDB6B80070CEB2 /* TGCameraAuthorizationViewController.m */,
+				F8B3E82519CDAEFC0070CEB2 /* TGCameraNavigationController.h */,
+				F8B3E82619CDAEFC0070CEB2 /* TGCameraNavigationController.m */,
 				F861D61219C620E10077B642 /* TGCameraViewController.h */,
 				F861D61319C620E10077B642 /* TGCameraViewController.m */,
 				F897017F19C7AF19004E6480 /* TGPhotoViewController.h */,
@@ -247,6 +260,7 @@
 		F861D61519C620EC0077B642 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F8B3E83519CDB6D90070CEB2 /* TGCameraAuthorizationViewController.xib */,
 				F861D61619C620EC0077B642 /* TGCameraViewController.xib */,
 				F897018719C7AF5C004E6480 /* TGPhotoViewController.xib */,
 			);
@@ -326,6 +340,7 @@
 				F861D62919C653D90077B642 /* TGCameraViewController.xcassets in Resources */,
 				F861D61A19C620EC0077B642 /* TGCameraViewController.xib in Resources */,
 				F897018919C7AF5C004E6480 /* TGPhotoViewController.xib in Resources */,
+				F8B3E83319CDB6D90070CEB2 /* TGCameraAuthorizationViewController.xib in Resources */,
 				F82F8EDF19C4F29000A47148 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,11 +357,13 @@
 				F8E72B4919C9B75900FF3AE5 /* TGCameraSlideUpView.m in Sources */,
 				F879167219C879DB000F8637 /* UIImage+CameraFilters.m in Sources */,
 				F897019819CA5E57004E6480 /* TGCameraSlideView.m in Sources */,
+				F8B3E83219CDB6B80070CEB2 /* TGCameraAuthorizationViewController.m in Sources */,
 				F83C260B19C856D400A8ADB2 /* TGCameraColor.m in Sources */,
 				F835957F19C7230500CAE395 /* TGInitialViewController.m in Sources */,
 				F82F8EE419C4F29000A47148 /* main.m in Sources */,
 				F861D60D19C612430077B642 /* TGCamera.m in Sources */,
 				F861D61019C61E240077B642 /* TGCameraFlash.m in Sources */,
+				F8B3E82719CDAEFC0070CEB2 /* TGCameraNavigationController.m in Sources */,
 				F835958719C766F800CAE395 /* TGCameraShot.m in Sources */,
 				F80D223A19CCFAC30019A8EA /* TGCameraGridView.m in Sources */,
 				F897018219C7AF19004E6480 /* TGPhotoViewController.m in Sources */,
@@ -398,6 +415,15 @@
 				F8505FA019C8B2ED00F89CA4 /* pt-BR */,
 			);
 			name = TGPhotoViewController.xib;
+			sourceTree = "<group>";
+		};
+		F8B3E83519CDB6D90070CEB2 /* TGCameraAuthorizationViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F8B3E83419CDB6D90070CEB2 /* Base */,
+				F8B3E83719CDC4650070CEB2 /* pt-BR */,
+			);
+			name = TGCameraAuthorizationViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
