@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <objects>
@@ -90,13 +91,13 @@
                                 <action selector="closeTapped" destination="-1" eventType="touchUpInside" id="mp3-Tj-Kz0"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nol-dD-ETh">
-                            <rect key="frame" x="542" y="5" width="50" height="40"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nol-dD-ETh">
+                            <rect key="frame" x="550" y="5" width="50" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="50" id="7C6-xa-8et"/>
                                 <constraint firstAttribute="height" constant="40" id="Ulw-sc-Qe1"/>
                             </constraints>
-                            <state key="normal" title="Grid">
+                            <state key="normal" image="CameraGrid">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
@@ -106,7 +107,7 @@
                     </subviews>
                     <color key="backgroundColor" red="0.078431372549019607" green="0.078431372549019607" blue="0.078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="Nol-dD-ETh" secondAttribute="trailing" constant="8" id="R3m-pw-nvC"/>
+                        <constraint firstAttribute="trailing" secondItem="Nol-dD-ETh" secondAttribute="trailing" id="R3m-pw-nvC"/>
                         <constraint firstItem="O3k-MF-E1l" firstAttribute="leading" secondItem="dit-c7-IZk" secondAttribute="leading" id="bXT-GY-UPU"/>
                         <constraint firstAttribute="height" constant="50" id="hyA-J5-S26"/>
                         <constraint firstItem="Nol-dD-ETh" firstAttribute="top" secondItem="dit-c7-IZk" secondAttribute="top" constant="5" id="n4Z-P8-7L9"/>
@@ -228,6 +229,7 @@
         <image name="CameraClose" width="26" height="26"/>
         <image name="CameraDetail" width="58" height="58"/>
         <image name="CameraFlashAuto" width="41" height="41"/>
+        <image name="CameraGrid" width="26" height="26"/>
         <image name="CameraShot" width="78" height="78"/>
         <image name="CameraToggle" width="30" height="30"/>
     </resources>
