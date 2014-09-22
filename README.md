@@ -20,6 +20,7 @@ Custom camera with AVFoundation. Beautiful, light and easy to integrate with iOS
 * Flash auto, off and on
 * Focus
 * Front and back camera
+* Grid view
 * Preview photo view with three filters (fast processing)
 * Visual effects like Instagram iOS app
 * Zoom with pinch gesture
