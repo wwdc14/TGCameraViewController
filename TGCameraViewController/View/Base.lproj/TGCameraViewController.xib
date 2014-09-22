@@ -78,20 +78,20 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dit-c7-IZk" userLabel="Top View">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3k-MF-E1l" userLabel="Close">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJG-N5-BnZ" userLabel="Toggle">
                             <rect key="frame" x="0.0" y="5" width="50" height="40"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="50" id="9CS-py-I2N"/>
-                                <constraint firstAttribute="height" constant="40" id="qbl-Xm-pO5"/>
+                                <constraint firstAttribute="height" constant="40" id="Ohv-kM-K2G"/>
+                                <constraint firstAttribute="width" constant="50" id="ano-tf-LKd"/>
                             </constraints>
-                            <state key="normal" image="CameraClose">
+                            <state key="normal" image="CameraToggle">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="closeTapped" destination="-1" eventType="touchUpInside" id="mp3-Tj-Kz0"/>
+                                <action selector="toggleTapped" destination="-1" eventType="touchUpInside" id="cnq-8L-ak1"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nol-dD-ETh">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nol-dD-ETh" userLabel="Grid">
                             <rect key="frame" x="550" y="5" width="50" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="50" id="7C6-xa-8et"/>
@@ -108,15 +108,37 @@
                     <color key="backgroundColor" red="0.078431372549019607" green="0.078431372549019607" blue="0.078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="Nol-dD-ETh" secondAttribute="trailing" id="R3m-pw-nvC"/>
-                        <constraint firstItem="O3k-MF-E1l" firstAttribute="leading" secondItem="dit-c7-IZk" secondAttribute="leading" id="bXT-GY-UPU"/>
+                        <constraint firstItem="WJG-N5-BnZ" firstAttribute="leading" secondItem="dit-c7-IZk" secondAttribute="leading" id="Va7-SY-m4l"/>
                         <constraint firstAttribute="height" constant="50" id="hyA-J5-S26"/>
                         <constraint firstItem="Nol-dD-ETh" firstAttribute="top" secondItem="dit-c7-IZk" secondAttribute="top" constant="5" id="n4Z-P8-7L9"/>
-                        <constraint firstItem="O3k-MF-E1l" firstAttribute="top" secondItem="dit-c7-IZk" secondAttribute="top" constant="5" id="q45-nb-5eD"/>
+                        <constraint firstItem="WJG-N5-BnZ" firstAttribute="top" secondItem="dit-c7-IZk" secondAttribute="top" constant="5" id="wCB-e9-o4i"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rJ9-I8-VJI" userLabel="Bottom View">
                     <rect key="frame" x="0.0" y="500" width="600" height="100"/>
                     <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3k-MF-E1l" userLabel="Close">
+                            <rect key="frame" x="8" y="10" width="80" height="80"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="80" id="WYh-99-1jy"/>
+                                <constraint firstAttribute="width" constant="80" id="x5F-jO-BIB"/>
+                            </constraints>
+                            <state key="normal" image="CameraClose">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="closeTapped" destination="-1" eventType="touchUpInside" id="mp3-Tj-Kz0"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wtQ-Dg-G3i" userLabel="Shot">
+                            <rect key="frame" x="261" y="11" width="78" height="78"/>
+                            <state key="normal" image="CameraShot">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="shotTapped" destination="-1" eventType="touchUpInside" id="XqW-0H-DD4"/>
+                            </connections>
+                        </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7O-pE-Mp0" userLabel="Flash">
                             <rect key="frame" x="512" y="10" width="80" height="80"/>
                             <constraints>
@@ -130,38 +152,15 @@
                                 <action selector="flashTapped" destination="-1" eventType="touchUpInside" id="yzx-f1-HjP"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJG-N5-BnZ" userLabel="Toggle">
-                            <rect key="frame" x="8" y="10" width="80" height="80"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="80" id="pSe-ni-HhG"/>
-                                <constraint firstAttribute="height" constant="80" id="wBA-9H-O3b"/>
-                            </constraints>
-                            <state key="normal" image="CameraToggle">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="toggleTapped" destination="-1" eventType="touchUpInside" id="cnq-8L-ak1"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wtQ-Dg-G3i" userLabel="Shot">
-                            <rect key="frame" x="261" y="11" width="78" height="78"/>
-                            <state key="normal" image="CameraShot">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="shotTapped" destination="-1" eventType="touchUpInside" id="XqW-0H-DD4"/>
-                            </connections>
-                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.078431372549019607" green="0.078431372549019607" blue="0.078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstItem="WJG-N5-BnZ" firstAttribute="leading" secondItem="rJ9-I8-VJI" secondAttribute="leading" constant="8" id="1if-fI-KlH"/>
+                        <constraint firstItem="O3k-MF-E1l" firstAttribute="leading" secondItem="rJ9-I8-VJI" secondAttribute="leading" constant="8" id="7V3-aL-brf"/>
                         <constraint firstAttribute="centerY" secondItem="wtQ-Dg-G3i" secondAttribute="centerY" id="GGn-PI-77o"/>
-                        <constraint firstAttribute="bottom" secondItem="WJG-N5-BnZ" secondAttribute="bottom" constant="10" id="QJH-sq-dwp"/>
+                        <constraint firstAttribute="bottom" secondItem="O3k-MF-E1l" secondAttribute="bottom" constant="10" id="QLg-Zd-GrZ"/>
                         <constraint firstAttribute="bottom" secondItem="p7O-pE-Mp0" secondAttribute="bottom" constant="10" id="ScT-Lc-F4w"/>
                         <constraint firstAttribute="height" constant="100" id="Yv5-Cy-07J"/>
                         <constraint firstItem="p7O-pE-Mp0" firstAttribute="top" secondItem="rJ9-I8-VJI" secondAttribute="top" constant="10" id="YwZ-Sh-nAE"/>
-                        <constraint firstItem="WJG-N5-BnZ" firstAttribute="top" secondItem="rJ9-I8-VJI" secondAttribute="top" constant="10" id="a8X-QE-b5I"/>
                         <constraint firstAttribute="centerX" secondItem="wtQ-Dg-G3i" secondAttribute="centerX" id="fIy-sn-2XV"/>
                         <constraint firstAttribute="trailing" secondItem="p7O-pE-Mp0" secondAttribute="trailing" constant="8" id="zQG-No-Lon"/>
                     </constraints>
