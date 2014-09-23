@@ -46,15 +46,20 @@
 #pragma mark -
 #pragma mark - TGCameraDelegate
 
-- (void)cameraImage:(UIImage *)image
+- (void)cameraDidTakePhoto:(UIImage *)image
 {
     _photoView.image = image;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)didCancelCamera
+- (void)cameraDidCancel
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)cameraWillTakePhoto
+{
+    NSLog(@"cameraWillTakePhoto");
 }
 
 #pragma mark -

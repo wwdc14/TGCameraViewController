@@ -135,7 +135,7 @@
 
 - (IBAction)closeTapped
 {
-    [_delegate didCancelCamera];
+    [_delegate cameraDidCancel];
 }
 
 - (IBAction)gridTapped

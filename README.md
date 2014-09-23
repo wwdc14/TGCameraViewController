@@ -70,18 +70,25 @@ pod install
 
 @implementation TGViewController
 
-- (void)cameraImage:(UIImage *)image
+- (IBAction)takePhotoTapped
+{
+    TGCameraNavigationController *navigationController =
+    [TGCameraNavigationController newWithCameraDelegate:self];
+
+    [self presentViewController:navigationController animated:YES completion:nil];
+}
+
+#pragma mark - TGCameraDelegate
+
+- (void)cameraDidTakePhoto:(UIImage *)image
 {
     _photoView.image = image;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (IBAction)takePhotoTapped
+- (void)cameraDidCancel
 {
-    TGCameraNavigationController *navigationController = 
-    [TGCameraNavigationController newWithCameraDelegate:self];
-
-    [self presentViewController:navigationController animated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
@@ -92,7 +99,7 @@ pod install
 ```obj-c
 #import "TGAlbum.h"
 
-@interface TGViewController : UIViewController 
+@interface TGViewController : UIViewController
 <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UIImageView *photoView;
@@ -104,7 +111,7 @@ pod install
 
 @implementation TGViewController
 
-- (void)imagePickerController:(UIImagePickerController *)picker 
+- (void)imagePickerController:(UIImagePickerController *)picker
 didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     _photoView.image = [TGAlbum imageWithMediaInfo:info];
@@ -118,7 +125,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 
 - (IBAction)chooseExistingPhotoTapped
 {
-    UIImagePickerController *pickerController = 
+    UIImagePickerController *pickerController =
     [TGAlbum imagePickerControllerWithDelegate:self];
 
     [self presentViewController:pickerController animated:YES completion:nil];
@@ -150,7 +157,7 @@ You will need LLVM 3.0 or later in order to build TGCameraViewController.
 
 * Customize layout programatically
 * iPad support
-* Preview when user choose photo 
+* Preview when user choose photo
 
 ---
 ---
