@@ -135,6 +135,10 @@
 
 - (IBAction)closeTapped
 {
+    if([_delegate respondsToSelector:@selector(didCancelCamera)]) {
+        [_delegate didCancelCamera];
+    }
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

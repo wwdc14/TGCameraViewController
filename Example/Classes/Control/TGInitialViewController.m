@@ -52,6 +52,11 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (void)didCancelCamera
+{
+    NSLog(@"didCancelCamera");
+}
+
 #pragma mark -
 #pragma mark - UIImagePickerControllerDelegate
 
