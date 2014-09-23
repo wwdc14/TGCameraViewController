@@ -54,9 +54,6 @@
 @protocol TGCameraDelegate <NSObject>
 
 - (void)cameraImage:(UIImage *)image;
-
-@optional
-
 - (void)didCancelCamera;
 
 @end

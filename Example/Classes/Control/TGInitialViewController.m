@@ -54,7 +54,7 @@
 
 - (void)didCancelCamera
 {
-    NSLog(@"didCancelCamera");
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark -
