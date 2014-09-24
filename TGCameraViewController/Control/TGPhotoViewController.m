@@ -86,17 +86,19 @@
 
 - (IBAction)confirmTapped
 {
-    if ([_delegate respondsToSelector:@selector(cameraImage:)]) {
+    if ( [_delegate respondsToSelector:@selector(cameraWillTakePhoto)]) {
+        [_delegate cameraWillTakePhoto];
+    }
+    
+    if ([_delegate respondsToSelector:@selector(cameraDidTakePhoto:)]) {
         _photo = _photoView.image;
-        [_delegate cameraImage:_photo];
+        [_delegate cameraDidTakePhoto:_photo];
         
         ALAuthorizationStatus status = [ALAssetsLibrary authorizationStatus];
         if (status == ALAuthorizationStatusAuthorized) {
             TGAssetsLibrary *library = [TGAssetsLibrary defaultAssetsLibrary];
             [library saveImage:_photo completion:nil];
         }
-         
-        [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
 

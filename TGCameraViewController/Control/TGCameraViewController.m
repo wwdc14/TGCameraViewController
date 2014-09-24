@@ -135,7 +135,9 @@
 
 - (IBAction)closeTapped
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    if ([_delegate respondsToSelector:@selector(cameraDidCancel)]) {
+        [_delegate cameraDidCancel];
+    }
 }
 
 - (IBAction)gridTapped

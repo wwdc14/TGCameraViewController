@@ -62,6 +62,7 @@ pod install
 @interface TGViewController : UIViewController <TGCameraDelegate>
 
 @property (strong, nonatomic) IBOutlet UIImageView *photoView;
+
 - (IBAction)takePhotoTapped;
 
 @end
@@ -70,18 +71,32 @@ pod install
 
 @implementation TGViewController
 
-- (void)cameraImage:(UIImage *)image
+- (IBAction)takePhotoTapped
+{
+    TGCameraNavigationController *navigationController =
+    [TGCameraNavigationController newWithCameraDelegate:self];
+
+    [self presentViewController:navigationController animated:YES completion:nil];
+}
+
+#pragma mark - TGCameraDelegate optional
+
+- (void)cameraWillTakePhoto
+{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+}
+
+#pragma mark - TGCameraDelegate required
+
+- (void)cameraDidTakePhoto:(UIImage *)image
 {
     _photoView.image = image;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (IBAction)takePhotoTapped
+- (void)cameraDidCancel
 {
-    TGCameraNavigationController *navigationController = 
-    [TGCameraNavigationController newWithCameraDelegate:self];
-
-    [self presentViewController:navigationController animated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
@@ -92,10 +107,11 @@ pod install
 ```obj-c
 #import "TGAlbum.h"
 
-@interface TGViewController : UIViewController 
+@interface TGViewController : UIViewController
 <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UIImageView *photoView;
+
 - (IBAction)chooseExistingPhotoTapped;
 
 @end
@@ -104,7 +120,17 @@ pod install
 
 @implementation TGViewController
 
-- (void)imagePickerController:(UIImagePickerController *)picker 
+- (IBAction)chooseExistingPhotoTapped
+{
+    UIImagePickerController *pickerController =
+    [TGAlbum imagePickerControllerWithDelegate:self];
+
+    [self presentViewController:pickerController animated:YES completion:nil];
+}
+
+#pragma mark - UIImagePickerControllerDelegate
+
+- (void)imagePickerController:(UIImagePickerController *)picker
 didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     _photoView.image = [TGAlbum imageWithMediaInfo:info];
@@ -114,14 +140,6 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
     [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (IBAction)chooseExistingPhotoTapped
-{
-    UIImagePickerController *pickerController = 
-    [TGAlbum imagePickerControllerWithDelegate:self];
-
-    [self presentViewController:pickerController animated:YES completion:nil];
 }
 
 @end
@@ -150,7 +168,7 @@ You will need LLVM 3.0 or later in order to build TGCameraViewController.
 
 * Customize layout programatically
 * iPad support
-* Preview when user choose photo 
+* Preview when user choose photo
 
 ---
 ---
