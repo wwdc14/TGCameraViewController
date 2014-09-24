@@ -135,7 +135,9 @@
 
 - (IBAction)closeTapped
 {
-    [_delegate cameraDidCancel];
+    if ([_delegate respondsToSelector:@selector(cameraDidCancel)]) {
+        [_delegate cameraDidCancel];
+    }
 }
 
 - (IBAction)gridTapped

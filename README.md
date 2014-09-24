@@ -62,6 +62,7 @@ pod install
 @interface TGViewController : UIViewController <TGCameraDelegate>
 
 @property (strong, nonatomic) IBOutlet UIImageView *photoView;
+
 - (IBAction)takePhotoTapped;
 
 @end
@@ -78,7 +79,14 @@ pod install
     [self presentViewController:navigationController animated:YES completion:nil];
 }
 
-#pragma mark - TGCameraDelegate
+#pragma mark - TGCameraDelegate optional
+
+- (void)cameraWillTakePhoto
+{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+}
+
+#pragma mark - TGCameraDelegate required
 
 - (void)cameraDidTakePhoto:(UIImage *)image
 {
@@ -103,6 +111,7 @@ pod install
 <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UIImageView *photoView;
+
 - (IBAction)chooseExistingPhotoTapped;
 
 @end
@@ -110,6 +119,16 @@ pod install
 
 
 @implementation TGViewController
+
+- (IBAction)chooseExistingPhotoTapped
+{
+    UIImagePickerController *pickerController =
+    [TGAlbum imagePickerControllerWithDelegate:self];
+
+    [self presentViewController:pickerController animated:YES completion:nil];
+}
+
+#pragma mark - UIImagePickerControllerDelegate
 
 - (void)imagePickerController:(UIImagePickerController *)picker
 didFinishPickingMediaWithInfo:(NSDictionary *)info
@@ -121,14 +140,6 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
     [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (IBAction)chooseExistingPhotoTapped
-{
-    UIImagePickerController *pickerController =
-    [TGAlbum imagePickerControllerWithDelegate:self];
-
-    [self presentViewController:pickerController animated:YES completion:nil];
 }
 
 @end

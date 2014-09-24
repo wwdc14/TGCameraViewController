@@ -90,13 +90,15 @@
         [_delegate cameraWillTakePhoto];
     }
     
-    _photo = _photoView.image;
-    [_delegate cameraDidTakePhoto:_photo];
-    
-    ALAuthorizationStatus status = [ALAssetsLibrary authorizationStatus];
-    if (status == ALAuthorizationStatusAuthorized) {
-        TGAssetsLibrary *library = [TGAssetsLibrary defaultAssetsLibrary];
-        [library saveImage:_photo completion:nil];
+    if ([_delegate respondsToSelector:@selector(cameraDidTakePhoto:)]) {
+        _photo = _photoView.image;
+        [_delegate cameraDidTakePhoto:_photo];
+        
+        ALAuthorizationStatus status = [ALAssetsLibrary authorizationStatus];
+        if (status == ALAuthorizationStatusAuthorized) {
+            TGAssetsLibrary *library = [TGAssetsLibrary defaultAssetsLibrary];
+            [library saveImage:_photo completion:nil];
+        }
     }
 }
 

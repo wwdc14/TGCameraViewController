@@ -59,7 +59,7 @@
 
 - (void)cameraWillTakePhoto
 {
-    NSLog(@"cameraWillTakePhoto");
+    NSLog(@"%s", __PRETTY_FUNCTION__);
 }
 
 #pragma mark -
