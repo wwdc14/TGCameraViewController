@@ -41,6 +41,7 @@ NSMutableDictionary *optionDictionary;
 @property (strong, nonatomic) TGCameraGridView *gridView;
 
 + (instancetype)newCamera;
++ (void)initOptions;
 
 - (void)setupWithFlashButton:(UIButton *)flashButton;
 
@@ -80,12 +81,6 @@ NSMutableDictionary *optionDictionary;
     }
     
     return nil;
-}
-
-+ (void)initOptions
-{
-    optionDictionary = [NSMutableDictionary dictionary];
-    optionDictionary[kTGCameraOptionSaveImageToDevice] = [NSNumber numberWithBool:YES];
 }
 
 #pragma mark -
@@ -223,6 +218,12 @@ NSMutableDictionary *optionDictionary;
     //
     
     [TGCameraFlash flashModeWithCaptureSession:_session andButton:flashButton];
+}
+
++ (void)initOptions
+{
+    optionDictionary = [NSMutableDictionary dictionary];
+    optionDictionary[kTGCameraOptionSaveImageToDevice] = [NSNumber numberWithBool:YES];
 }
 
 @end
