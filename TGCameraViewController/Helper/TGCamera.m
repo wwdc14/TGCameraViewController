@@ -31,7 +31,7 @@
 #import "TGCameraShot.h"
 #import "TGCameraToggle.h"
 
-
+NSMutableDictionary *optionDictionary;
 
 @interface TGCamera ()
 
@@ -56,6 +56,36 @@
     [camera setupWithFlashButton:flashButton];
     
     return camera;
+}
+
++ (void)setOption:(NSString *)option value:(id)value
+{
+    if (optionDictionary == nil) {
+        [TGCamera initOptions];
+    }
+    
+    if (option != nil && value != nil) {
+        optionDictionary[option] = value;
+    }
+}
+
+ + (id)getOption:(NSString *)option
+{
+    if (optionDictionary == nil) {
+        [TGCamera initOptions];
+    }
+    
+    if (option != nil) {
+        return optionDictionary[option];
+    }
+    
+    return nil;
+}
+
++ (void)initOptions
+{
+    optionDictionary = [NSMutableDictionary dictionary];
+    optionDictionary[kTGCameraOptionSaveImageToDevice] = [NSNumber numberWithBool:YES];
 }
 
 #pragma mark -

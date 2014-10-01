@@ -28,6 +28,8 @@
 @import UIKit;
 
 
+#define kTGCameraOptionSaveImageToDevice @"TGCameraOptionSaveImageToDevice"
+
 
 @protocol TGCameraDelegate;
 
@@ -42,6 +44,8 @@
 ((unavailable("[-init] is not allowed, use [+cameraWithRootView:andCaptureView:]")));
 
 + (instancetype)cameraWithFlashButton:(UIButton *)flashButton;
++ (void)setOption:(NSString*)option value:(id)value;
++ (id)getOption:(NSString*)option;
 
 - (void)startRunning;
 - (void)stopRunning;
