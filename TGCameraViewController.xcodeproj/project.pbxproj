@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F80D223A19CCFAC30019A8EA /* TGCameraGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = F80D223919CCFAC30019A8EA /* TGCameraGridView.m */; };
 		F80D223D19CCFD590019A8EA /* TGCameraGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = F80D223C19CCFD590019A8EA /* TGCameraGrid.m */; };
+		F80DC5A319E7FF9D00395FAD /* TGCameraFocusView.m in Sources */ = {isa = PBXBuildFile; fileRef = F80DC5A219E7FF9D00395FAD /* TGCameraFocusView.m */; };
 		F82C4ACF19CA050C001CEA3C /* TGAssetsLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = F82C4ACE19CA050C001CEA3C /* TGAssetsLibrary.m */; };
 		F82C4AD619CA058E001CEA3C /* TGAssetImageFile.m in Sources */ = {isa = PBXBuildFile; fileRef = F82C4AD519CA058E001CEA3C /* TGAssetImageFile.m */; };
 		F82F8EDC19C4F29000A47148 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F82F8EC819C4F29000A47148 /* AppDelegate.m */; };
@@ -43,6 +44,8 @@
 		F80D223919CCFAC30019A8EA /* TGCameraGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGCameraGridView.m; sourceTree = "<group>"; };
 		F80D223B19CCFD590019A8EA /* TGCameraGrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGCameraGrid.h; sourceTree = "<group>"; };
 		F80D223C19CCFD590019A8EA /* TGCameraGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGCameraGrid.m; sourceTree = "<group>"; };
+		F80DC5A119E7FF9D00395FAD /* TGCameraFocusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGCameraFocusView.h; sourceTree = "<group>"; };
+		F80DC5A219E7FF9D00395FAD /* TGCameraFocusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGCameraFocusView.m; sourceTree = "<group>"; };
 		F82C4ACD19CA050C001CEA3C /* TGAssetsLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGAssetsLibrary.h; sourceTree = "<group>"; };
 		F82C4ACE19CA050C001CEA3C /* TGAssetsLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGAssetsLibrary.m; sourceTree = "<group>"; };
 		F82C4AD419CA058E001CEA3C /* TGAssetImageFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGAssetImageFile.h; sourceTree = "<group>"; };
@@ -201,6 +204,8 @@
 			children = (
 				F8505F9C19C8AD7A00F89CA4 /* TGCameraFilterView.h */,
 				F8505F9D19C8AD7A00F89CA4 /* TGCameraFilterView.m */,
+				F80DC5A119E7FF9D00395FAD /* TGCameraFocusView.h */,
+				F80DC5A219E7FF9D00395FAD /* TGCameraFocusView.m */,
 				F80D223819CCFAC30019A8EA /* TGCameraGridView.h */,
 				F80D223919CCFAC30019A8EA /* TGCameraGridView.m */,
 				F8E72B4A19C9B76400FF3AE5 /* TGCameraSlideDownView.h */,
@@ -368,6 +373,7 @@
 				F82C4AD619CA058E001CEA3C /* TGAssetImageFile.m in Sources */,
 				F82C4ACF19CA050C001CEA3C /* TGAssetsLibrary.m in Sources */,
 				F861D60A19C604810077B642 /* TGCameraToggle.m in Sources */,
+				F80DC5A319E7FF9D00395FAD /* TGCameraFocusView.m in Sources */,
 				F835958419C72F3400CAE395 /* TGAlbum.m in Sources */,
 				F861D61419C620E10077B642 /* TGCameraViewController.m in Sources */,
 			);

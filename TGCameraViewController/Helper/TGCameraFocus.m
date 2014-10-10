@@ -25,7 +25,7 @@
 
 @import AVFoundation;
 @import UIKit;
-#import "TGCameraColor.h"
+#import "TGCameraFocusView.h"
 #import "TGCameraFocus.h"
 
 @interface TGCameraFocus ()
@@ -87,66 +87,27 @@
 
 + (void)showFocusView:(UIView *)focusView withTouchPoint:(CGPoint)touchPoint andDevice:(AVCaptureDevice *)device
 {
-    //
-    // create view and subview to focus
-    //
-    
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
-    UIView *subview = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
-    
-    view.tag = subview.tag = -1;
-    view.center = subview.center = touchPoint;
-    view.layer.borderColor = subview.layer.borderColor = [TGCameraColor orangeColor].CGColor;
-
-    view.layer.borderWidth = 1;
-    view.layer.cornerRadius = CGRectGetHeight(view.frame) / 2;
-    
-    subview.layer.borderWidth = 5;
-    subview.layer.cornerRadius = CGRectGetHeight(subview.frame) / 2;
     
     //
-    // remove old focus view and focus subview
-    // if doesn't exists, ignore
+    // add focus view animated
     //
-    
-    for (id subview in [focusView subviews]) {
-        if ([subview tag] == -1) {
-            [subview removeFromSuperview];
-        }
-    }
-    
-    //[focusView.subviews.lastObject removeFromSuperview];
-    //[focusView.subviews.lastObject removeFromSuperview];
-    
-    //
-    // add focus view and focus subview to touch viiew
-    //
-    
-    [focusView addSubview:view];
-    [focusView addSubview:subview];
-    
-    //
-    // remove focus view and focus subview animated
-    //
+    TGCameraFocusView *cameraFocusView = [[TGCameraFocusView alloc] initWithFrame:CGRectMake(0, 0, TGCameraFocusSize, TGCameraFocusSize)];
+    cameraFocusView.center = touchPoint;
+    [focusView addSubview:cameraFocusView];
+    [cameraFocusView startAnimation];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         [NSThread sleepForTimeInterval:.5f];
-
+        
         while ([device isAdjustingFocus] ||
                [device isAdjustingExposure] ||
                [device isAdjustingWhiteBalance]);
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            view.transform = subview.transform = CGAffineTransformIdentity;
-        
-            [UIView animateWithDuration:.25f animations:^{
-                view.transform = subview.transform = CGAffineTransformScale(view.transform, .01, .01);
-            } completion:^(BOOL finished) {
-                if (finished) {
-                    [subview removeFromSuperview];
-                    [view removeFromSuperview];
-                }
-            }];
+            //
+            // remove focus view and focus subview animated
+            //
+            [cameraFocusView stopAnimation];
         });
     });
 }
