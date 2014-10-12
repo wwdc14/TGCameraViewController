@@ -195,6 +195,7 @@ You will need LLVM 3.0 or later in order to build TGCameraViewController.
 ### Todo
 
 * Customize layout programatically
+* iPhone 6 and iPhone 6 Plus support
 * iPad support
 * Add support for more languages
 * Preview when user choose photo
