@@ -30,6 +30,10 @@
 #import "TGCameraFilterView.h"
 #import "UIImage+CameraFilters.h"
 
+static NSString* const kTGCacheSatureKey = @"TGCacheSatureKey";
+static NSString* const kTGCacheCurveKey = @"TGCacheCurveKey";
+static NSString* const kTGCacheVignetteKey = @"TGCacheVignetteKey";
+
 
 
 @interface TGPhotoViewController ()
@@ -69,7 +73,7 @@
     if (viewController) {
         viewController.delegate = delegate;
         viewController.photo = photo;
-        viewController.cachePhoto = [[NSCache alloc]init];
+        viewController.cachePhoto = [[NSCache alloc] init];
     }
     
     return viewController;
@@ -147,11 +151,11 @@
 {
     [self addDetailViewToButton:button];
     
-    if ([_cachePhoto objectForKey:@"sature"]) {
-        _photoView.image = [_cachePhoto objectForKey:@"sature"];
+    if ([_cachePhoto objectForKey:kTGCacheSatureKey]) {
+        _photoView.image = [_cachePhoto objectForKey:kTGCacheSatureKey];
     } else {
-        [_cachePhoto setObject:[_photo saturateImage:1.8 withContrast:1] forKey:@"sature"];
-        _photoView.image = [_cachePhoto objectForKey:@"sature"];
+        [_cachePhoto setObject:[_photo saturateImage:1.8 withContrast:1] forKey:kTGCacheSatureKey];
+        _photoView.image = [_cachePhoto objectForKey:kTGCacheSatureKey];
     }
     
 }
@@ -160,11 +164,11 @@
 {
     [self addDetailViewToButton:button];
     
-    if ([_cachePhoto objectForKey:@"curve"]) {
-        _photoView.image = [_cachePhoto objectForKey:@"curve"];
+    if ([_cachePhoto objectForKey:kTGCacheCurveKey]) {
+        _photoView.image = [_cachePhoto objectForKey:kTGCacheCurveKey];
     } else {
-        [_cachePhoto setObject:[_photo curveFilter] forKey:@"curve"];
-        _photoView.image = [_cachePhoto objectForKey:@"curve"];
+        [_cachePhoto setObject:[_photo curveFilter] forKey:kTGCacheCurveKey];
+        _photoView.image = [_cachePhoto objectForKey:kTGCacheCurveKey];
     }
 }
 
@@ -172,11 +176,11 @@
 {
     [self addDetailViewToButton:button];
     
-    if ([_cachePhoto objectForKey:@"vignette"]) {
-        _photoView.image = [_cachePhoto objectForKey:@"vignette"];
+    if ([_cachePhoto objectForKey:kTGCacheVignetteKey]) {
+        _photoView.image = [_cachePhoto objectForKey:kTGCacheVignetteKey];
     } else {
-        [_cachePhoto setObject:[_photo vignetteWithRadius:0 intensity:6] forKey:@"vignette"];
-        _photoView.image = [_cachePhoto objectForKey:@"vignette"];
+        [_cachePhoto setObject:[_photo vignetteWithRadius:0 intensity:6] forKey:kTGCacheVignetteKey];
+        _photoView.image = [_cachePhoto objectForKey:kTGCacheVignetteKey];
     }
 }
 
