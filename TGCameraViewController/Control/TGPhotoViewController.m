@@ -42,6 +42,7 @@
 @property (weak) id<TGCameraDelegate> delegate;
 @property (strong, nonatomic) UIView *detailFilterView;
 @property (strong, nonatomic) UIImage *photo;
+@property (strong, nonatomic) NSCache *cachePhoto;
 
 - (IBAction)backTapped;
 - (IBAction)confirmTapped;
@@ -68,6 +69,7 @@
     if (viewController) {
         viewController.delegate = delegate;
         viewController.photo = photo;
+        viewController.cachePhoto = [[NSCache alloc]init];
     }
     
     return viewController;
@@ -144,20 +146,40 @@
 - (IBAction)satureFilterTapped:(UIButton *)button
 {
     [self addDetailViewToButton:button];
-    _photoView.image = [_photo saturateImage:1.8 withContrast:1];
+    
+    if ([_cachePhoto objectForKey:@"sature"]) {
+        _photoView.image = [_cachePhoto objectForKey:@"sature"];
+    } else {
+        [_cachePhoto setObject:[_photo saturateImage:1.8 withContrast:1] forKey:@"sature"];
+        _photoView.image = [_cachePhoto objectForKey:@"sature"];
+    }
+    
 }
 
 - (IBAction)curveFilterTapped:(UIButton *)button
 {
     [self addDetailViewToButton:button];
-    _photoView.image = [_photo curveFilter];
+    
+    if ([_cachePhoto objectForKey:@"curve"]) {
+        _photoView.image = [_cachePhoto objectForKey:@"curve"];
+    } else {
+        [_cachePhoto setObject:[_photo curveFilter] forKey:@"curve"];
+        _photoView.image = [_cachePhoto objectForKey:@"curve"];
+    }
 }
 
 - (IBAction)vignetteFilterTapped:(UIButton *)button
 {
     [self addDetailViewToButton:button];
-    _photoView.image = [_photo vignetteWithRadius:0 intensity:6];
+    
+    if ([_cachePhoto objectForKey:@"vignette"]) {
+        _photoView.image = [_cachePhoto objectForKey:@"vignette"];
+    } else {
+        [_cachePhoto setObject:[_photo vignetteWithRadius:0 intensity:6] forKey:@"vignette"];
+        _photoView.image = [_cachePhoto objectForKey:@"vignette"];
+    }
 }
+
 
 #pragma mark -
 #pragma mark - Private methods
