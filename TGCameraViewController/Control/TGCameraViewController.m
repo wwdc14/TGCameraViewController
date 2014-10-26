@@ -36,6 +36,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *topRightView;
 @property (strong, nonatomic) IBOutlet UIImageView *bottomLeftView;
 @property (strong, nonatomic) IBOutlet UIImageView *bottomRightView;
+@property (strong, nonatomic) IBOutlet UIView *separatorView;
 @property (strong, nonatomic) IBOutlet UIButton *gridButton;
 @property (strong, nonatomic) IBOutlet UIButton *toggleButton;
 @property (strong, nonatomic) IBOutlet UIButton *shotButton;
@@ -89,19 +90,17 @@
                                                  name:UIDeviceOrientationDidChangeNotification
                                                object:nil];
     
+    _separatorView.hidden = NO;
+    
+    _topLeftView.hidden =
+    _topRightView.hidden =
+    _bottomLeftView.hidden =
+    _bottomRightView.hidden = YES;
+    
     _gridButton.enabled =
     _toggleButton.enabled =
     _shotButton.enabled =
     _flashButton.enabled = NO;
-    
-    [_camera startRunning];
-    
-    [TGCameraSlideView hideSlideUpView:_slideUpView slideDownView:_slideDownView atView:_captureView completion:^{
-        _gridButton.enabled =
-        _toggleButton.enabled =
-        _shotButton.enabled =
-        _flashButton.enabled = YES;
-    }];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -110,6 +109,22 @@
     
     [self deviceOrientationDidChangeNotification];
 
+    [_camera startRunning];
+    
+    _separatorView.hidden = YES;
+    
+    [TGCameraSlideView hideSlideUpView:_slideUpView slideDownView:_slideDownView atView:_captureView completion:^{
+        _topLeftView.hidden =
+        _topRightView.hidden =
+        _bottomLeftView.hidden =
+        _bottomRightView.hidden = NO;
+        
+        _gridButton.enabled =
+        _toggleButton.enabled =
+        _shotButton.enabled =
+        _flashButton.enabled = YES;
+    }];
+    
     if (_wasLoaded == NO) {
         _wasLoaded = YES;
         [_camera insertSublayerWithCaptureView:_captureView atRootView:self.view];
