@@ -69,7 +69,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+        
     _camera = [TGCamera cameraWithFlashButton:_flashButton];
     _effectiveScale = 1.;
     

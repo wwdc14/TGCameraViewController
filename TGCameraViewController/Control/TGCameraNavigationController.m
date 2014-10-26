@@ -63,7 +63,7 @@
                 break;
         }
     }
-    
+
     return navigationController;
 }
 
@@ -86,15 +86,19 @@
 
 - (void)setupNotDeterminedWithDelegate:(id<TGCameraDelegate>)delegate
 {
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    
     [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (granted) {
-                [self setupAuthorizedWithDelegate:delegate];
-            } else {
-                [self setupDenied];
-            }
-        });
+        if (granted) {
+            [self setupAuthorizedWithDelegate:delegate];
+        } else {
+            [self setupDenied];
+        }
+        
+        dispatch_semaphore_signal(semaphore);
     }];
+    
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
 }
 
 @end
