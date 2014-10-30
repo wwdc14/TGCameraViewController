@@ -189,7 +189,10 @@ NSMutableDictionary *optionDictionary;
             device.smoothAutoFocusEnabled = YES;
         }
         
-        device.focusMode = AVCaptureFocusModeContinuousAutoFocus;
+        if([device isFocusModeSupported:AVCaptureFocusModeContinuousAutoFocus]){
+            device.focusMode = AVCaptureFocusModeContinuousAutoFocus;
+        }
+
         device.exposureMode = AVCaptureExposureModeContinuousAutoExposure;
         
         [device unlockForConfiguration];
