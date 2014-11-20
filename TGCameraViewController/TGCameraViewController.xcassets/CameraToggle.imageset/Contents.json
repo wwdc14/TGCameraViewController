@@ -1,16 +1,17 @@
 {
   "images" : [
     {
-      "idiom" : "iphone",
-      "scale" : "1x"
+      "idiom" : "universal",
+      "scale" : "1x",
+      "filename" : "CameraToggle.png"
     },
     {
-      "idiom" : "iphone",
+      "idiom" : "universal",
       "scale" : "2x",
       "filename" : "CameraToggle@2x.png"
     },
     {
-      "idiom" : "iphone",
+      "idiom" : "universal",
       "scale" : "3x",
       "filename" : "CameraToggle@3x.png"
     }
