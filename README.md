@@ -24,6 +24,7 @@ Custom camera with AVFoundation. Beautiful, light and easy to integrate with iOS
 * Preview photo view with three filters (fast processing)
 * Visual effects like Instagram iOS app
 * Zoom with pinch gesture
+* iPhone, iPod and iPad supported
 
 <em>This library can be applied on all iPhones and iPods running iOS 7.0+.</em>
 
@@ -195,7 +196,6 @@ You will need LLVM 3.0 or later in order to build TGCameraViewController.
 ### Todo
 
 * Customize layout programatically
-* iPad support
 * Add support for more languages
 * Preview when user choose photo
 * Landscape mode support
