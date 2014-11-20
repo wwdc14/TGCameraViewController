@@ -67,6 +67,18 @@
     return navigationController;
 }
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
+}
+
 #pragma mark -
 #pragma mark - Private methods
 
