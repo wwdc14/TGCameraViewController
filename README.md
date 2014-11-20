@@ -26,7 +26,7 @@ Custom camera with AVFoundation. Beautiful, light and easy to integrate with iOS
 * Zoom with pinch gesture
 * iPhone, iPod and iPad supported
 
-<em>This library can be applied on all iPhones and iPods running iOS 7.0+.</em>
+<em>This library can be applied on devices running iOS 7.0+.</em>
 
 ---
 ---
