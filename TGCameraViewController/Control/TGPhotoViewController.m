@@ -122,13 +122,29 @@ static NSString* const kTGCacheVignetteKey = @"TGCacheVignetteKey";
         if ([[TGCamera getOption:kTGCameraOptionSaveImageToAlbum] boolValue]) {
             if (status != ALAuthorizationStatusDenied) {
                 TGAssetsLibrary *library = [TGAssetsLibrary defaultAssetsLibrary];
-                [library saveImage:_photo completion:nil];
+                [library saveImage:_photo resultBlock:^(NSURL *assetURL) {
+                    if ([_delegate respondsToSelector:@selector(cameraDidSavePhotoAtAlbumPath:)]) {
+                        [_delegate cameraDidSavePhotoAtAlbumPath:assetURL];
+                    }
+                } failureBlock:^(NSError *error) {
+                    if ([_delegate respondsToSelector:@selector(cameraDidSavePhotoAtAlbumWithError:)]) {
+                        [_delegate cameraDidSavePhotoAtAlbumWithError:error];
+                    }
+                }];
             }
         }
         
         if ([[TGCamera getOption:kTGCameraOptionSaveImageToDocuments] boolValue]) {
             TGAssetsLibrary *library = [TGAssetsLibrary defaultAssetsLibrary];
-            [library saveJPGImageAtDocumentDirectory:_photo];
+            [library saveJPGImageAtDocumentDirectory:_photo resultBlock:^(NSURL *assetURL) {
+                if ([_delegate respondsToSelector:@selector(cameraDidSavePhotoAtDocumentDirectoryPath:)]) {
+                    [_delegate cameraDidSavePhotoAtDocumentDirectoryPath:assetURL];
+                }
+            } failureBlock:^(NSError *error) {
+                if ([_delegate respondsToSelector:@selector(cameraDidSavePhotoAtDocumentWithError:)]) {
+                    [_delegate cameraDidSavePhotoAtDocumentWithError:error];
+                }
+            }];
         }
     }
 }

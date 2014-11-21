@@ -24,7 +24,10 @@
 //  THE SOFTWARE.
 
 @import UIKit;
+
+#import "TGAlbum.h"
 #import "TGCamera.h"
+#import "TGCameraNavigationController.h"
 
 @interface TGCameraViewController : UIViewController <UIGestureRecognizerDelegate>
 

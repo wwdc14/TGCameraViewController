@@ -27,7 +27,7 @@
 
 @interface TGAssetsLibrary ()
 
-- (void)addAssetURL:(NSURL *)assetURL toAlbum:(NSString *)albumName withCompletion:(TGAssetsSaveImageCompletion)completion;
+- (void)addAssetURL:(NSURL *)assetURL toAlbum:(NSString *)albumName resultBlock:(TGAssetsResultCompletion)resultBlock failureBlock:(TGAssetsFailureCompletion)failureBlock;
 - (NSString *)directory;
 
 @end
@@ -117,33 +117,34 @@
     
 }
 
-- (void)saveImage:(UIImage *)image completion:(TGAssetsSaveImageCompletion)completion
+- (void)saveImage:(UIImage *)image resultBlock:(TGAssetsResultCompletion)resultBlock failureBlock:(TGAssetsFailureCompletion)failureBlock;
 {
     NSString *appName = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString*)kCFBundleNameKey];
-    [self saveImage:image withAlbumName:appName completion:completion];
+    [self saveImage:image withAlbumName:appName resultBlock:resultBlock failureBlock:failureBlock];
 }
 
-- (void)saveImage:(UIImage *)image withAlbumName:(NSString *)albumName completion:(TGAssetsSaveImageCompletion)completion
+- (void)saveImage:(UIImage *)image withAlbumName:(NSString *)albumName resultBlock:(TGAssetsResultCompletion)resultBlock failureBlock:(TGAssetsFailureCompletion)failureBlock;
 {
     [self writeImageToSavedPhotosAlbum:[image CGImage] orientation:(ALAssetOrientation)image.imageOrientation
     completionBlock:^(NSURL *assetURL, NSError *error) {
-        if (error && completion) {
-            completion(error);
+        if (error && failureBlock) {
+            failureBlock(error);
             return;
         }
         
-        [self addAssetURL:assetURL toAlbum:albumName withCompletion:completion];
+        [self addAssetURL:assetURL toAlbum:albumName resultBlock:resultBlock failureBlock:failureBlock];
     }];
 }
 
-- (void)saveJPGImageAtDocumentDirectory:(UIImage *)image
+- (void)saveJPGImageAtDocumentDirectory:(UIImage *)image resultBlock:(TGAssetsResultCompletion)resultBlock failureBlock:(TGAssetsFailureCompletion)failureBlock
 {
     NSDateFormatter *dateFormatter = [NSDateFormatter new];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd hh_mm_SSSSZ"];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd_HH:mm:SSSSZ"];
     
     NSString *directory = [self directory];
     
     if (!directory) {
+        failureBlock(nil);
         return;
     }
     
@@ -151,17 +152,22 @@
     NSString *filePath = [directory stringByAppendingString:fileName];
     
     if (filePath == nil) {
+        failureBlock(nil);
         return;
     }
     
     NSData *data = UIImageJPEGRepresentation(image, 1);
     [data writeToFile:filePath atomically:YES];
+    
+    NSURL *assetURL = [NSURL URLWithString:filePath];
+    
+    resultBlock(assetURL);
 }
 
 #pragma mark -
 #pragma mark - Private methods
 
-- (void)addAssetURL:(NSURL *)assetURL toAlbum:(NSString *)albumName withCompletion:(TGAssetsSaveImageCompletion)completion
+- (void)addAssetURL:(NSURL *)assetURL toAlbum:(NSString *)albumName resultBlock:(TGAssetsResultCompletion)resultBlock failureBlock:(TGAssetsFailureCompletion)failureBlock
 {
     __block BOOL albumWasFound = NO;
     
@@ -172,10 +178,10 @@
             [self assetForURL:assetURL resultBlock:^(ALAsset *asset) {
                 [group addAsset:asset];
 
-                if (completion) {
-                    completion(nil);
+                if (resultBlock) {
+                    resultBlock(assetURL);
                 }
-            } failureBlock:completion];
+            } failureBlock:failureBlock];
             
             return;
         }
@@ -187,19 +193,19 @@
                 [weakSelf assetForURL:assetURL resultBlock:^(ALAsset *asset) {
                     [group addAsset:asset];
                     
-                    if (completion) {
-                        completion(nil);
+                    if (resultBlock) {
+                        resultBlock(assetURL);
                     }
-                } failureBlock:completion];
-            } failureBlock:completion];
+                } failureBlock:failureBlock];
+            } failureBlock:failureBlock];
         }
-    } failureBlock:completion];
+    } failureBlock:failureBlock];
 }
 
 - (NSString *)directory
 {
     NSMutableString *path = [NSMutableString new];
-    [path appendString:[NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES) lastObject]];
+    [path appendString:[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]];
     [path appendString:@"/Images/"];
     
     if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {

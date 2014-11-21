@@ -80,6 +80,11 @@
 
 @optional
 
+- (void)cameraDidSavePhotoAtAlbumPath:(NSURL *)assetURL;
+- (void)cameraDidSavePhotoAtAlbumWithError:(NSError *)error;
+- (void)cameraDidSavePhotoAtDocumentDirectoryPath:(NSURL *)assetURL;
+- (void)cameraDidSavePhotoAtDocumentWithError:(NSError *)error;
 - (void)cameraWillTakePhoto;
+
 
 @end

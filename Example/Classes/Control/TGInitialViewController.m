@@ -7,8 +7,7 @@
 //
 
 #import "TGInitialViewController.h"
-#import "TGAlbum.h"
-#import "TGCameraNavigationController.h"
+#import "TGCameraViewController.h"
 
 @interface TGInitialViewController ()
 
@@ -29,6 +28,9 @@
 {
     [super viewDidLoad];
     
+    [TGCamera setOption:kTGCameraOptionSaveImageToAlbum value:[NSNumber numberWithBool:YES]];
+    [TGCamera setOption:kTGCameraOptionSaveImageToDocuments value:[NSNumber numberWithBool:YES]];
+    
     _photoView.clipsToBounds = YES;
     
     UIBarButtonItem *clearButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
@@ -44,7 +46,7 @@
 }
 
 #pragma mark -
-#pragma mark - TGCameraDelegate
+#pragma mark - TGCameraDelegate required
 
 - (void)cameraDidTakePhoto:(UIImage *)image
 {
@@ -57,9 +59,32 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+#pragma mark -
+#pragma mark - TGCameraDelegate optional
+
 - (void)cameraWillTakePhoto
 {
     NSLog(@"%s", __PRETTY_FUNCTION__);
+}
+
+- (void)cameraDidSavePhotoAtAlbumPath:(NSURL *)assetURL
+{
+    NSLog(@"%s album path: %@", __PRETTY_FUNCTION__, assetURL);
+}
+
+- (void)cameraDidSavePhotoAtAlbumWithError:(NSError *)error
+{
+    NSLog(@"%s error: %@", __PRETTY_FUNCTION__, error);
+}
+
+- (void)cameraDidSavePhotoAtDocumentDirectoryPath:(NSURL *)assetURL
+{
+    NSLog(@"%s album path: %@", __PRETTY_FUNCTION__, assetURL);
+}
+
+- (void)cameraDidSavePhotoAtDocumentWithError:(NSError *)error
+{
+    NSLog(@"%s error: %@", __PRETTY_FUNCTION__, error);
 }
 
 #pragma mark -

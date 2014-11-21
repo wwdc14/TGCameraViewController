@@ -26,7 +26,8 @@
 @import AssetsLibrary;
 #import "TGAssetImageFile.h"
 
-typedef void(^TGAssetsSaveImageCompletion)(NSError* error);
+typedef void(^TGAssetsResultCompletion)(NSURL *assetURL);
+typedef void(^TGAssetsFailureCompletion)(NSError* error);
 typedef void(^TGAssetsLoadImagesCompletion)(NSArray *items, NSError *error);
 
 
@@ -46,8 +47,8 @@ typedef void(^TGAssetsLoadImagesCompletion)(NSArray *items, NSError *error);
 - (NSArray *)loadImagesFromDocumentDirectory;
 - (void)loadImagesFromAlbum:(NSString *)albumName withCallback:(TGAssetsLoadImagesCompletion)callback;
 
-- (void)saveImage:(UIImage *)image completion:(TGAssetsSaveImageCompletion)completion;
-- (void)saveImage:(UIImage *)image withAlbumName:(NSString *)albumName completion:(TGAssetsSaveImageCompletion)completion;
-- (void)saveJPGImageAtDocumentDirectory:(UIImage *)image;
+- (void)saveImage:(UIImage *)image resultBlock:(TGAssetsResultCompletion)resultBlock failureBlock:(TGAssetsFailureCompletion)failureBlock;
+- (void)saveImage:(UIImage *)image withAlbumName:(NSString *)albumName resultBlock:(TGAssetsResultCompletion)resultBlock failureBlock:(TGAssetsFailureCompletion)failureBlock;
+- (void)saveJPGImageAtDocumentDirectory:(UIImage *)image resultBlock:(TGAssetsResultCompletion)resultBlock failureBlock:(TGAssetsFailureCompletion)failureBlock;
 
 @end
