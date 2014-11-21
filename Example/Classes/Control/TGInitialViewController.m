@@ -66,7 +66,6 @@
     NSLog(@"%s", __PRETTY_FUNCTION__);
 }
 
-/*
 - (void)cameraDidSavePhotoAtPath:(NSURL *)assetURL
 {
     NSLog(@"%s album path: %@", __PRETTY_FUNCTION__, assetURL);
@@ -76,7 +75,6 @@
 {
     NSLog(@"%s error: %@", __PRETTY_FUNCTION__, error);
 }
-*/
  
 #pragma mark -
 #pragma mark - UIImagePickerControllerDelegate
