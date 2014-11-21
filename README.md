@@ -167,7 +167,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 
 |Option|Type|Default|Description|
 |:-:|:-:|:-:|:-:|
-|kTGCameraOptionSaveImageToDevice|NSNumber (YES/NO)|NO|Save or not the photo in the camera roll|
+|kTGCameraOptionSaveImageToAlbum|NSNumber (YES/NO)|NO|Save or not the photo in the camera roll|
 
 ```obj-c
 #import "TGCamera.h"
@@ -177,14 +177,14 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 - (void)viewDidLoad
 {
     //...
-    [TGCamera setOption:kTGCameraOptionSaveImageToDevice value:[NSNumber numberWithBool:YES]];
+    [TGCamera setOption:kTGCameraOptionSaveImageToAlbum value:[NSNumber numberWithBool:YES]];
     //...
 }
 
 - (IBAction)buttonTapped
 {
     //...
-    BOOL saveToDevice = [[TGCamera getOption:kTGCameraOptionSaveImageToDevice] boolValue];
+    BOOL saveToDevice = [[TGCamera getOption:kTGCameraOptionSaveImageToAlbum] boolValue];
     //...    
 }
 
