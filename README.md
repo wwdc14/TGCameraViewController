@@ -93,6 +93,16 @@ pod install
     NSLog(@"%s", __PRETTY_FUNCTION__);
 }
 
+- (void)cameraDidSavePhotoAtPath:(NSURL *)assetURL
+{
+    NSLog(@"%s album path: %@", __PRETTY_FUNCTION__, assetURL);
+}
+
+- (void)cameraDidSavePhotoWithError:(NSError *)error
+{
+    NSLog(@"%s error: %@", __PRETTY_FUNCTION__, error);
+}
+
 #pragma mark - TGCameraDelegate required
 
 - (void)cameraDidTakePhoto:(UIImage *)image
