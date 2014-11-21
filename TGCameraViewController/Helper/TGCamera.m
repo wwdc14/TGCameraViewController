@@ -226,7 +226,6 @@ NSMutableDictionary *optionDictionary;
 + (void)initOptions
 {
     optionDictionary = [NSMutableDictionary dictionary];
-    optionDictionary[kTGCameraOptionSaveImageToDevice] = [NSNumber numberWithBool:YES];
 }
 
 @end

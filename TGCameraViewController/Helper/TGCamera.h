@@ -28,7 +28,8 @@
 @import UIKit;
 
 
-#define kTGCameraOptionSaveImageToDevice @"TGCameraOptionSaveImageToDevice"
+#define kTGCameraOptionSaveImageToAlbum @"TGCameraOptionSaveImageToAlbum"
+#define kTGCameraOptionSaveImageToDocuments @"kTGCameraOptionSaveImageToDocuments"
 
 
 @protocol TGCameraDelegate;

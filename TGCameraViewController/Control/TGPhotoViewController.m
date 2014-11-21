@@ -118,11 +118,17 @@ static NSString* const kTGCacheVignetteKey = @"TGCacheVignetteKey";
         [_delegate cameraDidTakePhoto:_photo];
         
         ALAuthorizationStatus status = [ALAssetsLibrary authorizationStatus];
-        BOOL saveToDevice = [[TGCamera getOption:kTGCameraOptionSaveImageToDevice] boolValue];
-
-        if (status != ALAuthorizationStatusDenied && saveToDevice == YES) {
+        
+        if ([[TGCamera getOption:kTGCameraOptionSaveImageToAlbum] boolValue]) {
+            if (status != ALAuthorizationStatusDenied) {
+                TGAssetsLibrary *library = [TGAssetsLibrary defaultAssetsLibrary];
+                [library saveImage:_photo completion:nil];
+            }
+        }
+        
+        if ([[TGCamera getOption:kTGCameraOptionSaveImageToDocuments] boolValue]) {
             TGAssetsLibrary *library = [TGAssetsLibrary defaultAssetsLibrary];
-            [library saveImage:_photo completion:nil];
+            [library saveJPGImageAtDocumentDirectory:_photo];
         }
     }
 }
