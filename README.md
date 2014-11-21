@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <img src="http://s27.postimg.org/mwzb3sv2b/TGCamera_View_Controller.png" alt="TGCameraViewController" title="TGCameraViewController">
+  <img src="http://s8.postimg.org/7wobboss5/TGCamera_View_Controller.png" alt="TGCameraViewController" title="TGCameraViewController">
 </p>
 
 Custom camera with AVFoundation. Beautiful, light and easy to integrate with iOS projects.
@@ -26,7 +26,14 @@ Custom camera with AVFoundation. Beautiful, light and easy to integrate with iOS
 * Zoom with pinch gesture
 * iPhone, iPod and iPad supported
 
-<em>This library can be applied on all iPhones and iPods running iOS 7.0+.</em>
+<em>This library can be applied on devices running iOS 7.0+.</em>
+
+---
+---
+
+### Who use it
+
+Find out [who uses TGCameraViewController](https://github.com/tdginternet/TGCameraViewController/wiki/WHO-USES) and add your app to the list.
 
 ---
 ---
@@ -199,6 +206,7 @@ You will need LLVM 3.0 or later in order to build TGCameraViewController.
 * Add support for more languages
 * Preview when user choose photo
 * Landscape mode support
+* Force crop
 
 ---
 ---
