@@ -29,8 +29,6 @@
 
 
 #define kTGCameraOptionSaveImageToAlbum @"TGCameraOptionSaveImageToAlbum"
-#define kTGCameraOptionSaveImageToDocuments @"kTGCameraOptionSaveImageToDocuments"
-
 
 @protocol TGCameraDelegate;
 
@@ -80,10 +78,8 @@
 
 @optional
 
-- (void)cameraDidSavePhotoAtAlbumPath:(NSURL *)assetURL;
-- (void)cameraDidSavePhotoAtAlbumWithError:(NSError *)error;
-- (void)cameraDidSavePhotoAtDocumentDirectoryPath:(NSURL *)assetURL;
-- (void)cameraDidSavePhotoAtDocumentWithError:(NSError *)error;
+- (void)cameraDidSavePhotoWithError:(NSError *)error;
+- (void)cameraDidSavePhotoAtPath:(NSURL *)assetURL;
 - (void)cameraWillTakePhoto;
 
 

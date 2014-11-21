@@ -29,7 +29,6 @@
     [super viewDidLoad];
     
     [TGCamera setOption:kTGCameraOptionSaveImageToAlbum value:[NSNumber numberWithBool:YES]];
-    [TGCamera setOption:kTGCameraOptionSaveImageToDocuments value:[NSNumber numberWithBool:YES]];
     
     _photoView.clipsToBounds = YES;
     
@@ -67,26 +66,18 @@
     NSLog(@"%s", __PRETTY_FUNCTION__);
 }
 
-- (void)cameraDidSavePhotoAtAlbumPath:(NSURL *)assetURL
+/*
+- (void)cameraDidSavePhotoAtPath:(NSURL *)assetURL
 {
     NSLog(@"%s album path: %@", __PRETTY_FUNCTION__, assetURL);
 }
 
-- (void)cameraDidSavePhotoAtAlbumWithError:(NSError *)error
+- (void)cameraDidSavePhotoWithError:(NSError *)error
 {
     NSLog(@"%s error: %@", __PRETTY_FUNCTION__, error);
 }
-
-- (void)cameraDidSavePhotoAtDocumentDirectoryPath:(NSURL *)assetURL
-{
-    NSLog(@"%s album path: %@", __PRETTY_FUNCTION__, assetURL);
-}
-
-- (void)cameraDidSavePhotoAtDocumentWithError:(NSError *)error
-{
-    NSLog(@"%s error: %@", __PRETTY_FUNCTION__, error);
-}
-
+*/
+ 
 #pragma mark -
 #pragma mark - UIImagePickerControllerDelegate
 

@@ -33,6 +33,8 @@
 
 NSMutableDictionary *optionDictionary;
 
+
+
 @interface TGCamera ()
 
 @property (strong, nonatomic) AVCaptureSession *session;
