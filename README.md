@@ -167,7 +167,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 
 |Option|Type|Default|Description|
 |:-:|:-:|:-:|:-:|
-|kTGCameraOptionSaveImageToDevice|NSNumber (YES/NO)|YES|Save or not the photo in the camera roll|
+|kTGCameraOptionSaveImageToDevice|NSNumber (YES/NO)|NO|Save or not the photo in the camera roll|
 
 ```obj-c
 #import "TGCamera.h"
