@@ -95,6 +95,7 @@ pod install
 
 - (void)cameraDidSavePhotoAtPath:(NSURL *)assetURL
 {
+    // When this method is implemented, an image will be saved on the user's device
     NSLog(@"%s album path: %@", __PRETTY_FUNCTION__, assetURL);
 }
 
