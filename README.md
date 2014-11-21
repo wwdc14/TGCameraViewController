@@ -64,8 +64,7 @@ pod install
 #### Take photo
 
 ```obj-c
-#import "TGCamera.h"
-#import "TGCameraNavigationController.h"
+#import "TGCameraViewController.h"
 
 @interface TGViewController : UIViewController <TGCameraDelegate>
 
@@ -113,7 +112,7 @@ pod install
 #### Choose photo
 
 ```obj-c
-#import "TGAlbum.h"
+#import "TGCameraViewController.h"
 
 @interface TGViewController : UIViewController
 <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
