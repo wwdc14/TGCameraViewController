@@ -26,6 +26,7 @@
 @import UIKit;
 
 #import "TGAlbum.h"
+#import "TGAssetImageFile.h"
 #import "TGCamera.h"
 #import "TGCameraNavigationController.h"
 
