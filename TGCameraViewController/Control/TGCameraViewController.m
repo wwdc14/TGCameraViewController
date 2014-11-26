@@ -76,7 +76,7 @@
     [_captureView setNeedsLayout];
     [_captureView  layoutIfNeeded];
     
-    _camera = [TGCamera cameraWithFlashButton:_flashButton];
+    //_camera = [TGCamera cameraWithFlashButton:_flashButton];
     _effectiveScale = 1.;
     
     _captureView.backgroundColor = [UIColor clearColor];

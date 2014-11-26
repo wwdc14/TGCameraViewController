@@ -75,16 +75,33 @@
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CameraDetail" translatesAutoresizingMaskIntoConstraints="NO" id="umk-ea-F3l" userLabel="Top Right">
                             <rect key="frame" x="542" y="0.0" width="58" height="58"/>
                         </imageView>
-                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xFF-75-cke" userLabel="Separator View">
-                            <rect key="frame" x="1" y="-1" width="37" height="95"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xFF-75-cke" userLabel="Separator View">
+                            <rect key="frame" x="0.0" y="224" width="600" height="2"/>
                             <subviews>
-                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GxH-mC-xM3" userLabel="Top Separator View">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GxH-mC-xM3" userLabel="Top Separator View">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="1"/>
                                     <color key="backgroundColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="9wU-Bp-QTM"/>
+                                    </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yg1-A1-fum" userLabel="Button Separator View">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yg1-A1-fum" userLabel="Button Separator View">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="1"/>
                                     <color key="backgroundColor" white="1" alpha="0.050000000000000003" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="vH1-Va-9PF"/>
+                                    </constraints>
                                 </view>
                             </subviews>
+                            <constraints>
+                                <constraint firstItem="GxH-mC-xM3" firstAttribute="top" secondItem="xFF-75-cke" secondAttribute="top" id="JFk-Fp-8nW"/>
+                                <constraint firstAttribute="trailing" secondItem="GxH-mC-xM3" secondAttribute="trailing" id="Qbl-DV-4B1"/>
+                                <constraint firstAttribute="height" constant="2" id="VIB-KX-mux"/>
+                                <constraint firstItem="GxH-mC-xM3" firstAttribute="leading" secondItem="xFF-75-cke" secondAttribute="leading" id="Zfr-DY-KMz"/>
+                                <constraint firstAttribute="trailing" secondItem="Yg1-A1-fum" secondAttribute="trailing" id="aLp-i4-VS9"/>
+                                <constraint firstAttribute="bottom" secondItem="Yg1-A1-fum" secondAttribute="bottom" constant="1" id="tsI-uQ-uWI"/>
+                                <constraint firstItem="Yg1-A1-fum" firstAttribute="leading" secondItem="xFF-75-cke" secondAttribute="leading" id="vq2-Wx-HmI"/>
+                            </constraints>
                         </view>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CameraDetail" translatesAutoresizingMaskIntoConstraints="NO" id="2rS-OA-lDQ" userLabel="Bottom Left">
                             <rect key="frame" x="0.0" y="392" width="58" height="58"/>
@@ -97,6 +114,9 @@
                     <gestureRecognizers/>
                     <constraints>
                         <constraint firstAttribute="height" constant="450" id="8bj-5X-Px4"/>
+                        <constraint firstItem="xFF-75-cke" firstAttribute="leading" secondItem="dIq-rQ-gzr" secondAttribute="leading" id="Inn-ZF-CJ4"/>
+                        <constraint firstAttribute="trailing" secondItem="xFF-75-cke" secondAttribute="trailing" id="PmX-GD-Ruq"/>
+                        <constraint firstAttribute="centerY" secondItem="xFF-75-cke" secondAttribute="centerY" id="REs-jY-aTk"/>
                     </constraints>
                     <connections>
                         <outletCollection property="gestureRecognizers" destination="kkq-Ei-sRU" appends="YES" id="zVd-Mr-m7D"/>
