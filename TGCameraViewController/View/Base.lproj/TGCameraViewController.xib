@@ -31,7 +31,7 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dit-c7-IZk" userLabel="Top View">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
-                    <color key="backgroundColor" red="0.078431372549019607" green="0.078431372549019607" blue="0.078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="0mu-lN-Lkb"/>
                     </constraints>
@@ -159,7 +159,7 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" red="0.13588949022346364" green="0.13588949022346364" blue="0.13588949022346364" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="p7O-pE-Mp0" firstAttribute="leading" secondItem="WJG-N5-BnZ" secondAttribute="trailing" constant="63" id="1q8-DG-v1g"/>
                         <constraint firstItem="WJG-N5-BnZ" firstAttribute="leading" secondItem="Nol-dD-ETh" secondAttribute="trailing" constant="63" id="41d-NA-H1H"/>
