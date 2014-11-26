@@ -174,17 +174,17 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rJ9-I8-VJI" userLabel="Bottom View">
                     <rect key="frame" x="0.0" y="710" width="600" height="110"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NzH-mX-zAg" userLabel="Album">
-                            <rect key="frame" x="500" y="15" width="80" height="80"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3k-MF-E1l" userLabel="Close">
+                            <rect key="frame" x="20" y="15" width="80" height="80"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="80" id="aJL-Th-jNQ"/>
-                                <constraint firstAttribute="height" constant="80" id="jG4-H7-6kv"/>
+                                <constraint firstAttribute="height" constant="80" id="cgU-fk-MtB"/>
+                                <constraint firstAttribute="width" constant="80" id="xhg-SH-0Q3"/>
                             </constraints>
-                            <state key="normal" image="CameraRoll">
+                            <state key="normal" image="CameraClose">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="albumTapped" destination="-1" eventType="touchUpInside" id="so2-HZ-rQR"/>
+                                <action selector="closeTapped" destination="-1" eventType="touchUpInside" id="mp3-Tj-Kz0"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wtQ-Dg-G3i" userLabel="Shot">
@@ -200,17 +200,17 @@
                                 <action selector="shotTapped" destination="-1" eventType="touchUpInside" id="XqW-0H-DD4"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3k-MF-E1l" userLabel="Close">
-                            <rect key="frame" x="20" y="15" width="80" height="80"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NzH-mX-zAg" userLabel="Album">
+                            <rect key="frame" x="500" y="15" width="80" height="80"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="80" id="cgU-fk-MtB"/>
-                                <constraint firstAttribute="width" constant="80" id="xhg-SH-0Q3"/>
+                                <constraint firstAttribute="width" constant="80" id="aJL-Th-jNQ"/>
+                                <constraint firstAttribute="height" constant="80" id="jG4-H7-6kv"/>
                             </constraints>
-                            <state key="normal" image="CameraClose">
+                            <state key="normal" image="CameraRoll">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="closeTapped" destination="-1" eventType="touchUpInside" id="mp3-Tj-Kz0"/>
+                                <action selector="albumTapped" destination="-1" eventType="touchUpInside" id="so2-HZ-rQR"/>
                             </connections>
                         </button>
                     </subviews>
