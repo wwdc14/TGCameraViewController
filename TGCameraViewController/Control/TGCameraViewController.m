@@ -29,7 +29,7 @@
 
 
 
-@interface TGCameraViewController ()
+@interface TGCameraViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UIView *captureView;
 @property (strong, nonatomic) IBOutlet UIImageView *topLeftView;
@@ -58,7 +58,9 @@
 - (IBAction)toggleTapped;
 - (IBAction)handleTapGesture:(UITapGestureRecognizer *)recognizer;
 
+- (void)deviceOrientationDidChangeNotification;
 - (AVCaptureVideoOrientation)videoOrientationForDeviceOrientation:(UIDeviceOrientation)deviceOrientation;
+- (void)viewWillDisappearWithCompletion:(void (^)(void))completion;
 
 @end
 
@@ -110,7 +112,7 @@
     [super viewDidAppear:animated];
     
     [self deviceOrientationDidChangeNotification];
-
+    
     [_camera startRunning];
     
     _separatorView.hidden = YES;
@@ -156,6 +158,24 @@
 }
 
 #pragma mark -
+#pragma mark - UIImagePickerControllerDelegate
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    [self dismissViewControllerAnimated:YES completion:^{
+        UIImage *photo = [TGAlbum imageWithMediaInfo:info];
+        
+        TGPhotoViewController *viewController = [TGPhotoViewController newWithDelegate:_delegate photo:photo];
+        [self.navigationController pushViewController:viewController animated:YES];
+    }];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark -
 #pragma mark - Actions
 
 - (IBAction)closeTapped
@@ -177,14 +197,15 @@
 
 - (IBAction)albumTapped
 {
-    NSLog(@"teste");
+    [self viewWillDisappearWithCompletion:^{
+        UIImagePickerController *pickerController = [TGAlbum imagePickerControllerWithDelegate:self];
+        [self presentViewController:pickerController animated:YES completion:nil];
+    }];
 }
 
 - (IBAction)shotTapped
 {
-    _shotButton.enabled = _albumButton.enabled = NO;
-    
-    [TGCameraSlideView showSlideUpView:_slideUpView slideDownView:_slideDownView atView:_captureView completion:^{
+    [self viewWillDisappearWithCompletion:^{
         UIDeviceOrientation deviceOrientation = [[UIDevice currentDevice] orientation];
         AVCaptureVideoOrientation videoOrientation = [self videoOrientationForDeviceOrientation:deviceOrientation];
         
@@ -192,7 +213,6 @@
         completion:^(UIImage *photo) {
             TGPhotoViewController *viewController = [TGPhotoViewController newWithDelegate:_delegate photo:photo];
             [self.navigationController pushViewController:viewController animated:YES];
-            _shotButton.enabled = _albumButton.enabled = YES;
         }];
     }];
 }
@@ -266,6 +286,16 @@
     }
     
     return result;
+}
+
+- (void)viewWillDisappearWithCompletion:(void (^)(void))completion
+{
+    _shotButton.enabled = _albumButton.enabled = NO;
+    _actionsView.hidden = YES;
+    
+    [TGCameraSlideView showSlideUpView:_slideUpView slideDownView:_slideDownView atView:_captureView completion:^{
+        completion();
+    }];
 }
 
 @end
