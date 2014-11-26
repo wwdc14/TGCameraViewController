@@ -113,7 +113,6 @@
                         <constraint firstItem="xFF-75-cke" firstAttribute="leading" secondItem="dIq-rQ-gzr" secondAttribute="leading" id="vve-NH-MbK"/>
                     </constraints>
                     <connections>
-                        <outletCollection property="gestureRecognizers" destination="kkq-Ei-sRU" appends="YES" id="zVd-Mr-m7D"/>
                         <outletCollection property="gestureRecognizers" destination="8lp-h9-4Ub" appends="YES" id="9Ra-Em-naV"/>
                     </connections>
                 </view>
@@ -292,12 +291,6 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="1484" y="254.5"/>
         </view>
-        <pinchGestureRecognizer id="kkq-Ei-sRU">
-            <connections>
-                <action selector="handlePinchGesture:" destination="-1" id="JSg-gA-AbF"/>
-                <outlet property="delegate" destination="-1" id="8Cq-lb-JBn"/>
-            </connections>
-        </pinchGestureRecognizer>
         <tapGestureRecognizer id="8lp-h9-4Ub">
             <connections>
                 <action selector="handleTapGesture:" destination="-1" id="4eA-y3-VFZ"/>

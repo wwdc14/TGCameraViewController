@@ -47,7 +47,6 @@
 
 @property (strong, nonatomic) TGCamera *camera;
 @property (nonatomic) CGFloat beginPinchGestureScale;
-@property (nonatomic) CGFloat effectiveScale;
 @property (nonatomic) BOOL wasLoaded;
 
 - (IBAction)closeTapped;
@@ -56,11 +55,9 @@
 - (IBAction)albumTapped;
 - (IBAction)shotTapped;
 - (IBAction)toggleTapped;
-- (IBAction)handlePinchGesture:(UIPinchGestureRecognizer *)recognizer;
 - (IBAction)handleTapGesture:(UITapGestureRecognizer *)recognizer;
 
 - (AVCaptureVideoOrientation)videoOrientationForDeviceOrientation:(UIDeviceOrientation)deviceOrientation;
-- (void)zoomWithRecognizer:(UIPinchGestureRecognizer *)recognizer;
 
 @end
 
@@ -73,7 +70,6 @@
     [super viewDidLoad];
     
     _camera = [TGCamera cameraWithFlashButton:_flashButton];
-    _effectiveScale = 1.;
     
     _captureView.backgroundColor = [UIColor clearColor];
     
@@ -155,18 +151,6 @@
 }
 
 #pragma mark -
-#pragma mark - UIGestureRecognizerDelegate
-
-- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
-{
-    if ([gestureRecognizer isKindOfClass:[UIPinchGestureRecognizer class]]) {
-        _beginPinchGestureScale = _effectiveScale;
-    }
-    
-    return YES;
-}
-
-#pragma mark -
 #pragma mark - Actions
 
 - (IBAction)closeTapped
@@ -199,7 +183,7 @@
         UIDeviceOrientation deviceOrientation = [[UIDevice currentDevice] orientation];
         AVCaptureVideoOrientation videoOrientation = [self videoOrientationForDeviceOrientation:deviceOrientation];
         
-        [_camera takePhotoWithCaptureView:_captureView effectiveScale:_effectiveScale videoOrientation:videoOrientation cropSize:_captureView.frame.size
+        [_camera takePhotoWithCaptureView:_captureView videoOrientation:videoOrientation cropSize:_captureView.frame.size
         completion:^(UIImage *photo) {
             TGPhotoViewController *viewController = [TGPhotoViewController newWithDelegate:_delegate photo:photo];
             [self.navigationController pushViewController:viewController animated:YES];
@@ -211,11 +195,6 @@
 - (IBAction)toggleTapped
 {
     [_camera toogleWithFlashButton:_flashButton];
-}
-
-- (IBAction)handlePinchGesture:(UIPinchGestureRecognizer *)recognizer
-{
-    [self zoomWithRecognizer:recognizer];
 }
 
 - (IBAction)handleTapGesture:(UITapGestureRecognizer *)recognizer
@@ -282,44 +261,6 @@
     }
     
     return result;
-}
-
-- (void)zoomWithRecognizer:(UIPinchGestureRecognizer *)recognizer
-{
-    BOOL allTouchesAreOnThePreviewLayer = YES;
-    NSInteger numberOfTouches = [recognizer numberOfTouches];
-    
-    AVCaptureVideoPreviewLayer *previewLayer = [_camera previewLayer];
-    
-    for (NSInteger i = 0; i < numberOfTouches; i++) {
-        CGPoint location = [recognizer locationOfTouch:i inView:_captureView];
-        CGPoint convertedLocation = [previewLayer convertPoint:location fromLayer:previewLayer.superlayer];
-        
-        if ([previewLayer containsPoint:convertedLocation] == NO) {
-            allTouchesAreOnThePreviewLayer = NO;
-            break;
-        }
-    }
-    
-    if (allTouchesAreOnThePreviewLayer) {
-        _effectiveScale = _beginPinchGestureScale * [recognizer scale];
-        
-        if (_effectiveScale < 1.) {
-            _effectiveScale = 1.;
-        }
-        
-        AVCaptureStillImageOutput *stillImageOutput = [_camera stillImageOutput];
-        CGFloat maxScaleAndCropFactor = [[stillImageOutput connectionWithMediaType:AVMediaTypeVideo] videoMaxScaleAndCropFactor];
-        
-        if (_effectiveScale > maxScaleAndCropFactor) {
-            _effectiveScale = maxScaleAndCropFactor;
-        }
-        
-        [CATransaction begin];
-        [CATransaction setAnimationDuration:.025];
-        [previewLayer setAffineTransform:CGAffineTransformMakeScale(_effectiveScale, _effectiveScale)];
-        [CATransaction commit];
-    }
 }
 
 @end

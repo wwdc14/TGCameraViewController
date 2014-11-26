@@ -130,9 +130,9 @@ NSMutableDictionary *optionDictionary;
     [TGCameraFocus focusWithCaptureSession:_session touchPoint:touchPoint inFocusView:focusView];
 }
 
-- (void)takePhotoWithCaptureView:(UIView *)captureView effectiveScale:(NSInteger)effectiveScale videoOrientation:(AVCaptureVideoOrientation)videoOrientation cropSize:(CGSize)cropSize completion:(void (^)(UIImage *))completion
+- (void)takePhotoWithCaptureView:(UIView *)captureView videoOrientation:(AVCaptureVideoOrientation)videoOrientation cropSize:(CGSize)cropSize completion:(void (^)(UIImage *))completion
 {
-    [TGCameraShot takePhotoCaptureView:captureView stillImageOutput:_stillImageOutput effectiveScale:effectiveScale videoOrientation:videoOrientation cropSize:cropSize
+    [TGCameraShot takePhotoCaptureView:captureView stillImageOutput:_stillImageOutput videoOrientation:videoOrientation cropSize:cropSize
     completion:^(UIImage *photo) {
         completion(photo);
     }];

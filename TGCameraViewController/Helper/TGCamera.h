@@ -61,7 +61,6 @@
 - (void)focusView:(UIView *)focusView inTouchPoint:(CGPoint)touchPoint;
 
 - (void)takePhotoWithCaptureView:(UIView *)captureView
-                  effectiveScale:(NSInteger)effectiveScale
                 videoOrientation:(AVCaptureVideoOrientation)videoOrientation
                         cropSize:(CGSize)cropSize
                       completion:(void (^)(UIImage *))completion;

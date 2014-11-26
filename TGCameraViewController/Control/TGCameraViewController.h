@@ -29,7 +29,7 @@
 #import "TGCamera.h"
 #import "TGCameraNavigationController.h"
 
-@interface TGCameraViewController : UIViewController <UIGestureRecognizerDelegate>
+@interface TGCameraViewController : UIViewController
 
 @property (weak) id<TGCameraDelegate> delegate;
 
