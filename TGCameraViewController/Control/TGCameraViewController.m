@@ -45,8 +45,6 @@
 @property (strong, nonatomic) IBOutlet TGCameraSlideView *slideUpView;
 @property (strong, nonatomic) IBOutlet TGCameraSlideView *slideDownView;
 
-@property (strong, nonatomic) IBOutlet NSLayoutConstraint *captureHeight;
-
 @property (strong, nonatomic) TGCamera *camera;
 @property (nonatomic) CGFloat beginPinchGestureScale;
 @property (nonatomic) CGFloat effectiveScale;
@@ -73,10 +71,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    _captureHeight.constant = CGRectGetWidth([[UIScreen mainScreen] applicationFrame]);
-    [_captureView setNeedsLayout];
-    [_captureView  layoutIfNeeded];
     
     _camera = [TGCamera cameraWithFlashButton:_flashButton];
     _effectiveScale = 1.;
