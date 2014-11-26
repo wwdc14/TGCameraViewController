@@ -63,6 +63,7 @@
 - (void)takePhotoWithCaptureView:(UIView *)captureView
                   effectiveScale:(NSInteger)effectiveScale
                 videoOrientation:(AVCaptureVideoOrientation)videoOrientation
+                        cropSize:(CGSize)cropSize
                       completion:(void (^)(UIImage *))completion;
 
 - (void)toogleWithFlashButton:(UIButton *)flashButton;

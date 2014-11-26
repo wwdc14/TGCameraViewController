@@ -33,6 +33,7 @@
             stillImageOutput:(AVCaptureStillImageOutput *)stillImageOutput
               effectiveScale:(NSInteger)effectiveScale
             videoOrientation:(AVCaptureVideoOrientation)videoOrientation
+                    cropSize:(CGSize)cropSize
                   completion:(void (^)(UIImage *photo))completion;
 
 @end

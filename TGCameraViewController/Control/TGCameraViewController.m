@@ -199,7 +199,8 @@
         UIDeviceOrientation deviceOrientation = [[UIDevice currentDevice] orientation];
         AVCaptureVideoOrientation videoOrientation = [self videoOrientationForDeviceOrientation:deviceOrientation];
         
-        [_camera takePhotoWithCaptureView:_captureView effectiveScale:_effectiveScale videoOrientation:videoOrientation completion:^(UIImage *photo) {
+        [_camera takePhotoWithCaptureView:_captureView effectiveScale:_effectiveScale videoOrientation:videoOrientation cropSize:_captureView.frame.size
+        completion:^(UIImage *photo) {
             TGPhotoViewController *viewController = [TGPhotoViewController newWithDelegate:_delegate photo:photo];
             [self.navigationController pushViewController:viewController animated:YES];
             _shotButton.enabled = _albumButton.enabled = YES;
