@@ -37,6 +37,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *bottomLeftView;
 @property (strong, nonatomic) IBOutlet UIImageView *bottomRightView;
 @property (strong, nonatomic) IBOutlet UIView *separatorView;
+@property (strong, nonatomic) IBOutlet UIView *actionsView;
 @property (strong, nonatomic) IBOutlet UIButton *gridButton;
 @property (strong, nonatomic) IBOutlet UIButton *toggleButton;
 @property (strong, nonatomic) IBOutlet UIButton *albumButton;
@@ -90,6 +91,8 @@
     
     _separatorView.hidden = NO;
     
+    _actionsView.hidden = YES;
+    
     _topLeftView.hidden =
     _topRightView.hidden =
     _bottomLeftView.hidden =
@@ -117,6 +120,8 @@
         _topRightView.hidden =
         _bottomLeftView.hidden =
         _bottomRightView.hidden = NO;
+        
+        _actionsView.hidden = NO;
         
         _gridButton.enabled =
         _toggleButton.enabled =

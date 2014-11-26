@@ -8,6 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TGCameraViewController">
             <connections>
+                <outlet property="actionsView" destination="Ni6-M2-hWT" id="SLr-Oc-ge0"/>
                 <outlet property="albumButton" destination="NzH-mX-zAg" id="NYH-83-iUd"/>
                 <outlet property="bottomLeftView" destination="2rS-OA-lDQ" id="3Tj-6s-eEi"/>
                 <outlet property="bottomRightView" destination="HFV-tF-409" id="gvx-Rz-7bX"/>
