@@ -162,12 +162,12 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    [self dismissViewControllerAnimated:YES completion:^{
-        UIImage *photo = [TGAlbum imageWithMediaInfo:info];
-        
-        TGPhotoViewController *viewController = [TGPhotoViewController newWithDelegate:_delegate photo:photo];
-        [self.navigationController pushViewController:viewController animated:YES];
-    }];
+    UIImage *photo = [TGAlbum imageWithMediaInfo:info];
+    
+    TGPhotoViewController *viewController = [TGPhotoViewController newWithDelegate:_delegate photo:photo];
+    [self.navigationController pushViewController:viewController animated:NO];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
