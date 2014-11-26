@@ -39,6 +39,7 @@
 @property (strong, nonatomic) IBOutlet UIView *separatorView;
 @property (strong, nonatomic) IBOutlet UIButton *gridButton;
 @property (strong, nonatomic) IBOutlet UIButton *toggleButton;
+@property (strong, nonatomic) IBOutlet UIButton *albumButton;
 @property (strong, nonatomic) IBOutlet UIButton *shotButton;
 @property (strong, nonatomic) IBOutlet UIButton *flashButton;
 @property (strong, nonatomic) IBOutlet TGCameraSlideView *slideUpView;
@@ -54,6 +55,7 @@
 - (IBAction)closeTapped;
 - (IBAction)gridTapped;
 - (IBAction)flashTapped;
+- (IBAction)albumTapped;
 - (IBAction)shotTapped;
 - (IBAction)toggleTapped;
 - (IBAction)handlePinchGesture:(UIPinchGestureRecognizer *)recognizer;
@@ -76,7 +78,7 @@
     [_captureView setNeedsLayout];
     [_captureView  layoutIfNeeded];
     
-    //_camera = [TGCamera cameraWithFlashButton:_flashButton];
+    _camera = [TGCamera cameraWithFlashButton:_flashButton];
     _effectiveScale = 1.;
     
     _captureView.backgroundColor = [UIColor clearColor];
@@ -106,6 +108,7 @@
     _gridButton.enabled =
     _toggleButton.enabled =
     _shotButton.enabled =
+    _albumButton.enabled =
     _flashButton.enabled = NO;
 }
 
@@ -115,11 +118,10 @@
     
     [self deviceOrientationDidChangeNotification];
 
-    //[_camera startRunning];
+    [_camera startRunning];
     
-    //_separatorView.hidden = YES;
+    _separatorView.hidden = YES;
     
-    /*
     [TGCameraSlideView hideSlideUpView:_slideUpView slideDownView:_slideDownView atView:_captureView completion:^{
         _topLeftView.hidden =
         _topRightView.hidden =
@@ -129,13 +131,13 @@
         _gridButton.enabled =
         _toggleButton.enabled =
         _shotButton.enabled =
+        _albumButton.enabled =
         _flashButton.enabled = YES;
     }];
-    */
      
     if (_wasLoaded == NO) {
         _wasLoaded = YES;
-        //[_camera insertSublayerWithCaptureView:_captureView atRootView:self.view];
+       [_camera insertSublayerWithCaptureView:_captureView atRootView:self.view];
     }
 }
 
@@ -190,9 +192,14 @@
     [_camera changeFlashModeWithButton:_flashButton];
 }
 
+- (IBAction)albumTapped
+{
+    NSLog(@"teste");
+}
+
 - (IBAction)shotTapped
 {
-    _shotButton.enabled = NO;
+    _shotButton.enabled = _albumButton.enabled = NO;
     
     [TGCameraSlideView showSlideUpView:_slideUpView slideDownView:_slideDownView atView:_captureView completion:^{
         UIDeviceOrientation deviceOrientation = [[UIDevice currentDevice] orientation];
@@ -201,7 +208,7 @@
         [_camera takePhotoWithCaptureView:_captureView effectiveScale:_effectiveScale videoOrientation:videoOrientation completion:^(UIImage *photo) {
             TGPhotoViewController *viewController = [TGPhotoViewController newWithDelegate:_delegate photo:photo];
             [self.navigationController pushViewController:viewController animated:YES];
-            _shotButton.enabled = YES;
+            _shotButton.enabled = _albumButton.enabled = YES;
         }];
     }];
 }
@@ -255,8 +262,10 @@
     CGAffineTransform transform = CGAffineTransformMakeRotation(radians);
     
     [UIView animateWithDuration:.5f animations:^{
-        _flashButton.transform =
-        _toggleButton.transform = transform;
+        _gridButton.transform =
+        _toggleButton.transform =
+        _albumButton.transform =
+        _flashButton.transform = transform;
     }];
 }
 
