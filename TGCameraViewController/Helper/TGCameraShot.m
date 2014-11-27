@@ -53,6 +53,8 @@
         }
     }
     
+    [videoConnection setVideoOrientation:videoOrientation];
+    
     __weak __typeof(self)weakSelf = self;
     [stillImageOutput captureStillImageAsynchronouslyFromConnection:videoConnection
     completionHandler:^(CMSampleBufferRef imageDataSampleBuffer, NSError *error) {
@@ -70,46 +72,54 @@
 
 + (UIImage *)cropImage:(UIImage *)image withCropSize:(CGSize)cropSize
 {
-    CGFloat scaleFactor = image.size.width / cropSize.width;
+    UIImage *newImage = nil;
     
-    CGFloat centerX = image.size.width / 2;
-    CGFloat centerY = image.size.height / 2;
+    CGSize imageSize = image.size;
+    CGFloat width = imageSize.width;
+    CGFloat height = imageSize.height;
     
-    CGFloat cropX = centerX - ((cropSize.width / 2) * scaleFactor);
-    CGFloat cropY = centerY - ((cropSize.height / 2) * scaleFactor);
+    CGFloat targetWidth = cropSize.width;
+    CGFloat targetHeight = cropSize.height;
     
-    CGRect cropRect = CGRectMake(cropX, cropY, (cropSize.width * scaleFactor), (cropSize.height * scaleFactor));
+    CGFloat scaleFactor = 0;
+    CGFloat scaledWidth = targetWidth;
+    CGFloat scaledHeight = targetHeight;
     
-    CGAffineTransform rectTransform;
-    switch (image.imageOrientation) {
-        case UIImageOrientationLeft:
-            rectTransform = CGAffineTransformTranslate(CGAffineTransformMakeRotation(M_PI_2), 0, -image.size.height);
-            break;
-            
-        case UIImageOrientationRight:
-            rectTransform = CGAffineTransformTranslate(CGAffineTransformMakeRotation(-M_PI_2), -image.size.width, 0);
-            break;
-            
-        case UIImageOrientationDown:
-            rectTransform = CGAffineTransformTranslate(CGAffineTransformMakeRotation(-M_PI), -image.size.width, -image.size.height);
-            break;
-            
-        default:
-            rectTransform = CGAffineTransformIdentity;
-            break;
+    CGPoint thumbnailPoint = CGPointMake(0, 0);
+    
+    if (CGSizeEqualToSize(imageSize, cropSize) == NO) {
+        CGFloat widthFactor = targetWidth / width;
+        CGFloat heightFactor = targetHeight / height;
+        
+        if (widthFactor > heightFactor) {
+            scaleFactor = widthFactor;
+        } else {
+            scaleFactor = heightFactor;
+        }
+        
+        scaledWidth  = width * scaleFactor;
+        scaledHeight = height * scaleFactor;
+        
+
+        if (widthFactor > heightFactor) {
+            thumbnailPoint.y = (targetHeight - scaledHeight) * .5f;
+        } else {
+            if (widthFactor < heightFactor) {
+                thumbnailPoint.x = (targetWidth - scaledWidth) * .5f;
+            }
+        }
     }
-    rectTransform = CGAffineTransformScale(rectTransform, image.scale, image.scale);
     
-    CGImageRef imageRef = CGImageCreateWithImageInRect([image CGImage], CGRectApplyAffineTransform(cropRect, rectTransform));
-    UIImage *result = [UIImage imageWithCGImage:imageRef scale:image.scale orientation:image.imageOrientation];
-    CGImageRelease(imageRef);
+    UIGraphicsBeginImageContextWithOptions(cropSize, YES, 0);
     
-    CGRect scaledImgRect = CGRectMake(0, 0, (cropSize.width * 2), (cropSize.height * 2));
-    UIGraphicsBeginImageContextWithOptions(scaledImgRect.size, NO, [UIScreen mainScreen].scale);
+    CGRect thumbnailRect = CGRectZero;
+    thumbnailRect.origin = thumbnailPoint;
+    thumbnailRect.size.width  = scaledWidth;
+    thumbnailRect.size.height = scaledHeight;
     
-    [result drawInRect:scaledImgRect];
+    [image drawInRect:thumbnailRect];
+    newImage = UIGraphicsGetImageFromCurrentImageContext();
     
-    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
     return newImage;
