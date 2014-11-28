@@ -46,7 +46,6 @@
 @property (strong, nonatomic) IBOutlet TGCameraSlideView *slideDownView;
 
 @property (strong, nonatomic) TGCamera *camera;
-@property (nonatomic) CGFloat beginPinchGestureScale;
 @property (nonatomic) BOOL wasLoaded;
 
 - (IBAction)closeTapped;
@@ -151,24 +150,6 @@
 - (BOOL)prefersStatusBarHidden
 {
     return YES;
-}
-
-#pragma mark -
-#pragma mark - UIImagePickerControllerDelegate
-
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
-{
-    UIImage *photo = [TGAlbum imageWithMediaInfo:info];
-    
-    TGPhotoViewController *viewController = [TGPhotoViewController newWithDelegate:_delegate photo:photo];
-    [self.navigationController pushViewController:viewController animated:NO];
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark -
