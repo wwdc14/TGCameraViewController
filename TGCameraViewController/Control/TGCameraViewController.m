@@ -207,8 +207,10 @@
 
 - (IBAction)albumTapped
 {
-    UIImagePickerController *pickerController = [TGAlbum imagePickerControllerWithDelegate:self];
-    [self presentViewController:pickerController animated:YES completion:nil];
+    [self viewWillDisappearWithCompletion:^{
+        UIImagePickerController *pickerController = [TGAlbum imagePickerControllerWithDelegate:self];
+        [self presentViewController:pickerController animated:YES completion:nil];
+    }];
 }
 
 - (IBAction)toggleTapped
