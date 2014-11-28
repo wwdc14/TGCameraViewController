@@ -29,7 +29,7 @@
 
 
 
-@interface TGCameraViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface TGCameraViewController ()
 
 @property (strong, nonatomic) IBOutlet UIView *captureView;
 @property (strong, nonatomic) IBOutlet UIImageView *topLeftView;
@@ -40,7 +40,6 @@
 @property (strong, nonatomic) IBOutlet UIView *actionsView;
 @property (strong, nonatomic) IBOutlet UIButton *gridButton;
 @property (strong, nonatomic) IBOutlet UIButton *toggleButton;
-@property (strong, nonatomic) IBOutlet UIButton *albumButton;
 @property (strong, nonatomic) IBOutlet UIButton *shotButton;
 @property (strong, nonatomic) IBOutlet UIButton *flashButton;
 @property (strong, nonatomic) IBOutlet TGCameraSlideView *slideUpView;
@@ -53,7 +52,6 @@
 - (IBAction)closeTapped;
 - (IBAction)gridTapped;
 - (IBAction)flashTapped;
-- (IBAction)albumTapped;
 - (IBAction)shotTapped;
 - (IBAction)toggleTapped;
 - (IBAction)handleTapGesture:(UITapGestureRecognizer *)recognizer;
@@ -103,7 +101,6 @@
     _gridButton.enabled =
     _toggleButton.enabled =
     _shotButton.enabled =
-    _albumButton.enabled =
     _flashButton.enabled = NO;
 }
 
@@ -128,7 +125,6 @@
         _gridButton.enabled =
         _toggleButton.enabled =
         _shotButton.enabled =
-        _albumButton.enabled =
         _flashButton.enabled = YES;
     }];
      
@@ -195,14 +191,6 @@
     [_camera changeFlashModeWithButton:_flashButton];
 }
 
-- (IBAction)albumTapped
-{
-    [self viewWillDisappearWithCompletion:^{
-        UIImagePickerController *pickerController = [TGAlbum imagePickerControllerWithDelegate:self];
-        [self presentViewController:pickerController animated:YES completion:nil];
-    }];
-}
-
 - (IBAction)shotTapped
 {
     [self viewWillDisappearWithCompletion:^{
@@ -263,7 +251,6 @@
     [UIView animateWithDuration:.5f animations:^{
         _gridButton.transform =
         _toggleButton.transform =
-        _albumButton.transform =
         _flashButton.transform = transform;
     }];
 }
@@ -290,7 +277,6 @@
 
 - (void)viewWillDisappearWithCompletion:(void (^)(void))completion
 {
-    _shotButton.enabled = _albumButton.enabled = NO;
     _actionsView.hidden = YES;
     
     [TGCameraSlideView showSlideUpView:_slideUpView slideDownView:_slideDownView atView:_captureView completion:^{
