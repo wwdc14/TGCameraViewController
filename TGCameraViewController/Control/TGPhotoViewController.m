@@ -47,6 +47,7 @@ static NSString* const kTGCacheVignetteKey = @"TGCacheVignetteKey";
 @property (strong, nonatomic) UIView *detailFilterView;
 @property (strong, nonatomic) UIImage *photo;
 @property (strong, nonatomic) NSCache *cachePhoto;
+@property (nonatomic) BOOL albumPhoto;
 
 - (IBAction)backTapped;
 - (IBAction)confirmTapped;
@@ -115,7 +116,12 @@ static NSString* const kTGCacheVignetteKey = @"TGCacheVignetteKey";
     
     if ([_delegate respondsToSelector:@selector(cameraDidTakePhoto:)]) {
         _photo = _photoView.image;
-        [_delegate cameraDidTakePhoto:_photo];
+        
+        if (_albumPhoto) {
+            [_delegate cameraDidSelectAlbumPhoto:_photo];
+        } else {
+            [_delegate cameraDidTakePhoto:_photo];
+        }
         
         ALAuthorizationStatus status = [ALAssetsLibrary authorizationStatus];
         TGAssetsLibrary *library = [TGAssetsLibrary defaultAssetsLibrary];

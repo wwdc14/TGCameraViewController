@@ -36,4 +36,6 @@
 
 + (instancetype)newWithDelegate:(id<TGCameraDelegate>)delegate photo:(UIImage *)photo;
 
+- (void)setAlbumPhoto:(BOOL)isAlbumPhoto;
+
 @end
