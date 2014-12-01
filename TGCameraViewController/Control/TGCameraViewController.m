@@ -29,7 +29,7 @@
 
 
 
-@interface TGCameraViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface TGCameraViewController ()
 
 @property (strong, nonatomic) IBOutlet UIView *captureView;
 @property (strong, nonatomic) IBOutlet UIImageView *topLeftView;
@@ -41,7 +41,6 @@
 @property (strong, nonatomic) IBOutlet UIButton *gridButton;
 @property (strong, nonatomic) IBOutlet UIButton *toggleButton;
 @property (strong, nonatomic) IBOutlet UIButton *shotButton;
-@property (strong, nonatomic) IBOutlet UIButton *albumButton;
 @property (strong, nonatomic) IBOutlet UIButton *flashButton;
 @property (strong, nonatomic) IBOutlet TGCameraSlideView *slideUpView;
 @property (strong, nonatomic) IBOutlet TGCameraSlideView *slideDownView;
@@ -53,7 +52,6 @@
 - (IBAction)gridTapped;
 - (IBAction)flashTapped;
 - (IBAction)shotTapped;
-- (IBAction)albumTapped;
 - (IBAction)toggleTapped;
 - (IBAction)handleTapGesture:(UITapGestureRecognizer *)recognizer;
 
@@ -102,7 +100,6 @@
     _gridButton.enabled =
     _toggleButton.enabled =
     _shotButton.enabled =
-    _albumButton.enabled =
     _flashButton.enabled = NO;
 }
 
@@ -127,7 +124,6 @@
         _gridButton.enabled =
         _toggleButton.enabled =
         _shotButton.enabled =
-        _albumButton.enabled =
         _flashButton.enabled = YES;
     }];
      
@@ -154,21 +150,6 @@
 - (BOOL)prefersStatusBarHidden
 {
     return YES;
-}
-
-#pragma mark -
-#pragma mark - UIImagePickerControllerDelegate
-
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
-{
-    TGPhotoViewController *viewController = [TGPhotoViewController newWithDelegate:_delegate photo:[TGAlbum imageWithMediaInfo:info]];    
-    [self.navigationController pushViewController:viewController animated:NO];
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark -
@@ -202,14 +183,6 @@
             TGPhotoViewController *viewController = [TGPhotoViewController newWithDelegate:_delegate photo:photo];
             [self.navigationController pushViewController:viewController animated:YES];
         }];
-    }];
-}
-
-- (IBAction)albumTapped
-{
-    [self viewWillDisappearWithCompletion:^{
-        UIImagePickerController *pickerController = [TGAlbum imagePickerControllerWithDelegate:self];
-        [self presentViewController:pickerController animated:YES completion:nil];
     }];
 }
 
@@ -259,7 +232,6 @@
     [UIView animateWithDuration:.5f animations:^{
         _gridButton.transform =
         _toggleButton.transform =
-        _albumButton.transform =
         _flashButton.transform = transform;
     }];
 }

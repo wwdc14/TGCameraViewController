@@ -9,7 +9,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TGCameraViewController">
             <connections>
                 <outlet property="actionsView" destination="Ni6-M2-hWT" id="SLr-Oc-ge0"/>
-                <outlet property="albumButton" destination="LSC-Ft-szu" id="Ohx-ag-hbM"/>
                 <outlet property="bottomLeftView" destination="2rS-OA-lDQ" id="3Tj-6s-eEi"/>
                 <outlet property="bottomRightView" destination="HFV-tF-409" id="gvx-Rz-7bX"/>
                 <outlet property="captureView" destination="dIq-rQ-gzr" id="F4T-QP-lPu"/>
@@ -200,19 +199,6 @@
                                 <action selector="shotTapped" destination="-1" eventType="touchUpInside" id="XqW-0H-DD4"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LSC-Ft-szu" userLabel="Album">
-                            <rect key="frame" x="500" y="15" width="80" height="80"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="80" id="Bwb-xL-qYU"/>
-                                <constraint firstAttribute="width" constant="80" id="aer-pV-kmD"/>
-                            </constraints>
-                            <state key="normal" image="CameraRoll">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="albumTapped" destination="-1" eventType="touchUpInside" id="68Z-ZS-Vw7"/>
-                            </connections>
-                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.078431372549019607" green="0.078431372549019607" blue="0.078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -220,8 +206,6 @@
                         <constraint firstAttribute="centerY" secondItem="O3k-MF-E1l" secondAttribute="centerY" id="AlZ-MU-XJk"/>
                         <constraint firstAttribute="centerX" secondItem="wtQ-Dg-G3i" secondAttribute="centerX" id="UII-sp-ZJm"/>
                         <constraint firstItem="O3k-MF-E1l" firstAttribute="leading" secondItem="rJ9-I8-VJI" secondAttribute="leading" constant="20" id="h2u-nH-RSf"/>
-                        <constraint firstAttribute="trailing" secondItem="LSC-Ft-szu" secondAttribute="trailing" constant="20" id="jRI-KW-iRb"/>
-                        <constraint firstAttribute="centerY" secondItem="LSC-Ft-szu" secondAttribute="centerY" id="v4y-h9-REW"/>
                     </constraints>
                 </view>
             </subviews>
@@ -303,7 +287,6 @@
         <image name="CameraDetail" width="58" height="58"/>
         <image name="CameraFlashAuto" width="41" height="41"/>
         <image name="CameraGrid" width="26" height="26"/>
-        <image name="CameraRoll" width="26" height="26"/>
         <image name="CameraShot" width="78" height="78"/>
         <image name="CameraToggle" width="26" height="26"/>
     </resources>
