@@ -43,6 +43,8 @@ static NSString* const kTGCacheVignetteKey = @"TGCacheVignetteKey";
 @property (strong, nonatomic) IBOutlet TGCameraFilterView *filterView;
 @property (strong, nonatomic) IBOutlet UIButton *defaultFilterButton;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topViewHeight;
+
 @property (weak) id<TGCameraDelegate> delegate;
 @property (strong, nonatomic) UIView *detailFilterView;
 @property (strong, nonatomic) UIImage *photo;
@@ -83,6 +85,10 @@ static NSString* const kTGCacheVignetteKey = @"TGCacheVignetteKey";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    if (CGRectGetHeight([[UIScreen mainScreen] bounds]) <= 480) {
+        _topViewHeight.constant = 0;
+    }
     
     _photoView.clipsToBounds = YES;
     _photoView.image = _photo;

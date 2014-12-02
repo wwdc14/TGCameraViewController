@@ -46,6 +46,8 @@
 @property (strong, nonatomic) IBOutlet TGCameraSlideView *slideUpView;
 @property (strong, nonatomic) IBOutlet TGCameraSlideView *slideDownView;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topViewHeight;
+
 @property (strong, nonatomic) TGCamera *camera;
 @property (nonatomic) BOOL wasLoaded;
 
@@ -70,6 +72,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    if (CGRectGetHeight([[UIScreen mainScreen] bounds]) <= 480) {
+        _topViewHeight.constant = 0;
+    }
     
     _camera = [TGCamera cameraWithFlashButton:_flashButton];
     

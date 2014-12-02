@@ -22,6 +22,7 @@
                 <outlet property="toggleButton" destination="WJG-N5-BnZ" id="QRP-Z9-Zpe"/>
                 <outlet property="topLeftView" destination="ljD-PV-2sR" id="6yh-RZ-d0w"/>
                 <outlet property="topRightView" destination="umk-ea-F3l" id="bIA-Jv-2nh"/>
+                <outlet property="topViewHeight" destination="0mu-lN-Lkb" id="RZR-8e-pHu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
