@@ -85,6 +85,14 @@ NSMutableDictionary *optionDictionary;
     return nil;
 }
 
+- (void)dealloc
+{
+    _session = nil;
+    _previewLayer = nil;
+    _stillImageOutput = nil;
+    _gridView = nil;
+}
+
 #pragma mark -
 #pragma mark - Public methods
 

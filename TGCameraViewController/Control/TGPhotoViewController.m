@@ -38,10 +38,10 @@ static NSString* const kTGCacheVignetteKey = @"TGCacheVignetteKey";
 
 @interface TGPhotoViewController ()
 
-@property (strong, nonatomic) IBOutlet UIImageView *photoView;
-@property (strong, nonatomic) IBOutlet UIView *bottomView;
-@property (strong, nonatomic) IBOutlet TGCameraFilterView *filterView;
-@property (strong, nonatomic) IBOutlet UIButton *defaultFilterButton;
+@property (weak, nonatomic) IBOutlet UIImageView *photoView;
+@property (weak, nonatomic) IBOutlet UIView *bottomView;
+@property (weak, nonatomic) IBOutlet TGCameraFilterView *filterView;
+@property (weak, nonatomic) IBOutlet UIButton *defaultFilterButton;
 
 @property (weak) id<TGCameraDelegate> delegate;
 @property (strong, nonatomic) UIView *detailFilterView;
@@ -98,6 +98,13 @@ static NSString* const kTGCacheVignetteKey = @"TGCacheVignetteKey";
 - (BOOL)prefersStatusBarHidden
 {
     return YES;
+}
+
+- (void)dealloc
+{
+    _detailFilterView = nil;
+    _photo = nil;
+    _cachePhoto = nil;
 }
 
 #pragma mark -

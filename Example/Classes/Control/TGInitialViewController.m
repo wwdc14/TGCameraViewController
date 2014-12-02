@@ -47,14 +47,20 @@
 #pragma mark -
 #pragma mark - TGCameraDelegate required
 
+- (void)cameraDidCancel
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (void)cameraDidTakePhoto:(UIImage *)image
 {
     _photoView.image = image;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)cameraDidCancel
+- (void)cameraDidSelectAlbumPhoto:(UIImage *)image
 {
+    _photoView.image = image;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

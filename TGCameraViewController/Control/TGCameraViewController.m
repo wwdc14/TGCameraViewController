@@ -156,6 +156,25 @@
     return YES;
 }
 
+- (void)dealloc
+{
+    _captureView = nil;
+    _topLeftView = nil;
+    _topRightView = nil;
+    _bottomLeftView = nil;
+    _bottomRightView = nil;
+    _separatorView = nil;
+    _actionsView = nil;
+    _gridButton = nil;
+    _toggleButton = nil;
+    _shotButton = nil;
+    _albumButton = nil;
+    _flashButton = nil;
+    _slideUpView = nil;
+    _slideDownView = nil;
+    _camera = nil;
+}
+
 #pragma mark -
 #pragma mark - UIImagePickerControllerDelegate
 
