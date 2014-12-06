@@ -14,6 +14,6 @@ Pod::Spec.new do |s|
   
   s.ios.frameworks = 'AssetsLibrary', 'AVFoundation', 'CoreImage', 'Foundation', 'MobileCoreServices', 'UIKit'
   s.source_files = 'TGCameraViewController/**/*.{h,m}'
-  s.resources = ['TGCameraViewController/**/*.xib', 'TGCameraViewController/**/*.strings', 'TGCameraViewController/**/*.xcassets']
+  s.resources = ['TGCameraViewController/**/*.lproj', 'TGCameraViewController/**/*.xcassets']
   s.source = { :git => 'https://github.com/tdginternet/TGCameraViewController.git', :tag => s.version }  
 end
