@@ -222,6 +222,9 @@
 
 - (IBAction)shotTapped
 {
+    _shotButton.enabled =
+    _albumButton.enabled = NO;
+    
     [self viewWillDisappearWithCompletion:^{
         UIDeviceOrientation deviceOrientation = [[UIDevice currentDevice] orientation];
         AVCaptureVideoOrientation videoOrientation = [self videoOrientationForDeviceOrientation:deviceOrientation];
@@ -236,6 +239,9 @@
 
 - (IBAction)albumTapped
 {
+    _shotButton.enabled =
+    _albumButton.enabled = NO;
+    
     [self viewWillDisappearWithCompletion:^{
         UIImagePickerController *pickerController = [TGAlbum imagePickerControllerWithDelegate:self];
         [self presentViewController:pickerController animated:YES completion:nil];
