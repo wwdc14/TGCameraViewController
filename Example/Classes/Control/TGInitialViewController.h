@@ -7,13 +7,7 @@
 //
 
 @import UIKit;
-#import "TGCamera.h"
-
 
 @interface TGInitialViewController : UIViewController
-<
-    UINavigationControllerDelegate, UIImagePickerControllerDelegate,
-    TGCameraDelegate
->
 
 @end

@@ -7,14 +7,14 @@
 //
 
 #import "TGInitialViewController.h"
+#import "TGCamera.h"
 #import "TGCameraViewController.h"
 
-@interface TGInitialViewController ()
+@interface TGInitialViewController () <TGCameraDelegate>
 
 @property (strong, nonatomic) IBOutlet UIImageView *photoView;
 
 - (IBAction)takePhotoTapped;
-- (IBAction)chooseExistingPhotoTapped;
 
 - (void)clearTapped;
 
@@ -81,20 +81,6 @@
 {
     NSLog(@"%s error: %@", __PRETTY_FUNCTION__, error);
 }
- 
-#pragma mark -
-#pragma mark - UIImagePickerControllerDelegate
-
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
-{
-    _photoView.image = [TGAlbum imageWithMediaInfo:info];
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 
 #pragma mark -
 #pragma mark - Actions
@@ -103,12 +89,6 @@
 {    
     TGCameraNavigationController *navigationController = [TGCameraNavigationController newWithCameraDelegate:self];
     [self presentViewController:navigationController animated:YES completion:nil];
-}
-
-- (IBAction)chooseExistingPhotoTapped
-{
-    UIImagePickerController *pickerController = [TGAlbum imagePickerControllerWithDelegate:self];
-    [self presentViewController:pickerController animated:YES completion:nil];
 }
 
 #pragma mark -
