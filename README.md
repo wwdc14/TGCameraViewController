@@ -220,9 +220,7 @@ You will need LLVM 3.0 or later in order to build TGCameraViewController.
 
 * Customize layout programatically
 * Add support for more languages
-* Preview when user choose photo
 * Landscape mode support
-* Force crop
 
 ---
 ---
