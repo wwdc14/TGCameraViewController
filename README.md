@@ -221,6 +221,7 @@ You will need LLVM 3.0 or later in order to build TGCameraViewController.
 * Add support for more languages
 * Landscape mode support
 * Zoom
+* Image size as global parameter
 
 ---
 ---
