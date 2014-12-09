@@ -1,10 +1,10 @@
 Pod::Spec.new do |s|
   s.name = 'TGCameraViewController'
-  s.version = '1.2'
+  s.version = '2.0'
   s.license = { :type => 'MIT', :file => 'LICENSE' }
   s.summary = 'Custom camera with AVFoundation. Beautiful, light and easy to integrate with iOS projects.'
   s.homepage = 'https://github.com/tdginternet/TGCameraViewController'
-  s.screenshot  = "http://s8.postimg.org/7wobboss5/TGCamera_View_Controller.png"
+  s.screenshot  = "http://s28.postimg.org/eeli1omct/TGCamera_View_Controller.png"
   
   s.requires_arc = true
   s.platform = :ios
