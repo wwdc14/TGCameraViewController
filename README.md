@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <img src="http://s8.postimg.org/7wobboss5/TGCamera_View_Controller.png" alt="TGCameraViewController" title="TGCameraViewController">
+  <img src="http://s28.postimg.org/eeli1omct/TGCamera_View_Controller.png" alt="TGCameraViewController" title="TGCameraViewController">
 </p>
 
 Custom camera with AVFoundation. Beautiful, light and easy to integrate with iOS projects.
@@ -106,14 +106,20 @@ pod install
 
 #pragma mark - TGCameraDelegate required
 
+- (void)cameraDidCancel
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (void)cameraDidTakePhoto:(UIImage *)image
 {
     _photoView.image = image;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)cameraDidCancel
+- (void)cameraDidSelectAlbumPhoto:(UIImage *)image
 {
+    _photoView.image = image;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
