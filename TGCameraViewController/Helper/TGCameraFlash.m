@@ -24,6 +24,8 @@
 //  THE SOFTWARE.
 
 #import "TGCameraFlash.h"
+#import "TGCameraColor.h"
+#import "TGTintedButton.h"
 
 @implementation TGCameraFlash
 
@@ -65,8 +67,13 @@
     AVCaptureDevice *device = [session.inputs.lastObject device];
     AVCaptureFlashMode mode = [device flashMode];
     UIImage *image = UIImageFromAVCaptureFlashMode(mode);
-    
+    UIColor *tintColor = TintColorFromAVCaptureFlashMode(mode);
     button.enabled = [device isFlashModeSupported:mode];
+    
+    if ([button isKindOfClass:[TGTintedButton class]]) {
+        [(TGTintedButton*)button setCustomTintColorOverride:tintColor];
+    }
+    
     [button setImage:image forState:UIControlStateNormal];
 }
 
@@ -78,6 +85,13 @@ UIImage *UIImageFromAVCaptureFlashMode(AVCaptureFlashMode mode)
     NSArray *array = @[@"CameraFlashOff", @"CameraFlashOn", @"CameraFlashAuto"];
     NSString *imageName = [array objectAtIndex:mode];
     return [UIImage imageNamed:imageName];
+}
+
+UIColor *TintColorFromAVCaptureFlashMode(AVCaptureFlashMode mode)
+{
+    NSArray *array = @[[UIColor grayColor], [TGCameraColor tintColor], [TGCameraColor tintColor]];
+    UIColor *color = [array objectAtIndex:mode];
+    return color;
 }
 
 @end

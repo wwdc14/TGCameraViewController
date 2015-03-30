@@ -10,4 +10,6 @@
 
 @interface TGTintedButton : UIButton
 
+@property (nonatomic, strong) UIColor *customTintColorOverride;
+
 @end

@@ -40,8 +40,10 @@
 }
 
 - (void)updateTintIfNeeded {
-    if(self.tintColor != [TGCameraColor tintColor]) {
-        [self setTintColor:[TGCameraColor tintColor]];
+    UIColor *color = self.customTintColorOverride != nil ? self.customTintColorOverride : [TGCameraColor tintColor];
+    
+    if(self.tintColor != color) {
+        [self setTintColor:color];
         
         UIImage * __weak backgroundImage = [[self backgroundImageForState:UIControlStateNormal]  imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         [self setBackgroundImage:backgroundImage forState:UIControlStateNormal];
