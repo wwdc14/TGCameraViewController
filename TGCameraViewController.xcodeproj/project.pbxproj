@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7CD5E4CE1AC9FEA000295AF2 /* TGTintedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD5E4CD1AC9FEA000295AF2 /* TGTintedButton.m */; };
+		7CD5E4D11ACA047300295AF2 /* TGTintedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD5E4D01ACA047300295AF2 /* TGTintedLabel.m */; };
 		CCB91A611A29D08D00BA0539 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = CCB91A601A29D08D00BA0539 /* Base.lproj */; };
 		CCB91A631A29D09600BA0539 /* de.lproj in Resources */ = {isa = PBXBuildFile; fileRef = CCB91A621A29D09600BA0539 /* de.lproj */; };
 		CCB91A651A29D09B00BA0539 /* pt-BR.lproj in Resources */ = {isa = PBXBuildFile; fileRef = CCB91A641A29D09B00BA0539 /* pt-BR.lproj */; };
@@ -43,6 +45,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7CD5E4CC1AC9FEA000295AF2 /* TGTintedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGTintedButton.h; sourceTree = "<group>"; };
+		7CD5E4CD1AC9FEA000295AF2 /* TGTintedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGTintedButton.m; sourceTree = "<group>"; };
+		7CD5E4CF1ACA047300295AF2 /* TGTintedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGTintedLabel.h; sourceTree = "<group>"; };
+		7CD5E4D01ACA047300295AF2 /* TGTintedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGTintedLabel.m; sourceTree = "<group>"; };
 		CCB91A5C1A29CFE900BA0539 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		CCB91A5D1A29CFE900BA0539 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/TGCameraAuthorizationViewController.strings; sourceTree = "<group>"; };
 		CCB91A601A29D08D00BA0539 /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Base.lproj; path = Example/Classes/View/Base.lproj; sourceTree = SOURCE_ROOT; };
@@ -223,6 +229,10 @@
 				F8E72B4819C9B75900FF3AE5 /* TGCameraSlideUpView.m */,
 				F897019619CA5E57004E6480 /* TGCameraSlideView.h */,
 				F897019719CA5E57004E6480 /* TGCameraSlideView.m */,
+				7CD5E4CC1AC9FEA000295AF2 /* TGTintedButton.h */,
+				7CD5E4CD1AC9FEA000295AF2 /* TGTintedButton.m */,
+				7CD5E4CF1ACA047300295AF2 /* TGTintedLabel.h */,
+				7CD5E4D01ACA047300295AF2 /* TGTintedLabel.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -367,6 +377,7 @@
 				F80D223D19CCFD590019A8EA /* TGCameraGrid.m in Sources */,
 				F861D63F19C669060077B642 /* TGCameraFocus.m in Sources */,
 				F8E72B4919C9B75900FF3AE5 /* TGCameraSlideUpView.m in Sources */,
+				7CD5E4D11ACA047300295AF2 /* TGTintedLabel.m in Sources */,
 				F879167219C879DB000F8637 /* UIImage+CameraFilters.m in Sources */,
 				F897019819CA5E57004E6480 /* TGCameraSlideView.m in Sources */,
 				F8B3E83219CDB6B80070CEB2 /* TGCameraAuthorizationViewController.m in Sources */,
@@ -388,6 +399,7 @@
 				F80DC5A319E7FF9D00395FAD /* TGCameraFocusView.m in Sources */,
 				F835958419C72F3400CAE395 /* TGAlbum.m in Sources */,
 				F861D61419C620E10077B642 /* TGCameraViewController.m in Sources */,
+				7CD5E4CE1AC9FEA000295AF2 /* TGTintedButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

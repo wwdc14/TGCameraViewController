@@ -30,7 +30,7 @@
         
         view.tag = subview.tag = -1;
         view.center = subview.center = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds));
-        view.layer.borderColor = subview.layer.borderColor = [TGCameraColor orangeColor].CGColor;
+        view.layer.borderColor = subview.layer.borderColor = [TGCameraColor tintColor].CGColor;
         
         view.layer.borderWidth = 1;
         view.layer.cornerRadius = CGRectGetHeight(view.frame) / 2;

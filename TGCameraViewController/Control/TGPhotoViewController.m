@@ -242,7 +242,7 @@ static NSString* const kTGCacheVignetteKey = @"TGCacheVignetteKey";
     frame.origin.y = CGRectGetMaxY(button.frame) - height;
     
     _detailFilterView = [[UIView alloc] initWithFrame:frame];
-    _detailFilterView.backgroundColor = [TGCameraColor orangeColor];
+    _detailFilterView.backgroundColor = [TGCameraColor tintColor];
     _detailFilterView.userInteractionEnabled = NO;
     
     [button addSubview:_detailFilterView];
