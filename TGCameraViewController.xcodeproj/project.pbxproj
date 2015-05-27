@@ -95,6 +95,7 @@
 		F897018819C7AF5C004E6480 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TGPhotoViewController.xib; sourceTree = "<group>"; };
 		F897019619CA5E57004E6480 /* TGCameraSlideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGCameraSlideView.h; sourceTree = "<group>"; };
 		F897019719CA5E57004E6480 /* TGCameraSlideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGCameraSlideView.m; sourceTree = "<group>"; };
+		F8A3C5961B161A23001C01B4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/TGCameraAuthorizationViewController.strings; sourceTree = "<group>"; };
 		F8B3E82519CDAEFC0070CEB2 /* TGCameraNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGCameraNavigationController.h; sourceTree = "<group>"; };
 		F8B3E82619CDAEFC0070CEB2 /* TGCameraNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGCameraNavigationController.m; sourceTree = "<group>"; };
 		F8B3E83019CDB6B80070CEB2 /* TGCameraAuthorizationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGCameraAuthorizationViewController.h; sourceTree = "<group>"; };
@@ -426,6 +427,7 @@
 				F8B3E83419CDB6D90070CEB2 /* Base */,
 				F8B3E83719CDC4650070CEB2 /* pt-BR */,
 				CCB91A5D1A29CFE900BA0539 /* de */,
+				F8A3C5961B161A23001C01B4 /* en */,
 			);
 			name = TGCameraAuthorizationViewController.xib;
 			sourceTree = "<group>";
