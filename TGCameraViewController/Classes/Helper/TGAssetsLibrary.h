@@ -51,4 +51,6 @@ typedef void(^TGAssetsLoadImagesCompletion)(NSArray *items, NSError *error);
 - (void)saveImage:(UIImage *)image withAlbumName:(NSString *)albumName resultBlock:(TGAssetsResultCompletion)resultBlock failureBlock:(TGAssetsFailureCompletion)failureBlock;
 - (void)saveJPGImageAtDocumentDirectory:(UIImage *)image resultBlock:(TGAssetsResultCompletion)resultBlock failureBlock:(TGAssetsFailureCompletion)failureBlock;
 
+- (void)latestPhotoWithCompletion:(void (^)(UIImage *photo))completion;
+
 @end

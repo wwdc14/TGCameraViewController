@@ -60,9 +60,9 @@
 - (IBAction)handleTapGesture:(UITapGestureRecognizer *)recognizer;
 
 - (void)deviceOrientationDidChangeNotification;
+- (void)latestPhoto;
 - (AVCaptureVideoOrientation)videoOrientationForDeviceOrientation:(UIDeviceOrientation)deviceOrientation;
 - (void)viewWillDisappearWithCompletion:(void (^)(void))completion;
-- (void)getLatestPhoto;
 
 @end
 
@@ -147,48 +147,8 @@
     ALAuthorizationStatus status = [ALAssetsLibrary authorizationStatus];
     if (status != ALAuthorizationStatusDenied) {
         // access to album is authorised
-        [self getLatestPhoto];
+        [self latestPhoto];
     }
-}
-
-// get the latest image from the album
--(void)getLatestPhoto
-{
-    NSLog(@"MMM TGCameraViewController - getLatestPhoto");
-    ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
-    
-    // Enumerate just the photos and videos group by using ALAssetsGroupSavedPhotos.
-    [library enumerateGroupsWithTypes:ALAssetsGroupSavedPhotos usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
-        
-        // Within the group enumeration block, filter to enumerate just photos.
-        [group setAssetsFilter:[ALAssetsFilter allPhotos]];
-        
-        // For this example, we're only interested in the last item [group numberOfAssets]-1 = last.
-        if ([group numberOfAssets] > 0) {
-            
-            [group enumerateAssetsAtIndexes:[NSIndexSet indexSetWithIndex:[group numberOfAssets]-1]
-                                    options:0
-                                 usingBlock:^(ALAsset *alAsset, NSUInteger index, BOOL *innerStop) {
-                                     
-                                     // The end of the enumeration is signaled by asset == nil.
-                                     if (alAsset) {
-                                         ALAssetRepresentation *representation = [alAsset defaultRepresentation];
-                                         // Do something interesting with the AV asset.
-                                         UIImage *img = [UIImage imageWithCGImage:[representation fullScreenImage]];
-                                         
-                                         // use the photo
-                                         [_albumButton setImage:img forState:UIControlStateNormal];
-                                         
-                                         // we only need the first (most recent) photo -- stop the enumeration
-                                         *innerStop = YES;
-                                     }
-                                 }];
-        }
-    }
-    failureBlock: ^(NSError *error) {
-       // Typically you should handle an error more gracefully than this.
-       NSLog(@"No groups");
-    }];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -344,6 +304,16 @@
         _toggleButton.transform =
         _albumButton.transform =
         _flashButton.transform = transform;
+    }];
+}
+
+-(void)latestPhoto
+{
+    TGAssetsLibrary *library = [TGAssetsLibrary defaultAssetsLibrary];
+    
+    __weak __typeof(self)wSelf = self;
+    [library latestPhotoWithCompletion:^(UIImage *photo) {
+        [wSelf.albumButton setImage:photo forState:UIControlStateNormal];
     }];
 }
 
