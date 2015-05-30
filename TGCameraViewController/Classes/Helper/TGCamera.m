@@ -309,7 +309,6 @@ NSMutableDictionary *optionDictionary;
     [TGCameraFlash flashModeWithCaptureSession:_session andButton:flashButton];
 }
 
-
 + (void)initOptions
 {
     optionDictionary = [NSMutableDictionary dictionary];

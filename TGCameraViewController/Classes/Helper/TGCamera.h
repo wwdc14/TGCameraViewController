@@ -28,6 +28,7 @@
 @import UIKit;
 
 
+#define kTGCameraOptionHiddenToggleButton @"TGCameraOptionHiddenToggleButton"
 #define kTGCameraOptionSaveImageToAlbum @"TGCameraOptionSaveImageToAlbum"
 
 @protocol TGCameraDelegate;

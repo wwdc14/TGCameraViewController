@@ -47,6 +47,7 @@
 @property (strong, nonatomic) IBOutlet TGCameraSlideView *slideDownView;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topViewHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *toggleButtonWidth;
 
 @property (strong, nonatomic) TGCamera *camera;
 @property (nonatomic) BOOL wasLoaded;
@@ -76,6 +77,11 @@
     
     if (CGRectGetHeight([[UIScreen mainScreen] bounds]) <= 480) {
         _topViewHeight.constant = 0;
+    }
+    
+    if ([[TGCamera getOption:kTGCameraOptionHiddenToggleButton] boolValue] == YES) {
+        _toggleButton.hidden = YES;
+        _toggleButtonWidth.constant = 0;
     }
     
     [_albumButton.layer setCornerRadius:10.f];

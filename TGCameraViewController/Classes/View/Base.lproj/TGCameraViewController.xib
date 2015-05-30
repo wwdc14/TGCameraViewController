@@ -20,6 +20,7 @@
                 <outlet property="slideDownView" destination="Czb-nz-m44" id="Ga2-kT-HSY"/>
                 <outlet property="slideUpView" destination="vJp-kA-okD" id="hiW-4t-8lC"/>
                 <outlet property="toggleButton" destination="WJG-N5-BnZ" id="QRP-Z9-Zpe"/>
+                <outlet property="toggleButtonWidth" destination="6Yw-v5-k8c" id="Tt0-Xt-LUE"/>
                 <outlet property="topLeftView" destination="ljD-PV-2sR" id="6yh-RZ-d0w"/>
                 <outlet property="topRightView" destination="umk-ea-F3l" id="bIA-Jv-2nh"/>
                 <outlet property="topViewHeight" destination="0mu-lN-Lkb" id="RZR-8e-pHu"/>

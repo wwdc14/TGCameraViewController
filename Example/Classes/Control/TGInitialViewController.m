@@ -29,6 +29,7 @@
     [super viewDidLoad];
     
     [TGCamera setOption:kTGCameraOptionSaveImageToAlbum value:[NSNumber numberWithBool:YES]];
+    //[TGCamera setOption:kTGCameraOptionHiddenToggleButton value:[NSNumber numberWithBool:YES]];
     
     _photoView.clipsToBounds = YES;
     
