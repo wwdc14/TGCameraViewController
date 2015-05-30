@@ -225,6 +225,7 @@ You will need LLVM 3.0 or later in order to build TGCameraViewController.
 * Zoom
 * Image size as global parameter
 * Fast animations
+* Create a custom picker controller
 
 ---
 ---
