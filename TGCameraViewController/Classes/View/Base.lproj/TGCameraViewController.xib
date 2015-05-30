@@ -192,7 +192,7 @@
                                 <action selector="shotTapped" destination="-1" eventType="touchUpInside" id="XqW-0H-DD4"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wxI-gO-dPX" userLabel="Album" customClass="TGTintedButton">
+                        <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wxI-gO-dPX" userLabel="Album" customClass="TGTintedButton">
                             <rect key="frame" x="500" y="15" width="80" height="80"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="80" id="Qit-id-URc"/>
