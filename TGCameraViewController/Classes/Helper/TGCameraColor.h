@@ -27,4 +27,7 @@
 
 @interface TGCameraColor : UIColor
 
++ (void)setTintColor:(UIColor *)tintColor;
++ (UIColor *)tintColor;
+
 @end
