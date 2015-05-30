@@ -78,6 +78,9 @@
         _topViewHeight.constant = 0;
     }
     
+    [_albumButton.layer setCornerRadius:10.f];
+    [_albumButton.layer setMasksToBounds:YES];
+    
     _camera = [TGCamera cameraWithFlashButton:_flashButton];
     
     _captureView.backgroundColor = [UIColor clearColor];
