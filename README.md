@@ -55,7 +55,7 @@ pod install
 
 <em>Alternatively you can directly download the [latest code version](https://github.com/tdginternet/TGCameraViewController/archive/master.zip) add  drag and drop all files at <strong>TGCameraViewController</strong> folder onto your project.</em>
 
----
+---o
 ---
 
 ### Usage
@@ -172,6 +172,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 
 |Option|Type|Default|Description|
 |:-:|:-:|:-:|:-:|
+|kTGCameraOptionHiddenToggleButton|NSNumber (YES/NO)|NO|Displays or hides the button that switches between the front and rear camera|
 |kTGCameraOptionSaveImageToAlbum|NSNumber (YES/NO)|NO|Save or not the photo in the camera roll|
 
 ```obj-c
