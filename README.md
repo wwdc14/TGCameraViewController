@@ -169,6 +169,22 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 @end
 ```
 
+#### Change colors
+
+```obj-c
+@implementation TGViewController
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    UIColor *tintColor = [UIColor greenColor];
+    [TGCameraColor setTintColor:tintColor];
+}
+
+@end
+```
+
 #### Options
 
 |Option|Type|Default|Description|
