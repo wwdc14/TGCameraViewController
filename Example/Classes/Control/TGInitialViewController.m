@@ -31,7 +31,7 @@
     
     [TGCamera setOption:kTGCameraOptionSaveImageToAlbum value:[NSNumber numberWithBool:YES]];
     //[TGCamera setOption:kTGCameraOptionHiddenToggleButton value:[NSNumber numberWithBool:YES]];
-    [TGCameraColor setTintColor: [UIColor colorWithRed:67/255.0 green:159/255.0 blue:216/255.0 alpha:1.0]];
+    //[TGCameraColor setTintColor: [UIColor greenColor]];
     
     _photoView.clipsToBounds = YES;
     
