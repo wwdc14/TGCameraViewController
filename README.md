@@ -16,6 +16,7 @@ Custom camera with AVFoundation. Beautiful, light and easy to integrate with iOS
 
 * Completely custom camera with AVFoundation
 * Custom view with camera permission denied
+* Custom button colors
 * Easy way to access album (camera roll)
 * Flash auto, off and on
 * Focus
@@ -220,7 +221,6 @@ You will need LLVM 3.0 or later in order to build TGCameraViewController.
 
 ### Todo
 
-* Customize layout programatically
 * Landscape mode support
 * Zoom
 * Image size as global parameter
