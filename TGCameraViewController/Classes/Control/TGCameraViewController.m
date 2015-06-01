@@ -26,7 +26,7 @@
 #import "TGCameraViewController.h"
 #import "TGPhotoViewController.h"
 #import "TGCameraSlideView.h"
-
+#import "TGTintedButton.h"
 
 
 @interface TGCameraViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
@@ -41,7 +41,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *gridButton;
 @property (strong, nonatomic) IBOutlet UIButton *toggleButton;
 @property (strong, nonatomic) IBOutlet UIButton *shotButton;
-@property (strong, nonatomic) IBOutlet UIButton *albumButton;
+@property (strong, nonatomic) IBOutlet TGTintedButton *albumButton;
 @property (strong, nonatomic) IBOutlet UIButton *flashButton;
 @property (strong, nonatomic) IBOutlet TGCameraSlideView *slideUpView;
 @property (strong, nonatomic) IBOutlet TGCameraSlideView *slideDownView;
@@ -322,6 +322,7 @@
     
     __weak __typeof(self)wSelf = self;
     [library latestPhotoWithCompletion:^(UIImage *photo) {
+        wSelf.albumButton.disableTint = YES;
         [wSelf.albumButton setImage:photo forState:UIControlStateNormal];
     }];
 }
