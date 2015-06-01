@@ -322,6 +322,7 @@
     
     __weak __typeof(self)wSelf = self;
     [library latestPhotoWithCompletion:^(UIImage *photo) {
+        wSelf.albumButton.disableTint = YES;
         [wSelf.albumButton setImage:photo forState:UIControlStateNormal];
     }];
 }
