@@ -29,6 +29,7 @@
 #import "TGCameraColor.h"
 #import "TGCameraFilterView.h"
 #import "UIImage+CameraFilters.h"
+#import "TGTintedButton.h"
 
 static NSString* const kTGCacheSatureKey = @"TGCacheSatureKey";
 static NSString* const kTGCacheCurveKey = @"TGCacheCurveKey";
@@ -42,6 +43,7 @@ static NSString* const kTGCacheVignetteKey = @"TGCacheVignetteKey";
 @property (strong, nonatomic) IBOutlet UIView *bottomView;
 @property (strong, nonatomic) IBOutlet TGCameraFilterView *filterView;
 @property (strong, nonatomic) IBOutlet UIButton *defaultFilterButton;
+@property (weak, nonatomic) IBOutlet TGTintedButton *filterWandButton;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topViewHeight;
 
@@ -92,6 +94,13 @@ static NSString* const kTGCacheVignetteKey = @"TGCacheVignetteKey";
     
     _photoView.clipsToBounds = YES;
     _photoView.image = _photo;
+    
+    if (self.delegate != nil) {
+        if ([self.delegate respondsToSelector: @selector(cameraFilterViewEnabled)]) {
+            self.filterWandButton.enabled = [self.delegate cameraFilterViewEnabled];
+            self.filterWandButton.hidden = ![self.delegate cameraFilterViewEnabled];
+        }
+    }
     
     [self addDetailViewToButton:_defaultFilterButton];
 }

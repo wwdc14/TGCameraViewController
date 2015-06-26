@@ -85,6 +85,10 @@
     NSLog(@"%s error: %@", __PRETTY_FUNCTION__, error);
 }
 
+- (BOOL)cameraFilterViewEnabled {
+    return true;
+}
+
 #pragma mark -
 #pragma mark - Actions
 

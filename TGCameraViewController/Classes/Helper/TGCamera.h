@@ -85,6 +85,6 @@
 - (void)cameraDidSavePhotoWithError:(NSError *)error;
 - (void)cameraDidSavePhotoAtPath:(NSURL *)assetURL;
 - (void)cameraWillTakePhoto;
-
+- (BOOL)cameraFilterViewEnabled;
 
 @end
