@@ -29,6 +29,8 @@
 
 
 #define kTGCameraOptionHiddenToggleButton @"TGCameraOptionHiddenToggleButton"
+#define kTGCameraOptionHiddenAlbumButton @"TGCameraOptionHiddenAlbumButton"
+#define kTGCameraOptionHiddenFilterButton @"TGCameraOptionHiddenFilterButton"
 #define kTGCameraOptionSaveImageToAlbum @"TGCameraOptionSaveImageToAlbum"
 
 @protocol TGCameraDelegate;
@@ -85,6 +87,5 @@
 - (void)cameraDidSavePhotoWithError:(NSError *)error;
 - (void)cameraDidSavePhotoAtPath:(NSURL *)assetURL;
 - (void)cameraWillTakePhoto;
-- (BOOL)cameraFilterViewEnabled;
 
 @end

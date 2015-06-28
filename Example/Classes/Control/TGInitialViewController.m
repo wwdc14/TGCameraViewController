@@ -32,6 +32,9 @@
     [TGCamera setOption:kTGCameraOptionSaveImageToAlbum value:[NSNumber numberWithBool:YES]];
     //[TGCamera setOption:kTGCameraOptionHiddenToggleButton value:[NSNumber numberWithBool:YES]];
     //[TGCameraColor setTintColor: [UIColor greenColor]];
+    [TGCamera setOption:kTGCameraOptionHiddenAlbumButton value:[NSNumber numberWithBool:NO]];
+    [TGCamera setOption:kTGCameraOptionHiddenFilterButton value:[NSNumber numberWithBool:NO]];
+
     
     _photoView.clipsToBounds = YES;
     
@@ -83,10 +86,6 @@
 - (void)cameraDidSavePhotoWithError:(NSError *)error
 {
     NSLog(@"%s error: %@", __PRETTY_FUNCTION__, error);
-}
-
-- (BOOL)cameraFilterViewEnabled {
-    return true;
 }
 
 #pragma mark -

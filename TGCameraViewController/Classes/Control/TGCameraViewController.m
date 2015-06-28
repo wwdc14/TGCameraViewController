@@ -84,8 +84,13 @@
         _toggleButtonWidth.constant = 0;
     }
     
+    if ([[TGCamera getOption:kTGCameraOptionHiddenAlbumButton] boolValue] == YES) {
+        _albumButton.hidden = YES;
+    }
+    
     [_albumButton.layer setCornerRadius:10.f];
     [_albumButton.layer setMasksToBounds:YES];
+    
     
     _camera = [TGCamera cameraWithFlashButton:_flashButton];
     
@@ -146,10 +151,10 @@
         _albumButton.enabled =
         _flashButton.enabled = YES;
     }];
-     
+    
     if (_wasLoaded == NO) {
         _wasLoaded = YES;
-       [_camera insertSublayerWithCaptureView:_captureView atRootView:self.view];
+        [_camera insertSublayerWithCaptureView:_captureView atRootView:self.view];
     }
     
     // get the latest image from the album
@@ -247,10 +252,10 @@
     
     [self viewWillDisappearWithCompletion:^{
         [_camera takePhotoWithCaptureView:_captureView videoOrientation:videoOrientation cropSize:_captureView.frame.size
-        completion:^(UIImage *photo) {
-            TGPhotoViewController *viewController = [TGPhotoViewController newWithDelegate:_delegate photo:photo];
-            [self.navigationController pushViewController:viewController animated:YES];
-        }];
+                               completion:^(UIImage *photo) {
+                                   TGPhotoViewController *viewController = [TGPhotoViewController newWithDelegate:_delegate photo:photo];
+                                   [self.navigationController pushViewController:viewController animated:YES];
+                               }];
     }];
 }
 

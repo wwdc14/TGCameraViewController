@@ -95,11 +95,8 @@ static NSString* const kTGCacheVignetteKey = @"TGCacheVignetteKey";
     _photoView.clipsToBounds = YES;
     _photoView.image = _photo;
     
-    if (self.delegate != nil) {
-        if ([self.delegate respondsToSelector: @selector(cameraFilterViewEnabled)]) {
-            self.filterWandButton.enabled = [self.delegate cameraFilterViewEnabled];
-            self.filterWandButton.hidden = ![self.delegate cameraFilterViewEnabled];
-        }
+    if ([[TGCamera getOption:kTGCameraOptionHiddenFilterButton] boolValue] == YES) {
+        _filterWandButton.hidden = YES;
     }
     
     [self addDetailViewToButton:_defaultFilterButton];
