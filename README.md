@@ -203,6 +203,8 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     //...
     [TGCamera setOption:kTGCameraOptionHiddenToggleButton value:[NSNumber numberWithBool:YES]];
+    [TGCamera setOption:kTGCameraOptionHiddenAlbumButton value:[NSNumber numberWithBool:YES]];
+    [TGCamera setOption:kTGCameraOptionHiddenFilterButton value:[NSNumber numberWithBool:YES]];
     [TGCamera setOption:kTGCameraOptionSaveImageToAlbum value:[NSNumber numberWithBool:YES]];
     //...
 }
@@ -211,6 +213,8 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     //...
     BOOL hiddenToggleButton = [[TGCamera getOption:kTGCameraOptionHiddenToggleButton] boolValue];
+    BOOL hiddenAlbumButton = [[TGCamera getOption:kTGCameraOptionHiddenAlbumButton] boolValue];
+    BOOL hiddenFilterButton = [[TGCamera getOption:kTGCameraOptionHiddenFilterButton] boolValue];
     BOOL saveToDevice = [[TGCamera getOption:kTGCameraOptionSaveImageToAlbum] boolValue];
     //...    
 }
