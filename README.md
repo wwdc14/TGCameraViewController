@@ -190,6 +190,8 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 |Option|Type|Default|Description|
 |:-:|:-:|:-:|:-:|
 |kTGCameraOptionHiddenToggleButton|NSNumber (YES/NO)|NO|Displays or hides the button that switches between the front and rear camera|
+|kTGCameraOptionHiddenAlbumButton|NSNumber (YES/NO)|NO|Displays or hides the button that allows the user to select a photo from his/her album|
+|kTGCameraOptionHiddenFilterButton|NSNumber (YES/NO)|NO|Displays or hides the button that allos the user to filter his/her photo|
 |kTGCameraOptionSaveImageToAlbum|NSNumber (YES/NO)|NO|Save or not the photo in the camera roll|
 
 ```obj-c
@@ -201,6 +203,8 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     //...
     [TGCamera setOption:kTGCameraOptionHiddenToggleButton value:[NSNumber numberWithBool:YES]];
+    [TGCamera setOption:kTGCameraOptionHiddenAlbumButton value:[NSNumber numberWithBool:YES]];
+    [TGCamera setOption:kTGCameraOptionHiddenFilterButton value:[NSNumber numberWithBool:YES]];
     [TGCamera setOption:kTGCameraOptionSaveImageToAlbum value:[NSNumber numberWithBool:YES]];
     //...
 }
@@ -209,6 +213,8 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     //...
     BOOL hiddenToggleButton = [[TGCamera getOption:kTGCameraOptionHiddenToggleButton] boolValue];
+    BOOL hiddenAlbumButton = [[TGCamera getOption:kTGCameraOptionHiddenAlbumButton] boolValue];
+    BOOL hiddenFilterButton = [[TGCamera getOption:kTGCameraOptionHiddenFilterButton] boolValue];
     BOOL saveToDevice = [[TGCamera getOption:kTGCameraOptionSaveImageToAlbum] boolValue];
     //...    
 }

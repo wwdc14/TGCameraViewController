@@ -29,9 +29,19 @@
 {
     [super viewDidLoad];
     
+    // save image at album
     [TGCamera setOption:kTGCameraOptionSaveImageToAlbum value:[NSNumber numberWithBool:YES]];
+    
+    // hidden toggle button
     //[TGCamera setOption:kTGCameraOptionHiddenToggleButton value:[NSNumber numberWithBool:YES]];
     //[TGCameraColor setTintColor: [UIColor greenColor]];
+    
+    // hidden album button
+    //[TGCamera setOption:kTGCameraOptionHiddenAlbumButton value:[NSNumber numberWithBool:YES]];
+    
+    // hide filter button
+    //[TGCamera setOption:kTGCameraOptionHiddenFilterButton value:[NSNumber numberWithBool:YES]];
+
     
     _photoView.clipsToBounds = YES;
     
