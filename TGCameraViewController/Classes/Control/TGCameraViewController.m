@@ -61,7 +61,6 @@
 - (IBAction)handleTapGesture:(UITapGestureRecognizer *)recognizer;
 
 - (void)deviceOrientationDidChangeNotification;
-- (void)latestPhoto;
 - (AVCaptureVideoOrientation)videoOrientationForDeviceOrientation:(UIDeviceOrientation)deviceOrientation;
 - (void)viewWillDisappearWithCompletion:(void (^)(void))completion;
 
@@ -155,13 +154,6 @@
     if (_wasLoaded == NO) {
         _wasLoaded = YES;
         [_camera insertSublayerWithCaptureView:_captureView atRootView:self.view];
-    }
-    
-    // get the latest image from the album
-    ALAuthorizationStatus status = [ALAssetsLibrary authorizationStatus];
-    if (status != ALAuthorizationStatusDenied) {
-        // access to album is authorised
-        [self latestPhoto];
     }
 }
 
@@ -318,17 +310,6 @@
         _toggleButton.transform =
         _albumButton.transform =
         _flashButton.transform = transform;
-    }];
-}
-
--(void)latestPhoto
-{
-    TGAssetsLibrary *library = [TGAssetsLibrary defaultAssetsLibrary];
-    
-    __weak __typeof(self)wSelf = self;
-    [library latestPhotoWithCompletion:^(UIImage *photo) {
-        wSelf.albumButton.disableTint = YES;
-        [wSelf.albumButton setImage:photo forState:UIControlStateNormal];
     }];
 }
 
