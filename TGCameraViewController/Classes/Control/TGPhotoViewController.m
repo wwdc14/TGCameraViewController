@@ -99,6 +99,7 @@ static NSString* const kTGCacheVignetteKey = @"TGCacheVignetteKey";
     
     [_cancelButton setImage:[UIImage imageNamed:@"CameraBack"] forState:UIControlStateNormal];
     [_confirmButton setImage:[UIImage imageNamed:@"CameraShot"] forState:UIControlStateNormal];
+    [_filterWandButton setImage:[UIImage imageNamed:@"CameraFilter"] forState:UIControlStateNormal];
 
     if ([[TGCamera getOption:kTGCameraOptionHiddenFilterButton] boolValue] == YES) {
         _filterWandButton.hidden = YES;
