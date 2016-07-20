@@ -14,7 +14,20 @@ class TGInitialViewController: UIViewController, TGCameraDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // set custom tint color
+        //TGCameraColor.setTintColor(.greenColor())
+        
+        // save image to album
         TGCamera.setOption(kTGCameraOptionSaveImageToAlbum, value: true)
+        
+        // hide switch camera button
+        //TGCamera.setOption(kTGCameraOptionHiddenToggleButton, value: true)
+        
+        // hide album button
+        //TGCamera.setOption(kTGCameraOptionHiddenAlbumButton, value: true)
+        
+        // hide filter button
+        //TGCamera.setOption(kTGCameraOptionHiddenFilterButton, value: true)
         
         photoView.clipsToBounds = true
         

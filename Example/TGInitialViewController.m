@@ -29,14 +29,16 @@
 {
     [super viewDidLoad];
     
-    // save image at album
-    [TGCamera setOption:kTGCameraOptionSaveImageToAlbum value:[NSNumber numberWithBool:YES]];
-    
-    // hidden toggle button
-    //[TGCamera setOption:kTGCameraOptionHiddenToggleButton value:[NSNumber numberWithBool:YES]];
+    // set custom tint color
     //[TGCameraColor setTintColor: [UIColor greenColor]];
     
-    // hidden album button
+    // save image to album
+    [TGCamera setOption:kTGCameraOptionSaveImageToAlbum value:[NSNumber numberWithBool:YES]];
+    
+    // hide switch camera button
+    //[TGCamera setOption:kTGCameraOptionHiddenToggleButton value:[NSNumber numberWithBool:YES]];
+    
+    // hide album button
     //[TGCamera setOption:kTGCameraOptionHiddenAlbumButton value:[NSNumber numberWithBool:YES]];
     
     // hide filter button
