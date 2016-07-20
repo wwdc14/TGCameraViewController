@@ -104,6 +104,7 @@
     
     [_closeButton setImage:[UIImage imageNamed:@"CameraClose"] forState:UIControlStateNormal];
     [_shotButton setImage:[UIImage imageNamed:@"CameraShot"] forState:UIControlStateNormal];
+    [_albumButton setImage:[UIImage imageNamed:@"CameraRoll"] forState:UIControlStateNormal];
     [_gridButton setImage:[UIImage imageNamed:@"CameraGrid"] forState:UIControlStateNormal];
     [_toggleButton setImage:[UIImage imageNamed:@"CameraToggle"] forState:UIControlStateNormal];
 
