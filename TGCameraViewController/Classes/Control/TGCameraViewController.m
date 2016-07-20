@@ -107,7 +107,7 @@
     [_albumButton setImage:[UIImage imageNamed:@"CameraRoll"] forState:UIControlStateNormal];
     [_gridButton setImage:[UIImage imageNamed:@"CameraGrid"] forState:UIControlStateNormal];
     [_toggleButton setImage:[UIImage imageNamed:@"CameraToggle"] forState:UIControlStateNormal];
-
+    
     _camera = [TGCamera cameraWithFlashButton:_flashButton];
     
     _captureView.backgroundColor = [UIColor clearColor];
@@ -141,6 +141,8 @@
     _shotButton.enabled =
     _albumButton.enabled =
     _flashButton.enabled = NO;
+    
+    [_camera startRunning];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -148,8 +150,6 @@
     [super viewDidAppear:animated];
     
     [self deviceOrientationDidChangeNotification];
-    
-    [_camera startRunning];
     
     _separatorView.hidden = YES;
     
@@ -259,13 +259,24 @@
     UIDeviceOrientation deviceOrientation = [[UIDevice currentDevice] orientation];
     AVCaptureVideoOrientation videoOrientation = [self videoOrientationForDeviceOrientation:deviceOrientation];
     
+    dispatch_group_t group = dispatch_group_create();
+    __block UIImage *photo;
+    
+    dispatch_group_enter(group);
     [self viewWillDisappearWithCompletion:^{
-        [_camera takePhotoWithCaptureView:_captureView videoOrientation:videoOrientation cropSize:_captureView.frame.size
-                               completion:^(UIImage *photo) {
-                                   TGPhotoViewController *viewController = [TGPhotoViewController newWithDelegate:_delegate photo:photo];
-                                   [self.navigationController pushViewController:viewController animated:YES];
-                               }];
+        dispatch_group_leave(group);
     }];
+    
+    dispatch_group_enter(group);
+    [_camera takePhotoWithCaptureView:_captureView videoOrientation:videoOrientation cropSize:_captureView.frame.size completion:^(UIImage *_photo) {
+        photo = _photo;
+        dispatch_group_leave(group);
+    }];
+    
+    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+        TGPhotoViewController *viewController = [TGPhotoViewController newWithDelegate:_delegate photo:photo];
+        [self.navigationController pushViewController:viewController animated:YES];
+    });
 }
 
 - (IBAction)albumTapped
