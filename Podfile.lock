@@ -1,0 +1,16 @@
+PODS:
+  - TGCameraViewController (2.2.3)
+
+DEPENDENCIES:
+  - TGCameraViewController (from `./`)
+
+EXTERNAL SOURCES:
+  TGCameraViewController:
+    :path: ./
+
+SPEC CHECKSUMS:
+  TGCameraViewController: b9cf4b8f963354d9272fed2634c82963920a4e1a
+
+PODFILE CHECKSUM: b393f23b5d055732b8d4183813959cc427bc36bc
+
+COCOAPODS: 1.0.1
