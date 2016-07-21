@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		89AC90AF284FF2253C5B63D8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E31780ABF851CF05FCE8B4 /* libPods.a */; };
-		991B0F0985A87B115C4C5878 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E31780ABF851CF05FCE8B4 /* libPods.a */; };
+		019EB36AC3A774CECF950F6A /* libPods-TGCameraViewControllerExampleSwift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F3CFDB984D1BE298F4B36076 /* libPods-TGCameraViewControllerExampleSwift.a */; };
+		6B358B508F06890D991C3E7A /* libPods-TGCameraViewControllerExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC5EB0303C6DCDB5E2EEC5E6 /* libPods-TGCameraViewControllerExample.a */; };
 		A31A89CA1D3FE52B00BE590E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F82F8ED719C4F29000A47148 /* Images.xcassets */; };
 		A388D77F1D3FC86D00BBB49A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A388D77E1D3FC86D00BBB49A /* AppDelegate.swift */; };
 		A388D7811D3FC86D00BBB49A /* TGInitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A388D7801D3FC86D00BBB49A /* TGInitialViewController.swift */; };
@@ -22,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C36363E15249692662BA6BC /* Pods-TGCameraViewControllerExampleSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TGCameraViewControllerExampleSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TGCameraViewControllerExampleSwift/Pods-TGCameraViewControllerExampleSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		2BB6239BD5786FDB11132D4A /* Pods-TGCameraViewControllerExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TGCameraViewControllerExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-TGCameraViewControllerExample/Pods-TGCameraViewControllerExample.release.xcconfig"; sourceTree = "<group>"; };
 		73BD7ABC8188570035F30A24 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7C061DEB4E8F5FAD0814545E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A31A89CC1D3FE7C300BE590E /* CONTRIBUTING.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CONTRIBUTING.md; sourceTree = "<group>"; };
@@ -35,8 +37,12 @@
 		A388D78A1D3FC86D00BBB49A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A388D78F1D3FC92400BBB49A /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		A3BF89651D3FD17F00179ECB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		BFEE62AA34F84F414CAE7A72 /* Pods-TGCameraViewControllerExampleSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TGCameraViewControllerExampleSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-TGCameraViewControllerExampleSwift/Pods-TGCameraViewControllerExampleSwift.release.xcconfig"; sourceTree = "<group>"; };
 		C0E31780ABF851CF05FCE8B4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		F82F8E8119C4EFE700A47148 /* .app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = .app; path = TGCameraViewControllerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC5EB0303C6DCDB5E2EEC5E6 /* libPods-TGCameraViewControllerExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TGCameraViewControllerExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1514C79E91669EA6ECF66D6 /* Pods-TGCameraViewControllerExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TGCameraViewControllerExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TGCameraViewControllerExample/Pods-TGCameraViewControllerExample.debug.xcconfig"; sourceTree = "<group>"; };
+		F3CFDB984D1BE298F4B36076 /* libPods-TGCameraViewControllerExampleSwift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TGCameraViewControllerExampleSwift.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F82F8E8119C4EFE700A47148 /* TGCameraViewControllerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TGCameraViewControllerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F82F8EC719C4F29000A47148 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
 		F82F8EC819C4F29000A47148 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../AppDelegate.m; sourceTree = "<group>"; };
 		F82F8ED219C4F29000A47148 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -52,7 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89AC90AF284FF2253C5B63D8 /* libPods.a in Frameworks */,
+				019EB36AC3A774CECF950F6A /* libPods-TGCameraViewControllerExampleSwift.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,7 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				991B0F0985A87B115C4C5878 /* libPods.a in Frameworks */,
+				6B358B508F06890D991C3E7A /* libPods-TGCameraViewControllerExample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +78,10 @@
 			children = (
 				73BD7ABC8188570035F30A24 /* Pods.debug.xcconfig */,
 				7C061DEB4E8F5FAD0814545E /* Pods.release.xcconfig */,
+				E1514C79E91669EA6ECF66D6 /* Pods-TGCameraViewControllerExample.debug.xcconfig */,
+				2BB6239BD5786FDB11132D4A /* Pods-TGCameraViewControllerExample.release.xcconfig */,
+				0C36363E15249692662BA6BC /* Pods-TGCameraViewControllerExampleSwift.debug.xcconfig */,
+				BFEE62AA34F84F414CAE7A72 /* Pods-TGCameraViewControllerExampleSwift.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -80,6 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				C0E31780ABF851CF05FCE8B4 /* libPods.a */,
+				CC5EB0303C6DCDB5E2EEC5E6 /* libPods-TGCameraViewControllerExample.a */,
+				F3CFDB984D1BE298F4B36076 /* libPods-TGCameraViewControllerExampleSwift.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -124,7 +136,7 @@
 		F82F8E8219C4EFE700A47148 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F82F8E8119C4EFE700A47148 /* .app */,
+				F82F8E8119C4EFE700A47148 /* TGCameraViewControllerExample.app */,
 				A388D77C1D3FC86D00BBB49A /* TGCameraViewControllerExampleSwift.app */,
 			);
 			name = Products;
@@ -168,12 +180,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A388D78B1D3FC86D00BBB49A /* Build configuration list for PBXNativeTarget "TGCameraViewControllerExampleSwift" */;
 			buildPhases = (
-				33AEE89A20190C511A41A201 /* Check Pods Manifest.lock */,
+				33AEE89A20190C511A41A201 /* [CP] Check Pods Manifest.lock */,
 				A388D7781D3FC86D00BBB49A /* Sources */,
 				A388D7791D3FC86D00BBB49A /* Frameworks */,
 				A388D77A1D3FC86D00BBB49A /* Resources */,
-				6A29B60A857CD8837B5C0983 /* Embed Pods Frameworks */,
-				B4BD7428597833FA9215AEA1 /* Copy Pods Resources */,
+				6A29B60A857CD8837B5C0983 /* [CP] Embed Pods Frameworks */,
+				B4BD7428597833FA9215AEA1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -188,12 +200,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F82F8EA419C4EFE800A47148 /* Build configuration list for PBXNativeTarget "TGCameraViewControllerExample" */;
 			buildPhases = (
-				AF1D8618C52DFDD7FCB73DB5 /* Check Pods Manifest.lock */,
+				AF1D8618C52DFDD7FCB73DB5 /* [CP] Check Pods Manifest.lock */,
 				F82F8E7D19C4EFE700A47148 /* Sources */,
 				F82F8E7E19C4EFE700A47148 /* Frameworks */,
 				F82F8E7F19C4EFE700A47148 /* Resources */,
-				B0344BF7D063DF81C89E92C7 /* Embed Pods Frameworks */,
-				DC47000837BE6E7840BA75A1 /* Copy Pods Resources */,
+				B0344BF7D063DF81C89E92C7 /* [CP] Embed Pods Frameworks */,
+				DC47000837BE6E7840BA75A1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -201,7 +213,7 @@
 			);
 			name = TGCameraViewControllerExample;
 			productName = TGCameraViewController;
-			productReference = F82F8E8119C4EFE700A47148 /* .app */;
+			productReference = F82F8E8119C4EFE700A47148 /* TGCameraViewControllerExample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -269,14 +281,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		33AEE89A20190C511A41A201 /* Check Pods Manifest.lock */ = {
+		33AEE89A20190C511A41A201 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,29 +296,29 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		6A29B60A857CD8837B5C0983 /* Embed Pods Frameworks */ = {
+		6A29B60A857CD8837B5C0983 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TGCameraViewControllerExampleSwift/Pods-TGCameraViewControllerExampleSwift-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AF1D8618C52DFDD7FCB73DB5 /* Check Pods Manifest.lock */ = {
+		AF1D8618C52DFDD7FCB73DB5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,49 +326,49 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		B0344BF7D063DF81C89E92C7 /* Embed Pods Frameworks */ = {
+		B0344BF7D063DF81C89E92C7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TGCameraViewControllerExample/Pods-TGCameraViewControllerExample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B4BD7428597833FA9215AEA1 /* Copy Pods Resources */ = {
+		B4BD7428597833FA9215AEA1 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TGCameraViewControllerExampleSwift/Pods-TGCameraViewControllerExampleSwift-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DC47000837BE6E7840BA75A1 /* Copy Pods Resources */ = {
+		DC47000837BE6E7840BA75A1 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TGCameraViewControllerExample/Pods-TGCameraViewControllerExample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -406,7 +418,7 @@
 /* Begin XCBuildConfiguration section */
 		A388D78C1D3FC86D00BBB49A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 73BD7ABC8188570035F30A24 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 0C36363E15249692662BA6BC /* Pods-TGCameraViewControllerExampleSwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -420,13 +432,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ExampleSwift/Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		A388D78D1D3FC86D00BBB49A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7C061DEB4E8F5FAD0814545E /* Pods.release.xcconfig */;
+			baseConfigurationReference = BFEE62AA34F84F414CAE7A72 /* Pods-TGCameraViewControllerExampleSwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -440,6 +453,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "NZN.Tudo-Gostoso.TGCameraViewController.swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ExampleSwift/Bridging-Header.h";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -527,7 +541,7 @@
 		};
 		F82F8EA519C4EFE800A47148 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 73BD7ABC8188570035F30A24 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = E1514C79E91669EA6ECF66D6 /* Pods-TGCameraViewControllerExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -544,7 +558,7 @@
 		};
 		F82F8EA619C4EFE800A47148 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7C061DEB4E8F5FAD0814545E /* Pods.release.xcconfig */;
+			baseConfigurationReference = 2BB6239BD5786FDB11132D4A /* Pods-TGCameraViewControllerExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
