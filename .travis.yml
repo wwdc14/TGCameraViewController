@@ -4,3 +4,4 @@ xcode_workspace: TGCameraViewController.xcworkspace
 xcode_scheme:
   - TGCameraViewControllerExample
   - TGCameraViewControllerExampleSwift
+xcode_sdk: iphonesimulator9.3
