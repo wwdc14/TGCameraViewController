@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.platform = :ios
   s.ios.deployment_target = '7.0'
   
-  s.authors = { 'Bruno Tortato Furtado' => 'bruno@furtado.me' }
+  s.authors = { 'Bruno Tortato Furtado' => 'bruno@furtado.me', 'Mario Cecchi' => 'macecchi@gmail.com' }
   
   s.ios.frameworks = 'AssetsLibrary', 'AVFoundation', 'CoreImage', 'Foundation', 'MobileCoreServices', 'UIKit'
   s.source_files = 'TGCameraViewController/**/*.{h,m}'
