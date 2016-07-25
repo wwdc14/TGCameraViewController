@@ -119,17 +119,6 @@ static NSString* const kTGCacheVignetteKey = @"TGCacheVignetteKey";
     return YES;
 }
 
-- (void)dealloc
-{
-    _photoView = nil;
-    _bottomView = nil;
-    _filterView = nil;
-    _defaultFilterButton = nil;
-    _detailFilterView = nil;
-    _photo = nil;
-    _cachePhoto = nil;
-}
-
 #pragma mark -
 #pragma mark - Controller actions
 
