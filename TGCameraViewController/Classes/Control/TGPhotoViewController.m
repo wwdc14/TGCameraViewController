@@ -97,9 +97,10 @@ static NSString* const kTGCacheVignetteKey = @"TGCacheVignetteKey";
     _photoView.clipsToBounds = YES;
     _photoView.image = _photo;
     
-    [_cancelButton setImage:[UIImage imageNamed:@"CameraBack"] forState:UIControlStateNormal];
-    [_confirmButton setImage:[UIImage imageNamed:@"CameraShot"] forState:UIControlStateNormal];
-    [_filterWandButton setImage:[UIImage imageNamed:@"CameraFilter"] forState:UIControlStateNormal];
+    NSBundle *bundle = [NSBundle bundleForClass:self.class];
+    [_cancelButton setImage:[UIImage imageNamed:@"CameraBack" inBundle:bundle compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
+    [_confirmButton setImage:[UIImage imageNamed:@"CameraShot" inBundle:bundle compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
+    [_filterWandButton setImage:[UIImage imageNamed:@"CameraFilter" inBundle:bundle compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
 
     if ([[TGCamera getOption:kTGCameraOptionHiddenFilterButton] boolValue] == YES) {
         _filterWandButton.hidden = YES;
@@ -262,7 +263,7 @@ static NSString* const kTGCacheVignetteKey = @"TGCacheVignetteKey";
 
 + (instancetype)newController
 {
-    return [super new];
+    return [[self alloc] initWithNibName:NSStringFromClass(self.class) bundle:[NSBundle bundleForClass:self.class]];
 }
 
 @end

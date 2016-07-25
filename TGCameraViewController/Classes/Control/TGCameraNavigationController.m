@@ -98,7 +98,7 @@
 
 - (void)setupAuthorizedWithDelegate:(id<TGCameraDelegate>)delegate
 {
-    TGCameraViewController *viewController = [TGCameraViewController new];
+    TGCameraViewController *viewController = [[TGCameraViewController alloc] init];
     viewController.delegate = delegate;
     
     self.viewControllers = @[viewController];
@@ -106,7 +106,7 @@
 
 - (void)setupDenied
 {
-    UIViewController *viewController = [TGCameraAuthorizationViewController new];
+    UIViewController *viewController = [[TGCameraAuthorizationViewController alloc] init];
     self.viewControllers = @[viewController];
 }
 

@@ -71,6 +71,11 @@
 
 @implementation TGCameraViewController
 
+- (instancetype)init
+{
+    return [super initWithNibName:NSStringFromClass(self.class) bundle:[NSBundle bundleForClass:self.class]];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -102,11 +107,12 @@
     [_albumButton.layer setCornerRadius:10.f];
     [_albumButton.layer setMasksToBounds:YES];
     
-    [_closeButton setImage:[UIImage imageNamed:@"CameraClose"] forState:UIControlStateNormal];
-    [_shotButton setImage:[UIImage imageNamed:@"CameraShot"] forState:UIControlStateNormal];
-    [_albumButton setImage:[UIImage imageNamed:@"CameraRoll"] forState:UIControlStateNormal];
-    [_gridButton setImage:[UIImage imageNamed:@"CameraGrid"] forState:UIControlStateNormal];
-    [_toggleButton setImage:[UIImage imageNamed:@"CameraToggle"] forState:UIControlStateNormal];
+    NSBundle *bundle = [NSBundle bundleForClass:self.class];
+    [_closeButton setImage:[UIImage imageNamed:@"CameraClose" inBundle:bundle compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
+    [_shotButton setImage:[UIImage imageNamed:@"CameraShot" inBundle:bundle compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
+    [_albumButton setImage:[UIImage imageNamed:@"CameraRoll" inBundle:bundle compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
+    [_gridButton setImage:[UIImage imageNamed:@"CameraGrid" inBundle:bundle compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
+    [_toggleButton setImage:[UIImage imageNamed:@"CameraToggle" inBundle:bundle compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
     
     _camera = [TGCamera cameraWithFlashButton:_flashButton];
     
