@@ -13,7 +13,8 @@
     "ios": "7.0"
   },
   "authors": {
-    "Bruno Tortato Furtado": "bruno@furtado.me"
+    "Bruno Tortato Furtado": "bruno@furtado.me",
+    "Mario Cecchi": "macecchi@gmail.com"
   },
   "ios": {
     "frameworks": [
