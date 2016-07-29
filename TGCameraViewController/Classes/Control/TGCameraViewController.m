@@ -240,6 +240,7 @@
 
 - (IBAction)shotTapped
 {
+#if !TARGET_IPHONE_SIMULATOR
     _shotButton.enabled =
     _albumButton.enabled = NO;
     
@@ -264,6 +265,7 @@
         TGPhotoViewController *viewController = [TGPhotoViewController newWithDelegate:_delegate photo:photo];
         [self.navigationController pushViewController:viewController animated:YES];
     });
+#endif
 }
 
 - (IBAction)albumTapped
