@@ -55,6 +55,7 @@
     pickerController.delegate = delegate;
     pickerController.mediaTypes = @[(NSString *) kUTTypeImage];
     pickerController.allowsEditing = YES;
+    pickerController.modalPresentationStyle = UIModalPresentationPopover;
     
     return pickerController;
 }

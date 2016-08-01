@@ -275,6 +275,7 @@
     
     [self viewWillDisappearWithCompletion:^{
         UIImagePickerController *pickerController = [TGAlbum imagePickerControllerWithDelegate:self];
+        pickerController.popoverPresentationController.sourceView = self.albumButton;
         [self presentViewController:pickerController animated:YES completion:nil];
     }];
 }
