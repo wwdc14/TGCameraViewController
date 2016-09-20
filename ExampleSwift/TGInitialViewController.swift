@@ -31,7 +31,7 @@ class TGInitialViewController: UIViewController, TGCameraDelegate {
         
         photoView.clipsToBounds = true
         
-        let clearButton = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action:#selector(clearTapped))
+        let clearButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action:#selector(clearTapped))
         navigationItem.rightBarButtonItem = clearButton
     }
 
@@ -43,17 +43,17 @@ class TGInitialViewController: UIViewController, TGCameraDelegate {
     // MARK: TGCameraDelegate - Required methods
     
     func cameraDidCancel() {
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
-    func cameraDidTakePhoto(image: UIImage!) {
+    func cameraDidTakePhoto(_ image: UIImage!) {
         photoView.image = image
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
-    func cameraDidSelectAlbumPhoto(image: UIImage!) {
+    func cameraDidSelectAlbumPhoto(_ image: UIImage!) {
         photoView.image = image
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     
@@ -63,11 +63,11 @@ class TGInitialViewController: UIViewController, TGCameraDelegate {
         print("cameraWillTakePhoto")
     }
     
-    func cameraDidSavePhotoAtPath(assetURL: NSURL!) {
+    func cameraDidSavePhoto(atPath assetURL: URL!) {
         print("cameraDidSavePhotoAtPath: \(assetURL)")
     }
     
-    func cameraDidSavePhotoWithError(error: NSError!) {
+    func cameraDidSavePhotoWithError(_ error: Error!) {
         print("cameraDidSavePhotoWithError \(error)")
     }
     
@@ -75,8 +75,8 @@ class TGInitialViewController: UIViewController, TGCameraDelegate {
     // MARK: Actions
     
     @IBAction func takePhotoTapped() {
-        let navigationController = TGCameraNavigationController.newWithCameraDelegate(self)
-        presentViewController(navigationController, animated: true, completion: nil)
+        let navigationController = TGCameraNavigationController.new(with: self)
+        present(navigationController!, animated: true, completion: nil)
     }
     
     
