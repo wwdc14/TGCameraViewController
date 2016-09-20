@@ -1,6 +1,6 @@
 platform :ios, '7.0'
 
-pod 'TGCameraViewController', :path => './'
+pod 'TGCameraViewController', :path => './', :inhibit_warnings => true
 
 target 'TGCameraViewControllerExample' do
 	
