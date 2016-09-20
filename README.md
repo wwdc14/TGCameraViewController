@@ -51,9 +51,23 @@ pod install
 
 Alternatively, you can download the [latest code version](https://github.com/tdginternet/TGCameraViewController/archive/master.zip) directly and import the files to your project.
 
+#### Privacy (iOS 10)
+
+If you are building your app with iOS 10 or newer, you need to add two privacy keys to your app's Info.plist to allow the usage of the camera and photo library, or your app will crash. 
+
+Add the keys below to the `<dict>` tag of your Info.plist, replacing the strings with the description you want to provide when prompting the user:
+
+```
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Enable Photos access to import photos from your library.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Enable Camera to take photos.</string>
+```
 
 
 ### Usage
+
+Here are some usage examples with Objective-C. You can find example projects for **Objective-C** and **Swift 3** cloning the project. Refer to version 2.2.5 if you need a Swift 2.3 example.
 
 #### Take photo
 
