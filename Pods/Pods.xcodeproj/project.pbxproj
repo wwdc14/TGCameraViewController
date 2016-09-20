@@ -7,65 +7,65 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0363932F6FF61D30721C078E5F13EABD /* TGCameraFocusView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FF85D7BD2361DAA59119947AC89175 /* TGCameraFocusView.m */; };
+		0DB4AD009BCACEE51E6F11D5A8BB7697 /* TGCameraColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 99BA805E6C2C2BB2FEA4FAA4483CAA25 /* TGCameraColor.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		0E1191AB3CF5B4726382A94BCEC65D94 /* TGCameraFocusView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FF85D7BD2361DAA59119947AC89175 /* TGCameraFocusView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		1012ECBC657544249DEA02C786E5FE32 /* TGCameraViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D63F26628D73F92B6AF9350273A08E /* TGCameraViewController-dummy.m */; };
 		12E6DC6784B5DB8858C94C33B87FB499 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85F42EFAEE1D3FE1169877E1CFF5269E /* CoreImage.framework */; };
 		12FF56A38A4BD05D6C2DE92BAE5354DB /* TGAssetImageFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F97CA8154943E0B4F791D37DA2C5AD6 /* TGAssetImageFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		14E17C78394896DA510B55E4D3BBC01E /* TGCameraFocusView.h in Headers */ = {isa = PBXBuildFile; fileRef = D3F4F472E4370B5F1A30E807DBE6B54F /* TGCameraFocusView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		17BA9A63DEDE9CF1FDF1699767C18CA5 /* TGAlbum.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FDBDCDB4CE3E215813A56AAEC2BA7BD /* TGAlbum.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1AE745E0D9723CE7C78D3584C31AD13B /* TGCameraFocus.m in Sources */ = {isa = PBXBuildFile; fileRef = B955BE766161370DFEF27E3338B58B23 /* TGCameraFocus.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		20DE6B3E59B25E9C4FEAE8B6C9FA8018 /* TGCameraGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A6027FB8F45AB2FAE99A04C84D2D09 /* TGCameraGrid.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		2DAD75B03E5B09521299678C7DA27A60 /* TGCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D48B9B7A1FE24820BE621912C8C730 /* TGCameraViewController.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		2DB76C3310DD8FEEFBE37B83B3E5BC25 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A311CFFEBC974500EB813BB228EE7793 /* AssetsLibrary.framework */; };
-		35A8CA0008C413D448028CBBA6495C42 /* TGCameraFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B332C932D714BB756D46749BB5BD579 /* TGCameraFunctions.m */; };
+		3262B12501D66FBB895C0DD9A52FB968 /* TGCameraSlideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9776546CDDC472139A88F5AA969E4045 /* TGCameraSlideView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		3E23D1358F98C1BC3ED0493A2298DFA5 /* TGCameraSlideView.h in Headers */ = {isa = PBXBuildFile; fileRef = C0A1E3DFA6A8F85B20841BA7EE77F035 /* TGCameraSlideView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3F63919F3076A1266ECACEEC66D7176F /* TGAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F60E607109AA8B5DF6AF7EEB2D10C9 /* TGAlbum.m */; };
 		427396DCA9ECCBE3E3FEF5813A7A023A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5A3317B5A66CAB4667F3CE3E2F9A931 /* UIKit.framework */; };
+		429D8E95C90B0EDDA8949C523209F677 /* TGCameraSlideUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7595505BF738A8A0EDE42B2280A5EF /* TGCameraSlideUpView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		460A21D115969C94613A522CA9C85E88 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACEBE15173CC6D0E1E476EEA389DEFAE /* Foundation.framework */; };
-		4E2968C2DC9353F44C09A3359066CA43 /* TGCameraNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6232212F74C02A58522F3CDB19312C /* TGCameraNavigationController.m */; };
+		4E43FC3D29C3D8AE46B5007C68867AF3 /* TGCameraGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF11B27C98CC75F55A69638FB5E0743 /* TGCameraGridView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		55EE68D7081493507776E64FCC578BE6 /* TGTintedLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 76F0B8A00571892462A28B690C6BAFD5 /* TGTintedLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		563A21C3BB6A4CDACF5345DA38D667A3 /* TGTintedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 955C870852912A39F782490418D0089E /* TGTintedLabel.m */; };
-		583681889D6F66E775DD7F4779C1EFE5 /* TGCameraFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CF04D9773638EFC364B93D3D29A892 /* TGCameraFilterView.m */; };
+		56D1DBED51C5D6ACB97C7D2EC849CB63 /* TGTintedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 413E7A05197989E87630DF40684CCAA2 /* TGTintedButton.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		587C2B04B011E4F59EB9F64F6206778D /* TGCameraNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 80959ADB06154D021D0722A28C57CD3F /* TGCameraNavigationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5CC6CCD84299911A6EEB1B8762ADE43B /* Pods-TGCameraViewControllerExample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 78774B631AB2BA6A5BA954DF4ABD5BD5 /* Pods-TGCameraViewControllerExample-dummy.m */; };
+		6147E68C481ECE250E5C6FF923CF6F58 /* TGCameraAuthorizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C8AFA4F231704906A72ECE5BFE612A0 /* TGCameraAuthorizationViewController.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		61D715D97F1D09440021E138681815C8 /* TGCameraSlideDownView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7115E5275C57113DB36E74BEF56DB58D /* TGCameraSlideDownView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6AFCA5E6911BAB109E691984AFF6F7F2 /* TGCameraGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A6027FB8F45AB2FAE99A04C84D2D09 /* TGCameraGrid.m */; };
-		6F39D94134BDB43B90353A23A19C1350 /* TGCameraSlideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9776546CDDC472139A88F5AA969E4045 /* TGCameraSlideView.m */; };
+		62DBB2B3D814F42225A207B76C061D38 /* TGAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F60E607109AA8B5DF6AF7EEB2D10C9 /* TGAlbum.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		692F47268E8394AB8A19FDA7952C1FC1 /* TGCameraSlideDownView.m in Sources */ = {isa = PBXBuildFile; fileRef = 115B82FA5DCDCDE4AB601676181A280D /* TGCameraSlideDownView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		70515CAF07E27911CCFF34651DF50156 /* TGCameraFlash.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A8D4A16B68DDBBCC83E8F81FFBDEC0 /* TGCameraFlash.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		70618F106746A334B4B9398117B84C21 /* TGCameraGrid.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9D786ED293BCE3CC11F90CB5F74C6F /* TGCameraGrid.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7830EA597019BEA70658D1CDDACC1088 /* TGCameraFocus.h in Headers */ = {isa = PBXBuildFile; fileRef = DE2728786D22FA4D269698200945A8BA /* TGCameraFocus.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7E35E1A742DAF6F526DE624AE5319C61 /* TGAssetsLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE8E30DFC88BD53DFA3998AA9FB4305 /* TGAssetsLibrary.m */; };
-		811A45BB3B7028897C9AABE74B718DD2 /* TGCameraShot.m in Sources */ = {isa = PBXBuildFile; fileRef = 483AD04570EF20E5EE4DB2E4FD9D94BE /* TGCameraShot.m */; };
-		8865DFE01F25F7BF80A7DAE54FF00875 /* TGCameraSlideUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7595505BF738A8A0EDE42B2280A5EF /* TGCameraSlideUpView.m */; };
+		836B10F69A061B3D94500EA8E0E0FEA0 /* TGAssetImageFile.m in Sources */ = {isa = PBXBuildFile; fileRef = F644DC198DD52F97AAD6F7568F0EBA16 /* TGAssetImageFile.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		8AD4D7881127FCED8BD2A9440A5D0B4A /* TGCameraSlideUpView.h in Headers */ = {isa = PBXBuildFile; fileRef = 66C3C56E012A218389CBB39523C8F295 /* TGCameraSlideUpView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9047205F3ADA0A7EA5C58F4CC7DDF07A /* TGCameraFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CF04D9773638EFC364B93D3D29A892 /* TGCameraFilterView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		907D3A003A706A23961461F47C301D1B /* Pods-TGCameraViewControllerExampleSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AD7F9930EB469DEA1182A50EE2DDB41 /* Pods-TGCameraViewControllerExampleSwift-dummy.m */; };
+		92DE6AC2685E42FAAE2BF7E8EFFFADBD /* TGCameraShot.m in Sources */ = {isa = PBXBuildFile; fileRef = 483AD04570EF20E5EE4DB2E4FD9D94BE /* TGCameraShot.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		9358C12B17E64AB485C58D294098AF4E /* TGCameraShot.h in Headers */ = {isa = PBXBuildFile; fileRef = B5C60E0041535C64502BFD753D83E604 /* TGCameraShot.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9A32BC3E0B4E032636D26A9EE1562D7D /* TGCameraToggle.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A022D37B13E892CEA6C02D1F93933AC /* TGCameraToggle.m */; };
-		A1914CDA762E30F32F79AE957184096E /* TGCameraFlash.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A8D4A16B68DDBBCC83E8F81FFBDEC0 /* TGCameraFlash.m */; };
-		A500556134CA099AD1688B35626CD09F /* TGCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D48B9B7A1FE24820BE621912C8C730 /* TGCameraViewController.m */; };
+		99A33BF8E8722D7939658228D1303EED /* TGPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB1325D80F660A26EF1215DED1C47C8 /* TGPhotoViewController.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		9A55265F3EC3CEAAC38F999B481AEE95 /* TGCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D6727D9580B6249AA69AF6F36BD143 /* TGCamera.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		A3F77B4C8A9FB82B9F7866D0A0E442B7 /* UIImage+CameraFilters.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FAB98446475D7E63253D72E0BBBDBD4 /* UIImage+CameraFilters.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		A5302E024D18C586CB5F01CEA1DD761B /* TGCameraFlash.h in Headers */ = {isa = PBXBuildFile; fileRef = 7840BFBEBA22A4CE80E48AC1A4528C71 /* TGCameraFlash.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A87B656E0407A896394AA343252075C9 /* TGAssetsLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = C6167F43543FBF653FA0920AFCE28152 /* TGAssetsLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ABEC92EA5A0096FE3D9E1F7F4B5A3F35 /* TGCameraToggle.h in Headers */ = {isa = PBXBuildFile; fileRef = D03D6C41C5C2E277006689D954F12991 /* TGCameraToggle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AC99E36E7256408DB5176CB9AEB7E88A /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F080874BE77FD565854A9051C5A2C059 /* MobileCoreServices.framework */; };
 		B66FDDAC6865B685710CCAD756BC85A1 /* TGPhotoViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 45477727347BDE32A45EE5DEB90B925F /* TGPhotoViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B7EC41FC1F339A08BE2739B659AFB02D /* TGCameraGridView.h in Headers */ = {isa = PBXBuildFile; fileRef = B6023F54C6739EBF56512C5013969A23 /* TGCameraGridView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B92393F4B2FED27C77E9BE7E3B87B3FF /* UIImage+CameraFilters.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FAB98446475D7E63253D72E0BBBDBD4 /* UIImage+CameraFilters.m */; };
-		BBDF796164FCEF62421909675D9DC4DF /* TGCameraGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF11B27C98CC75F55A69638FB5E0743 /* TGCameraGridView.m */; };
 		BFFA29B3637CE2DEF3612E139538B279 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0D618670E8A3731ECBF6F976F3174E /* AVFoundation.framework */; };
 		C748AFA81CFB41103004B6D784423354 /* TGCameraColor.h in Headers */ = {isa = PBXBuildFile; fileRef = E8FEDB98A23C61D4CEB16144AA9E61A7 /* TGCameraColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C75FAB53CDEA546C39BD5179678021E5 /* TGTintedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 413E7A05197989E87630DF40684CCAA2 /* TGTintedButton.m */; };
 		C8E365CC0B75F9E5A5608F499819E414 /* TGCameraAuthorizationViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 688EB3BB9D6781EA9400D55A5C515F3D /* TGCameraAuthorizationViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA36337AF9DBC752480B7C277F40C56A /* TGCameraViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = D1507B51DAFDEDB5857398C113B6F784 /* TGCameraViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA658B2A181171D20C95CD6ADCBFF6F7 /* TGTintedButton.h in Headers */ = {isa = PBXBuildFile; fileRef = F51630CFF39A03D330BBC5C5FA1E2E0C /* TGTintedButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CD2F943C6FE4FA13BE0C09293D56CBA9 /* TGCameraViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D63F26628D73F92B6AF9350273A08E /* TGCameraViewController-dummy.m */; };
-		D2C94CAC7A6CA303BEFC5F3C1ECF30BE /* TGCameraColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 99BA805E6C2C2BB2FEA4FAA4483CAA25 /* TGCameraColor.m */; };
+		CFB7D73947CF4B347F2F7C2AF415D6F6 /* TGCameraFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B332C932D714BB756D46749BB5BD579 /* TGCameraFunctions.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		D034A5416C59F4A104CBA540C4DC2582 /* TGCameraToggle.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A022D37B13E892CEA6C02D1F93933AC /* TGCameraToggle.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		D87B3F0443B5BBBAF6443D89921930B3 /* TGCameraFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 52BF3054E04C9A94ED79FA5B7E1DD779 /* TGCameraFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E0FC23B12261F9FB3730BEA304A25A42 /* TGCameraSlideDownView.m in Sources */ = {isa = PBXBuildFile; fileRef = 115B82FA5DCDCDE4AB601676181A280D /* TGCameraSlideDownView.m */; };
+		DC6542D67CB4953EAF285BBB4D8DE09F /* TGTintedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 955C870852912A39F782490418D0089E /* TGTintedLabel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		E149D1D955257B1348FB222F64DDF8AE /* TGCameraNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6232212F74C02A58522F3CDB19312C /* TGCameraNavigationController.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		E312E6302F65D770922D9D9DF8DE3884 /* TGCameraFilterView.h in Headers */ = {isa = PBXBuildFile; fileRef = 54D9E6423FDABCDFD8A4FFB74DC51C28 /* TGCameraFilterView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E67D8BAD00BD0B1D8AC4CFFE19634C88 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACEBE15173CC6D0E1E476EEA389DEFAE /* Foundation.framework */; };
-		E6F666D650E148D6CBC9D4B5C438B114 /* TGCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D6727D9580B6249AA69AF6F36BD143 /* TGCamera.m */; };
 		EA9995003B0AF10E10DB269D0A18634C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACEBE15173CC6D0E1E476EEA389DEFAE /* Foundation.framework */; };
-		EDD70311F09AA02800F26E1FB6700E58 /* TGPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB1325D80F660A26EF1215DED1C47C8 /* TGPhotoViewController.m */; };
-		EF3300E34B5BB66477D17CC6698775FF /* TGCameraFocus.m in Sources */ = {isa = PBXBuildFile; fileRef = B955BE766161370DFEF27E3338B58B23 /* TGCameraFocus.m */; };
 		EF84A1D8C50F685356CA39C6EFF51143 /* TGCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = 48159282B725DB1B7937CA7B5354BD3B /* TGCamera.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F252D93148FBED8D7D6DDA95E27072E2 /* TGAssetImageFile.m in Sources */ = {isa = PBXBuildFile; fileRef = F644DC198DD52F97AAD6F7568F0EBA16 /* TGAssetImageFile.m */; };
+		F0CBDC54FA464328FFE7641FBB7A5E6E /* TGAssetsLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE8E30DFC88BD53DFA3998AA9FB4305 /* TGAssetsLibrary.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		FC36B4571FBC789ED0F23144F53AFEA9 /* UIImage+CameraFilters.h in Headers */ = {isa = PBXBuildFile; fileRef = 40D88874AAF8675C56B313766F2F748D /* UIImage+CameraFilters.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FF336E0992C36D1FFEA866C7C13476A8 /* TGCameraAuthorizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C8AFA4F231704906A72ECE5BFE612A0 /* TGCameraAuthorizationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -517,7 +517,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0A8D10DF2D561156DA656A3B46F5B3A9 /* Build configuration list for PBXNativeTarget "TGCameraViewController" */;
 			buildPhases = (
-				12C76953FAE3D2D88D2B6C65D164E927 /* Sources */,
+				38F8EA3B9AD2A6FBD6A35EA2E58D9C1D /* Sources */,
 				9EC976F23D6AD648A7AFD4800CAA91B0 /* Frameworks */,
 				19BA34B95BF89AB7A93F2569053E5F79 /* Headers */,
 			);
@@ -576,43 +576,43 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		12C76953FAE3D2D88D2B6C65D164E927 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3F63919F3076A1266ECACEEC66D7176F /* TGAlbum.m in Sources */,
-				F252D93148FBED8D7D6DDA95E27072E2 /* TGAssetImageFile.m in Sources */,
-				7E35E1A742DAF6F526DE624AE5319C61 /* TGAssetsLibrary.m in Sources */,
-				E6F666D650E148D6CBC9D4B5C438B114 /* TGCamera.m in Sources */,
-				FF336E0992C36D1FFEA866C7C13476A8 /* TGCameraAuthorizationViewController.m in Sources */,
-				D2C94CAC7A6CA303BEFC5F3C1ECF30BE /* TGCameraColor.m in Sources */,
-				583681889D6F66E775DD7F4779C1EFE5 /* TGCameraFilterView.m in Sources */,
-				A1914CDA762E30F32F79AE957184096E /* TGCameraFlash.m in Sources */,
-				EF3300E34B5BB66477D17CC6698775FF /* TGCameraFocus.m in Sources */,
-				0363932F6FF61D30721C078E5F13EABD /* TGCameraFocusView.m in Sources */,
-				35A8CA0008C413D448028CBBA6495C42 /* TGCameraFunctions.m in Sources */,
-				6AFCA5E6911BAB109E691984AFF6F7F2 /* TGCameraGrid.m in Sources */,
-				BBDF796164FCEF62421909675D9DC4DF /* TGCameraGridView.m in Sources */,
-				4E2968C2DC9353F44C09A3359066CA43 /* TGCameraNavigationController.m in Sources */,
-				811A45BB3B7028897C9AABE74B718DD2 /* TGCameraShot.m in Sources */,
-				E0FC23B12261F9FB3730BEA304A25A42 /* TGCameraSlideDownView.m in Sources */,
-				8865DFE01F25F7BF80A7DAE54FF00875 /* TGCameraSlideUpView.m in Sources */,
-				6F39D94134BDB43B90353A23A19C1350 /* TGCameraSlideView.m in Sources */,
-				9A32BC3E0B4E032636D26A9EE1562D7D /* TGCameraToggle.m in Sources */,
-				CD2F943C6FE4FA13BE0C09293D56CBA9 /* TGCameraViewController-dummy.m in Sources */,
-				A500556134CA099AD1688B35626CD09F /* TGCameraViewController.m in Sources */,
-				EDD70311F09AA02800F26E1FB6700E58 /* TGPhotoViewController.m in Sources */,
-				C75FAB53CDEA546C39BD5179678021E5 /* TGTintedButton.m in Sources */,
-				563A21C3BB6A4CDACF5345DA38D667A3 /* TGTintedLabel.m in Sources */,
-				B92393F4B2FED27C77E9BE7E3B87B3FF /* UIImage+CameraFilters.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		346261643944628BF04D61F622FF4DDF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				907D3A003A706A23961461F47C301D1B /* Pods-TGCameraViewControllerExampleSwift-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38F8EA3B9AD2A6FBD6A35EA2E58D9C1D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62DBB2B3D814F42225A207B76C061D38 /* TGAlbum.m in Sources */,
+				836B10F69A061B3D94500EA8E0E0FEA0 /* TGAssetImageFile.m in Sources */,
+				F0CBDC54FA464328FFE7641FBB7A5E6E /* TGAssetsLibrary.m in Sources */,
+				9A55265F3EC3CEAAC38F999B481AEE95 /* TGCamera.m in Sources */,
+				6147E68C481ECE250E5C6FF923CF6F58 /* TGCameraAuthorizationViewController.m in Sources */,
+				0DB4AD009BCACEE51E6F11D5A8BB7697 /* TGCameraColor.m in Sources */,
+				9047205F3ADA0A7EA5C58F4CC7DDF07A /* TGCameraFilterView.m in Sources */,
+				70515CAF07E27911CCFF34651DF50156 /* TGCameraFlash.m in Sources */,
+				1AE745E0D9723CE7C78D3584C31AD13B /* TGCameraFocus.m in Sources */,
+				0E1191AB3CF5B4726382A94BCEC65D94 /* TGCameraFocusView.m in Sources */,
+				CFB7D73947CF4B347F2F7C2AF415D6F6 /* TGCameraFunctions.m in Sources */,
+				20DE6B3E59B25E9C4FEAE8B6C9FA8018 /* TGCameraGrid.m in Sources */,
+				4E43FC3D29C3D8AE46B5007C68867AF3 /* TGCameraGridView.m in Sources */,
+				E149D1D955257B1348FB222F64DDF8AE /* TGCameraNavigationController.m in Sources */,
+				92DE6AC2685E42FAAE2BF7E8EFFFADBD /* TGCameraShot.m in Sources */,
+				692F47268E8394AB8A19FDA7952C1FC1 /* TGCameraSlideDownView.m in Sources */,
+				429D8E95C90B0EDDA8949C523209F677 /* TGCameraSlideUpView.m in Sources */,
+				3262B12501D66FBB895C0DD9A52FB968 /* TGCameraSlideView.m in Sources */,
+				D034A5416C59F4A104CBA540C4DC2582 /* TGCameraToggle.m in Sources */,
+				1012ECBC657544249DEA02C786E5FE32 /* TGCameraViewController-dummy.m in Sources */,
+				2DAD75B03E5B09521299678C7DA27A60 /* TGCameraViewController.m in Sources */,
+				99A33BF8E8722D7939658228D1303EED /* TGPhotoViewController.m in Sources */,
+				56D1DBED51C5D6ACB97C7D2EC849CB63 /* TGTintedButton.m in Sources */,
+				DC6542D67CB4953EAF285BBB4D8DE09F /* TGTintedLabel.m in Sources */,
+				A3F77B4C8A9FB82B9F7866D0A0E442B7 /* UIImage+CameraFilters.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
