@@ -15,7 +15,7 @@ class TGInitialViewController: UIViewController, TGCameraDelegate {
         super.viewDidLoad()
         
         // set custom tint color
-        //TGCameraColor.setTintColor(.greenColor())
+        //TGCameraColor.setTint(.green)
         
         // save image to album
         TGCamera.setOption(kTGCameraOptionSaveImageToAlbum, value: true)
