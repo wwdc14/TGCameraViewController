@@ -1,6 +1,6 @@
 {
   "name": "TGCameraViewController",
-  "version": "2.2.6",
+  "version": "2.2.7",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -10,7 +10,7 @@
   "screenshots": "http://s28.postimg.org/eeli1omct/TGCamera_View_Controller.png",
   "requires_arc": true,
   "platforms": {
-    "ios": "7.0"
+    "ios": "8.0"
   },
   "authors": {
     "Bruno Tortato Furtado": "bruno@furtado.me",
@@ -34,6 +34,6 @@
   ],
   "source": {
     "git": "https://github.com/tdginternet/TGCameraViewController.git",
-    "tag": "2.2.6"
+    "tag": "2.2.7"
   }
 }

@@ -672,28 +672,28 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		2EB1E319B408E19671B849EE4DFDF8A6 /* Release */ = {
+		2163A664A7CF475470C3798B09435A83 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B5428CD989535FCBE86F4D514EFD3124 /* TGCameraViewController.xcconfig */;
+			baseConfigurationReference = D0DB6147021EE79C153FAE8330E718F2 /* Pods-TGCameraViewControllerExampleSwift.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/TGCameraViewController/TGCameraViewController-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
-			name = Release;
+			name = Debug;
 		};
-		3FA2475660FFC880302AD18E29B2E5FC /* Debug */ = {
+		47BEF9D903506B003EA5C2B249729489 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -728,24 +728,45 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		6127D9E5304E2CF8E6903AED06AB9FDE /* Debug */ = {
+		684A36E965D474AD3B8AEEDE9F67A2B9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0DB6147021EE79C153FAE8330E718F2 /* Pods-TGCameraViewControllerExampleSwift.debug.xcconfig */;
+			baseConfigurationReference = B5428CD989535FCBE86F4D514EFD3124 /* TGCameraViewController.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				GCC_PREFIX_HEADER = "Target Support Files/TGCameraViewController/TGCameraViewController-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		69E259B0731076A4DDDD34E459028EFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 958FE236C396BCF9A4EB73E5397146C3 /* Pods-TGCameraViewControllerExample.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -754,9 +775,9 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
-			name = Debug;
+			name = Release;
 		};
-		883C8E150194C6D8C910E12B5A03D4A1 /* Debug */ = {
+		7014370E4F6C34BBB93BFCE2E6769953 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B5428CD989535FCBE86F4D514EFD3124 /* TGCameraViewController.xcconfig */;
 			buildSettings = {
@@ -765,7 +786,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/TGCameraViewController/TGCameraViewController-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
@@ -777,7 +798,7 @@
 			};
 			name = Debug;
 		};
-		8DC5B0D5BE92DCFC21B76C2AE488A9C6 /* Debug */ = {
+		73981E7803F84C752A66384B9A64FE24 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B231C8CB2E5302032F4F05447515E16F /* Pods-TGCameraViewControllerExample.debug.xcconfig */;
 			buildSettings = {
@@ -785,7 +806,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACH_O_TYPE = staticlib;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
@@ -798,49 +819,7 @@
 			};
 			name = Debug;
 		};
-		96D85C6668044C1358EDEFCE4C2A4FC3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 958FE236C396BCF9A4EB73E5397146C3 /* Pods-TGCameraViewControllerExample.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		F0C0522AD9AA137FC8304D0A669110E0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4102334B2EADB75C294ED0D6756AF77B /* Pods-TGCameraViewControllerExampleSwift.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		F325026B55060D3B22BEC0BAB5FA7344 /* Release */ = {
+		AAF678CED40D3499169D10F63CA0719E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -871,10 +850,31 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AF8119DFB9AED09F0F308F467C8F36CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4102334B2EADB75C294ED0D6756AF77B /* Pods-TGCameraViewControllerExampleSwift.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -884,8 +884,8 @@
 		0A8D10DF2D561156DA656A3B46F5B3A9 /* Build configuration list for PBXNativeTarget "TGCameraViewController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				883C8E150194C6D8C910E12B5A03D4A1 /* Debug */,
-				2EB1E319B408E19671B849EE4DFDF8A6 /* Release */,
+				7014370E4F6C34BBB93BFCE2E6769953 /* Debug */,
+				684A36E965D474AD3B8AEEDE9F67A2B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -893,8 +893,8 @@
 		161F01888F3B51F53ECC69917EF014E7 /* Build configuration list for PBXNativeTarget "Pods-TGCameraViewControllerExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8DC5B0D5BE92DCFC21B76C2AE488A9C6 /* Debug */,
-				96D85C6668044C1358EDEFCE4C2A4FC3 /* Release */,
+				73981E7803F84C752A66384B9A64FE24 /* Debug */,
+				69E259B0731076A4DDDD34E459028EFC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -902,8 +902,8 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3FA2475660FFC880302AD18E29B2E5FC /* Debug */,
-				F325026B55060D3B22BEC0BAB5FA7344 /* Release */,
+				47BEF9D903506B003EA5C2B249729489 /* Debug */,
+				AAF678CED40D3499169D10F63CA0719E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -911,8 +911,8 @@
 		69131D9E6257F8C7E67A80FE78ABF60A /* Build configuration list for PBXNativeTarget "Pods-TGCameraViewControllerExampleSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6127D9E5304E2CF8E6903AED06AB9FDE /* Debug */,
-				F0C0522AD9AA137FC8304D0A669110E0 /* Release */,
+				2163A664A7CF475470C3798B09435A83 /* Debug */,
+				AF8119DFB9AED09F0F308F467C8F36CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
