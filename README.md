@@ -26,7 +26,7 @@ Custom camera with AVFoundation. Beautiful, light and easy to integrate with iOS
 * Visual effects like Instagram iOS app
 * iPhone, iPod and iPad supported
 
-Requirements: iOS 7 or higher.
+Requirements: iOS 8 or higher.
 
 ### Who uses it
 
@@ -234,7 +234,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 
 ### Requirements
 
-TGCameraViewController works on iOS 7.0+ version and is compatible with ARC projects. It depends on the following Apple frameworks, which should already be included with most Xcode templates:
+TGCameraViewController works on iOS 8.0+ version and is compatible with ARC projects. It depends on the following Apple frameworks, which should already be included with most Xcode templates:
 
 * AssetsLibrary.framework
 * AVFoundation.framework
