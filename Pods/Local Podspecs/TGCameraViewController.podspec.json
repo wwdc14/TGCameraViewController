@@ -1,6 +1,6 @@
 {
   "name": "TGCameraViewController",
-  "version": "2.2.7",
+  "version": "2.2.8",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -34,6 +34,6 @@
   ],
   "source": {
     "git": "https://github.com/tdginternet/TGCameraViewController.git",
-    "tag": "2.2.7"
+    "tag": "2.2.8"
   }
 }
