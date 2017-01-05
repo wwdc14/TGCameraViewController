@@ -147,7 +147,9 @@ static NSString* const kTGCacheVignetteKey = @"TGCacheVignetteKey";
         
         void (^saveJPGImageAtDocumentDirectory)(UIImage *) = ^(UIImage *photo) {
             [library saveJPGImageAtDocumentDirectory:_photo resultBlock:^(NSURL *assetURL) {
-                [_delegate cameraDidSavePhotoAtPath:assetURL];
+                if ([_delegate respondsToSelector:@selector(cameraDidSavePhotoAtPath:)]) {
+                    [_delegate cameraDidSavePhotoAtPath:assetURL];
+                }
             } failureBlock:^(NSError *error) {
                 if ([_delegate respondsToSelector:@selector(cameraDidSavePhotoWithError:)]) {
                     [_delegate cameraDidSavePhotoWithError:error];
