@@ -297,30 +297,30 @@
 - (void)deviceOrientationDidChangeNotification
 {
     UIDeviceOrientation orientation = [UIDevice.currentDevice orientation];
-    NSInteger degress;
+    NSInteger degrees;
     
     switch (orientation) {
         case UIDeviceOrientationFaceUp:
         case UIDeviceOrientationPortrait:
         case UIDeviceOrientationUnknown:
-            degress = 0;
+            degrees = 0;
             break;
             
         case UIDeviceOrientationLandscapeLeft:
-            degress = 90;
+            degrees = 90;
             break;
             
         case UIDeviceOrientationFaceDown:
         case UIDeviceOrientationPortraitUpsideDown:
-            degress = 180;
+            degrees = 180;
             break;
             
         case UIDeviceOrientationLandscapeRight:
-            degress = 270;
+            degrees = 270;
             break;
     }
     
-    CGFloat radians = degress * M_PI / 180;
+    CGFloat radians = degrees * M_PI / 180;
     CGAffineTransform transform = CGAffineTransformMakeRotation(radians);
     
     [UIView animateWithDuration:.5f animations:^{
