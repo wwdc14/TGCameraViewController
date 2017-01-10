@@ -29,6 +29,6 @@
 
 @interface TGCameraGrid : NSObject
 
-+ (void)disPlayGridView:(TGCameraGridView *)gridView;
++ (void)displayGridView:(TGCameraGridView *)gridView;
 
 @end

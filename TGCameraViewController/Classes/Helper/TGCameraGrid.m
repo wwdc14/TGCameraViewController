@@ -27,7 +27,7 @@
 
 @implementation TGCameraGrid
 
-+ (void)disPlayGridView:(TGCameraGridView *)gridView
++ (void)displayGridView:(TGCameraGridView *)gridView
 {
     NSInteger newAlpha = ([gridView alpha] == 0.) ? 1. : 0.;
     

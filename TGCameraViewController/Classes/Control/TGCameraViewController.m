@@ -230,7 +230,7 @@
 
 - (IBAction)gridTapped
 {
-    [_camera disPlayGridView];
+    [_camera displayGridView];
 }
 
 - (IBAction)flashTapped
