@@ -19,6 +19,9 @@ class TGInitialViewController: UIViewController, TGCameraDelegate {
         
         // save image to album
         TGCamera.setOption(kTGCameraOptionSaveImageToAlbum, value: true)
+
+        // use the standard image aspect instead of square
+        TGCamera.setOption(kTGCameraOptionUseStandardAspect, value: true)
         
         // hide switch camera button
         //TGCamera.setOption(kTGCameraOptionHiddenToggleButton, value: true)
