@@ -2,5 +2,5 @@ language: objective-c
 osx_image: xcode8.2
 script:
   - set -e -o pipefail
-  - xcodebuild -workspace TGCameraViewController.xcworkspace -scheme TGCameraViewControllerExample -sdk iphoneos | xcpretty -s
-  - xcodebuild -workspace TGCameraViewController.xcworkspace -scheme TGCameraViewControllerExampleSwift -sdk iphoneos | xcpretty -s
+  - xcodebuild -workspace TGCameraViewController.xcworkspace -scheme TGCameraViewControllerExample -sdk iphonesimulator | xcpretty -s
+  - xcodebuild -workspace TGCameraViewController.xcworkspace -scheme TGCameraViewControllerExampleSwift -sdk iphonesimulator | xcpretty -s
