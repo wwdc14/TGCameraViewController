@@ -104,7 +104,7 @@
         _albumButton.hidden = YES;
     }
 
-    if ([[TGCamera getOption:kTGCameraOptionUseStandardAspect] boolValue] == YES) {
+    if ([[TGCamera getOption:kTGCameraOptionUseOriginalAspect] boolValue] == YES) {
         _bottomViewHeightFixed.active = YES;
         _captureViewAspect.active = NO;
     } else {
@@ -254,6 +254,13 @@
     UIDeviceOrientation deviceOrientation = [[UIDevice currentDevice] orientation];
     AVCaptureVideoOrientation videoOrientation = [self videoOrientationForDeviceOrientation:deviceOrientation];
     
+    CGSize cropSize;
+    if ([[TGCamera getOption:kTGCameraOptionUseOriginalAspect] boolValue] == YES) {
+        cropSize = CGSizeZero;
+    } else {
+        cropSize = _captureView.frame.size;
+    }
+    
     dispatch_group_t group = dispatch_group_create();
     __block UIImage *photo;
     
@@ -263,7 +270,7 @@
     }];
     
     dispatch_group_enter(group);
-    [_camera takePhotoWithCaptureView:_captureView videoOrientation:videoOrientation cropSize:_captureView.frame.size completion:^(UIImage *_photo) {
+    [_camera takePhotoWithCaptureView:_captureView videoOrientation:videoOrientation cropSize:cropSize completion:^(UIImage *_photo) {
         photo = _photo;
         dispatch_group_leave(group);
     }];

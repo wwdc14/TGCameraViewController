@@ -31,16 +31,19 @@
     //[TGCameraColor setTintColor: [UIColor greenColor]];
     
     // save image to album
-    [TGCamera setOption:kTGCameraOptionSaveImageToAlbum value:[NSNumber numberWithBool:YES]];
+    [TGCamera setOption:kTGCameraOptionSaveImageToAlbum value:@YES];
+    
+    // use the original image aspect instead of square
+    [TGCamera setOption:kTGCameraOptionUseOriginalAspect value:@YES];
     
     // hide switch camera button
-    //[TGCamera setOption:kTGCameraOptionHiddenToggleButton value:[NSNumber numberWithBool:YES]];
+    //[TGCamera setOption:kTGCameraOptionHiddenToggleButton value:@YES];
     
     // hide album button
-    //[TGCamera setOption:kTGCameraOptionHiddenAlbumButton value:[NSNumber numberWithBool:YES]];
+    //[TGCamera setOption:kTGCameraOptionHiddenAlbumButton value:@YES;
     
     // hide filter button
-    //[TGCamera setOption:kTGCameraOptionHiddenFilterButton value:[NSNumber numberWithBool:YES]];
+    //[TGCamera setOption:kTGCameraOptionHiddenFilterButton value:@YES];
 
     
     _photoView.clipsToBounds = YES;

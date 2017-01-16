@@ -61,8 +61,10 @@
         if (imageDataSampleBuffer != NULL) {
             NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
             UIImage *image = [UIImage imageWithData:imageData];
-            UIImage *croppedImage = [weakSelf cropImage:image withCropSize:cropSize];
-            completion(croppedImage);
+            if (!CGSizeEqualToSize(cropSize, CGSizeZero)) {
+                image = [weakSelf cropImage:image withCropSize:cropSize];
+            }
+            completion(image);
         }
     }];
 }
