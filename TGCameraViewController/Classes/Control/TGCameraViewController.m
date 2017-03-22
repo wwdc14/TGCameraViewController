@@ -48,7 +48,10 @@
 @property (strong, nonatomic) IBOutlet TGCameraSlideView *slideDownView;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topViewHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomViewHeightFixed;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomViewHeightFill;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *toggleButtonWidth;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *captureViewAspect;
 
 @property (strong, nonatomic) TGCamera *camera;
 @property (nonatomic) BOOL wasLoaded;
@@ -86,14 +89,11 @@
     
     NSArray *devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
     if (devices.count > 1) {
-        
         if ([[TGCamera getOption:kTGCameraOptionHiddenToggleButton] boolValue] == YES) {
             _toggleButton.hidden = YES;
             _toggleButtonWidth.constant = 0;
         }
-    }
-    else {
-        
+    } else {  
         if ([[TGCamera getOption:kTGCameraOptionHiddenToggleButton] boolValue] == YES) {
             _toggleButton.hidden = YES;
             _toggleButtonWidth.constant = 0;
@@ -102,6 +102,13 @@
     
     if ([[TGCamera getOption:kTGCameraOptionHiddenAlbumButton] boolValue] == YES) {
         _albumButton.hidden = YES;
+    }
+
+    if ([[TGCamera getOption:kTGCameraOptionUseOriginalAspect] boolValue] == YES) {
+        _bottomViewHeightFixed.active = YES;
+        _captureViewAspect.active = NO;
+    } else {
+        _bottomViewHeightFixed.active = NO;
     }
     
     [_albumButton.layer setCornerRadius:10.f];
@@ -247,6 +254,13 @@
     UIDeviceOrientation deviceOrientation = [[UIDevice currentDevice] orientation];
     AVCaptureVideoOrientation videoOrientation = [self videoOrientationForDeviceOrientation:deviceOrientation];
     
+    CGSize cropSize;
+    if ([[TGCamera getOption:kTGCameraOptionUseOriginalAspect] boolValue] == YES) {
+        cropSize = CGSizeZero;
+    } else {
+        cropSize = _captureView.frame.size;
+    }
+    
     dispatch_group_t group = dispatch_group_create();
     __block UIImage *photo;
     
@@ -256,7 +270,7 @@
     }];
     
     dispatch_group_enter(group);
-    [_camera takePhotoWithCaptureView:_captureView videoOrientation:videoOrientation cropSize:_captureView.frame.size completion:^(UIImage *_photo) {
+    [_camera takePhotoWithCaptureView:_captureView videoOrientation:videoOrientation cropSize:cropSize completion:^(UIImage *_photo) {
         photo = _photo;
         dispatch_group_leave(group);
     }];

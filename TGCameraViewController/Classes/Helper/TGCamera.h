@@ -27,15 +27,13 @@
 @import AVFoundation;
 @import UIKit;
 
-
 #define kTGCameraOptionHiddenToggleButton @"TGCameraOptionHiddenToggleButton"
 #define kTGCameraOptionHiddenAlbumButton @"TGCameraOptionHiddenAlbumButton"
 #define kTGCameraOptionHiddenFilterButton @"TGCameraOptionHiddenFilterButton"
 #define kTGCameraOptionSaveImageToAlbum @"TGCameraOptionSaveImageToAlbum"
+#define kTGCameraOptionUseOriginalAspect @"kTGCameraOptionUseOriginalAspect"
 
 @protocol TGCameraDelegate;
-
-
 
 @interface TGCamera : NSObject
 

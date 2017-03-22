@@ -199,9 +199,10 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 |Option|Type|Default|Description|
 |:-:|:-:|:-:|:-:|
 |kTGCameraOptionHiddenToggleButton|NSNumber (YES/NO)|NO|Displays or hides the button that switches between the front and rear camera|
-|kTGCameraOptionHiddenAlbumButton|NSNumber (YES/NO)|NO|Displays or hides the button that allows the user to select a photo from his/her album|
-|kTGCameraOptionHiddenFilterButton|NSNumber (YES/NO)|NO|Displays or hides the button that allos the user to filter his/her photo|
+|kTGCameraOptionHiddenAlbumButton|NSNumber (YES/NO)|NO|Displays or hides the button that allows the user to select a photo from their album|
+|kTGCameraOptionHiddenFilterButton|NSNumber (YES/NO)|NO|Displays or hides the button that allos the user to filter their photo|
 |kTGCameraOptionSaveImageToAlbum|NSNumber (YES/NO)|NO|Save or not the photo in the camera roll|
+|kTGCameraOptionUseOriginalAspect|NSNumber (YES/NO)|NO|Use the original aspect instead of cropping the image to a square|
 
 ```obj-c
 #import "TGCamera.h"
@@ -211,10 +212,10 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 - (void)viewDidLoad
 {
     //...
-    [TGCamera setOption:kTGCameraOptionHiddenToggleButton value:[NSNumber numberWithBool:YES]];
-    [TGCamera setOption:kTGCameraOptionHiddenAlbumButton value:[NSNumber numberWithBool:YES]];
-    [TGCamera setOption:kTGCameraOptionHiddenFilterButton value:[NSNumber numberWithBool:YES]];
-    [TGCamera setOption:kTGCameraOptionSaveImageToAlbum value:[NSNumber numberWithBool:YES]];
+    [TGCamera setOption:kTGCameraOptionHiddenToggleButton value:@YES];
+    [TGCamera setOption:kTGCameraOptionHiddenAlbumButton value:@YES];
+    [TGCamera setOption:kTGCameraOptionHiddenFilterButton value:@YES];
+    [TGCamera setOption:kTGCameraOptionSaveImageToAlbum value:@YES];
     //...
 }
 
