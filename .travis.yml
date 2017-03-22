@@ -1,7 +1,7 @@
 language: objective-c
-osx_image: xcode8
-xcode_workspace: TGCameraViewController.xcworkspace
-xcode_scheme:
-  - TGCameraViewControllerExample
-  - TGCameraViewControllerExampleSwift
-xcode_sdk: iphonesimulator10.0
+osx_image: xcode8.2
+script:
+  - set -e -o pipefail
+  - xcodebuild -workspace TGCameraViewController.xcworkspace -scheme TGCameraViewControllerExample -sdk iphonesimulator | xcpretty -s
+  - xcodebuild -workspace TGCameraViewController.xcworkspace -scheme TGCameraViewControllerExampleSwift -sdk iphonesimulator | xcpretty -s
+  - set +e
