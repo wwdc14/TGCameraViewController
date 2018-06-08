@@ -23,7 +23,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-@import MobileCoreServices;
+#import <MobileCoreServices/MobileCoreServices.h>
 #import "TGAlbum.h"
 
 @implementation TGAlbum

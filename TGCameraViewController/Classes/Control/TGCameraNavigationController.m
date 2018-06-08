@@ -23,7 +23,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-@import AVFoundation;
+#import <AVFoundation/AVFoundation.h>
 #import "TGCameraAuthorizationViewController.h"
 #import "TGCameraNavigationController.h"
 #import "TGCameraViewController.h"

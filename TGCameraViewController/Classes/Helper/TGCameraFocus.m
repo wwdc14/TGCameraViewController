@@ -23,8 +23,8 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-@import AVFoundation;
-@import UIKit;
+#import <AVFoundation/AVFoundation.h>
+#import <UIKit/UIKit.h>
 #import "TGCameraFocusView.h"
 #import "TGCameraFocus.h"
 

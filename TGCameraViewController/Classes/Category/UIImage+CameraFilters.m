@@ -23,7 +23,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-@import CoreImage;
+#import <CoreImage/CoreImage.h>
 #import "UIImage+CameraFilters.h"
 
 static NSString* const kCIColorControls         = @"CIColorControls";

@@ -23,7 +23,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-@import AssetsLibrary;
+#import <AssetsLibrary/AssetsLibrary.h>
 #import "TGAssetImageFile.h"
 
 typedef void(^TGAssetsResultCompletion)(NSURL *assetURL);
